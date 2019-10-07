@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  bot:
+    build:
+      context: .
+    restart: on-failure
+    ports:
+      - ${BOT_PUBLIC_PORT}:80
+    environment:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+      DOMAIN: ${DOMAIN}
