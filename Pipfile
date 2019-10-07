@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+lint = "./scripts/lint.sh"
+app = "python -m app"
+
+[dev-packages]
+black = "==19.3b0"
+isort = "==4.3.21"
+flake8 = "==3.7.8"
+ipython = "==7.8.0"
+
+[packages]
+aiogram = "==2.3"
+click = "==7.0"
+loguru = "==0.3.2"
+uvloop = "==0.13.0"
+python-rapidjson = "==0.8.0"
+
+[pipenv]
+allow_prereleases = true
