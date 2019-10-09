@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker.pkg.github.com/aiogram/bot/telegram:${GITHUB_SHA:0:8} --tag docker.pkg.github.com/aiogram/bot/telegram:latest
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/aiogram/bot:${GITHUB_SHA:0:8} --tag docker.pkg.github.com/aiogram/bot:latest
     - name: Publish to Github Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: docker.pkg.github.com/aiogram/bot/telegram:latest
+        name: docker.pkg.github.com/aiogram/bot:latest
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: docker.pkg.github.com
