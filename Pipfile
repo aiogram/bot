@@ -22,6 +22,7 @@ click = "==7.0"
 loguru = "==0.3.2"
 uvloop = "==0.13.0"
 python-rapidjson = "==0.8.0"
+aiohttp-autoreload = "==0.0.1"
 
 [pipenv]
 allow_prereleases = true

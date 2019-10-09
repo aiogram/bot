@@ -2,13 +2,15 @@
 
 set -e
 
-python -O -m app version
-python -O before_start.py
+PYTHON="python -O"
+APP="${PYTHON} -m app"
+
+${PYTHON} before_start.py
 
 if [[ "$1" == "run-webhook" ]]; then
-  echo "start bot with webhook"
+  ${APP} webhook
 elif [[ "$1" == "run-polling" ]]; then
-  python -m app polling
+  ${APP} polling
 else
-  exec "${@}"
+  ${@}
 fi
