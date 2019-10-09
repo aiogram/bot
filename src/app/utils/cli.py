@@ -12,9 +12,6 @@ def cli():
     logging.setup()
     misc.setup()
 
-    # noinspection PyUnresolvedReferences
-    import app.modules  # Load all application submodules
-
 
 @cli.command()
 def version():

@@ -11,3 +11,6 @@ def setup():
 
     middlewares.setup(dp)
     filters.setup(dp)
+
+    # noinspection PyUnresolvedReferences
+    import app.modules  # Load all application submodules
