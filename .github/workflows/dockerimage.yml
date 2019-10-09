@@ -16,8 +16,8 @@ jobs:
     - name: Publish to Github Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: aiogram/bot/app:latest
-        tag: docker.pkg.github.com/aiogram/bot/app:latest
+        name: aiogram/bot:latest
+        tag: docker.illemius.xyz/aiogram/bot/app:latest
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: docker.pkg.github.com
+        registry: docker.illemius.xyz
