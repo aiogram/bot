@@ -21,3 +21,4 @@ jobs:
         name: docker.pkg.github.com/aiogram/bot/telegram:latest
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: docker.pkg.github.com
