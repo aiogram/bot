@@ -15,6 +15,7 @@ RUN pip install pipenv && \
 
 # Add source code
 ADD src .
+RUN pybabel compile -d locales -D bot && find . -name "*.po*" -type f -delete
 
 # Execution
 ENTRYPOINT ["docker-entrypoint"]
