@@ -1,0 +1,36 @@
+# English translations for aiogram_bot.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the aiogram_bot
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: aiogram_bot 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-10-11 17:48+0300\n"
+"PO-Revision-Date: 2019-10-11 17:49+0300\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: app/modules/base.py:14
+msgid "Hello, {user}. My source code: {source_url}"
+msgstr ""
+"Hello, <b>{user}</b>!\n"
+"I'm <b>aiogram</b> bot.\n"
+"My source code: {source_url}"
+
+#: app/modules/simple_admin.py:37
+msgid "Read-only activated for user {user}. duration: {duration}"
+msgstr "<b>Read-only</b> mode <b>activated</b> for user {user} for {duration}."
+
+#: app/modules/simple_admin.py:72
+msgid "User {user} banned."
+msgstr "User {user} banned."

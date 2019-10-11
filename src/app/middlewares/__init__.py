@@ -3,4 +3,7 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 
 
 def setup(dispatcher: Dispatcher):
+    from app.misc import i18n
+
     dispatcher.middleware.setup(LoggingMiddleware("bot"))
+    dispatcher.middleware.setup(i18n)

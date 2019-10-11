@@ -47,5 +47,6 @@ async def parse_timedelta_from_message(
             return
         if duration <= datetime.timedelta(seconds=30):
             return datetime.timedelta(seconds=30)
+        return duration
     else:
         return datetime.timedelta(minutes=15)

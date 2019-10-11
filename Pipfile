@@ -9,6 +9,8 @@ python_version = "3.7"
 [scripts]
 lint = "./scripts/lint.sh"
 app = "python -m app"
+texts_update = "./scripts/exportTexts.sh"
+texts_compile = "./scripts/compileTexts.sh"
 
 [dev-packages]
 black = "==19.3b0"
@@ -23,6 +25,7 @@ loguru = "==0.3.2"
 uvloop = "==0.13.0"
 python-rapidjson = "==0.8.0"
 aiohttp-autoreload = "==0.0.1"
+aiohttp = "==3.5.4"
 
 [pipenv]
 allow_prereleases = true
