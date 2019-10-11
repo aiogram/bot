@@ -11,7 +11,8 @@ RUN chmod +x /usr/bin/docker-entrypoint
 COPY Pipfile .
 COPY Pipfile.lock .
 RUN pip install pipenv && \
-	pipenv install --system --deploy
+	pipenv install --system --deploy && \
+	rm Pipfile*
 
 # Add source code
 ADD src .
