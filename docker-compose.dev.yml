@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  redis:
+    ports:
+      - ${REDIS_PORT}:6379
+
+  postgres:
+    ports:
+      - ${POSTGRES_PORT}:5432

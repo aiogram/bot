@@ -16,3 +16,12 @@ async def cmd_start(message: types.Message):
             source_url=md.hlink("GitHub", "https://github.com/aiogram/bot"),
         )
     )
+
+
+@dp.errors_handler()
+async def errors_handler(update: types.Update, exception: Exception):
+    try:
+        raise exception
+    except Exception as e:
+        logger.exception("Cause exception {e} in update {update}", e=e, update=update)
+    return True

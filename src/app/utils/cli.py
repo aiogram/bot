@@ -3,6 +3,11 @@ from aiogram.__main__ import SysInfo
 from aiogram.utils import executor
 from loguru import logger
 
+try:
+    import aiohttp_autoreload
+except ImportError:
+    aiohttp_autoreload = None
+
 
 @click.group()
 def cli():
@@ -37,10 +42,10 @@ def polling(skip_updates: bool, autoreload: bool):
     """
     from app.misc import dp
 
-    if autoreload:
-        import aiohttp_autoreload
-
+    if autoreload and aiohttp_autoreload:
         logger.warning("Application started in live-reload mode. Please disable it in production!")
         aiohttp_autoreload.start()
+    elif not autoreload and not aiohttp_autoreload:
+        click.echo("`aiohttp_autoreload` is not installed.", err=True)
 
     executor.start_polling(dp, skip_updates=skip_updates)

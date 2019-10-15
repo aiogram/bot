@@ -5,8 +5,37 @@ services:
     build:
       context: .
     restart: on-failure
-    ports:
-      - ${BOT_PUBLIC_PORT}:80
+    depends_on:
+      - redis
+      - postgres
     environment:
-      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-      DOMAIN: ${DOMAIN}
+      TELEGRAM_TOKEN:
+      DOMAIN:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB_FSM:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_PASSWORD:
+      POSTGRES_USER:
+      POSTGRES_DB:
+
+  redis:
+    image: redis:5-alpine
+    restart: on-failure
+    volumes:
+      - redis-data:/data
+
+  postgres:
+    image: postgres:12-alpine
+    restart: on-failure
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD:
+      POSTGRES_USER:
+      POSTGRES_DB:
+
+volumes:
+  redis-data:
+  postgres-data:
