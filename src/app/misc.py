@@ -2,6 +2,7 @@ from pathlib import Path
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
+from gino import Gino
 
 from app import config, middlewares
 from app.middlewares.i18n import I18nMiddleware

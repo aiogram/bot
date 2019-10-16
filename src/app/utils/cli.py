@@ -3,6 +3,8 @@ from aiogram.__main__ import SysInfo
 from aiogram.utils import executor
 from loguru import logger
 
+from app.models import db
+
 try:
     import aiohttp_autoreload
 except ImportError:
@@ -48,4 +50,4 @@ def polling(skip_updates: bool, autoreload: bool):
     elif not autoreload and not aiohttp_autoreload:
         click.echo("`aiohttp_autoreload` is not installed.", err=True)
 
-    executor.start_polling(dp, skip_updates=skip_updates)
+    executor.start_polling(dp, skip_updates=skip_updates, on_startup=[db.on_startup])

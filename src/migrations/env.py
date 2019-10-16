@@ -4,12 +4,12 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from app.config import POSTGRES_URI
-from app.models import base
+from app.models.base import db
 
 config = context.config
 fileConfig(config.config_file_name)
-target_metadata = base.Base.metadata
-config.set_main_option("sqlalchemy.url", POSTGRES_URI)
+target_metadata = db
+config.set_main_option("sqlalchemy.url", f"postgresql://{POSTGRES_URI}")
 
 
 def run_migrations_offline():

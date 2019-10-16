@@ -3,19 +3,24 @@ from typing import Optional
 from aiogram import types
 from aiogram.dispatcher.middlewares import BaseMiddleware
 
-from app.middlewares.db import get_db
 from app.models.chat import Chat
 from app.models.user import User
 
 
 class ACLMiddleware(BaseMiddleware):
-    def setup_chat(self, data: dict, user: types.User, chat: Optional[types.Chat] = None):
-        session = get_db()
-        data["user"] = User.get_user(session, user.id)
-        if chat:
-            data["chat"] = Chat.get_chat(session, chat.id)
-        else:
-            data["chat"] = Chat.get_chat(session, user.id)
+    async def setup_chat(self, data: dict, user: types.User, chat: Optional[types.Chat] = None):
+        user_id = user.id
+        chat_id = chat.id if chat else user.id
+
+        user = await User.get(user_id)
+        if user is None:
+            user = await User.create(id=user_id)
+        chat = await Chat.get(chat_id)
+        if chat is None:
+            chat = await Chat.create(id=chat_id)
+
+        data["user"] = user
+        data["chat"] = chat
 
     async def on_pre_process_message(self, message: types.Message, data: dict):
-        self.setup_chat(data, message.from_user, message.chat)
+        await self.setup_chat(data, message.from_user, message.chat)

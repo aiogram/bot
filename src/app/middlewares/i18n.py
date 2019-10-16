@@ -4,9 +4,7 @@ from aiogram.contrib.middlewares.i18n import I18nMiddleware as BaseI18nMiddlewar
 
 
 class I18nMiddleware(BaseI18nMiddleware):
-    AVAILABLE_LANGUAGES = [
-        'en'
-    ]
+    AVAILABLE_LANGUAGES = ["en"]
 
     async def get_user_locale(self, action: str, args: Tuple[Any]) -> str:
         data: dict = args[-1]
