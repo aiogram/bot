@@ -22,4 +22,4 @@ class InterceptHandler(logging.Handler):
 
 def setup():
     logging.basicConfig(handlers=[InterceptHandler()], level=logging.INFO)
-    logger.disable('sqlalchemy.engine.base')
+    logger.disable("sqlalchemy.engine.base")
