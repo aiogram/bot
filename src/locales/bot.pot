@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-15 22:18+0300\n"
+"POT-Creation-Date: 2019-10-16 22:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Hello, {user}. My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:38
+#: app/handlers/simple_admin.py:40
 msgid "Read-only activated for user {user}. duration: {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:70
-msgid "User {user} banned."
+#: app/handlers/simple_admin.py:73
+msgid "User {user} banned for {duration}."
 msgstr ""
 

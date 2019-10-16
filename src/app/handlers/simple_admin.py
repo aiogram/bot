@@ -1,8 +1,10 @@
 from aiogram import types
 from aiogram.utils import exceptions
+from babel.dates import format_timedelta
 from loguru import logger
 
 from app.misc import dp, i18n
+from app.models.chat import Chat
 from app.utils.timedelta import parse_timedelta_from_message
 
 _ = i18n.gettext
@@ -15,7 +17,7 @@ _ = i18n.gettext
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
 )
-async def cmd_ro(message: types.Message):
+async def cmd_ro(message: types.Message, chat: Chat):
     duration = await parse_timedelta_from_message(message)
     if not duration:
         return
@@ -36,7 +38,8 @@ async def cmd_ro(message: types.Message):
 
     await message.reply_to_message.answer(
         _("Read-only activated for user {user}. duration: {duration}").format(
-            user=message.reply_to_message.from_user.get_mention(), duration=duration
+            user=message.reply_to_message.from_user.get_mention(),
+            duration=format_timedelta(duration, locale=chat.language, granularity="seconds"),
         )
     )
     return True
@@ -49,7 +52,7 @@ async def cmd_ro(message: types.Message):
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
 )
-async def cmd_ban(message: types.Message):
+async def cmd_ban(message: types.Message, chat: Chat):
     duration = await parse_timedelta_from_message(message)
     if not duration:
         return
@@ -67,6 +70,9 @@ async def cmd_ban(message: types.Message):
         return False
 
     await message.reply_to_message.answer(
-        _("User {user} banned.").format(user=message.reply_to_message.from_user.get_mention())
+        _("User {user} banned for {duration}.").format(
+            user=message.reply_to_message.from_user.get_mention(),
+            duration=format_timedelta(duration, locale=chat.language, granularity="seconds"),
+        )
     )
     return True
