@@ -7,10 +7,13 @@ APP="${PYTHON} -m app"
 
 ${PYTHON} before_start.py
 
-if [[ "$1" == "run-webhook" ]]; then
+case "$1" in
+run-webhook)
   ${APP} webhook
-elif [[ "$1" == "run-polling" ]]; then
+  ;;
+run-polling)
   ${APP} polling
-else
+  ;;
+*)
   ${@}
-fi
+esac

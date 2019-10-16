@@ -20,4 +20,4 @@ RUN pybabel compile -d locales -D bot && find . -name "*.po*" -type f -delete
 
 # Execution
 ENTRYPOINT ["docker-entrypoint"]
-CMD ["run-polling"]
+CMD ["run-webhook"]

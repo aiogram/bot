@@ -13,7 +13,7 @@ lint:
 
 entrypoint:
 	cd src
-	pipenv run bash ../docker-entrypoint.sh ${ARGS}
+	pipenv run bash ../docker-entrypoint.sh ${args}
 
 texts-update:
 	pipenv run texts_update

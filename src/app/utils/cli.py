@@ -1,9 +1,6 @@
 import click
 from aiogram.__main__ import SysInfo
-from aiogram.utils import executor
 from loguru import logger
-
-from app.models import db
 
 try:
     import aiohttp_autoreload
@@ -42,7 +39,7 @@ def polling(skip_updates: bool, autoreload: bool):
     :param skip_updates: Skip pending updates
     :param autoreload: autoreload application on file changes
     """
-    from app.misc import dp
+    from app.utils.executor import runner
 
     if autoreload and aiohttp_autoreload:
         logger.warning("Application started in live-reload mode. Please disable it in production!")
@@ -50,4 +47,14 @@ def polling(skip_updates: bool, autoreload: bool):
     elif not autoreload and not aiohttp_autoreload:
         click.echo("`aiohttp_autoreload` is not installed.", err=True)
 
-    executor.start_polling(dp, skip_updates=skip_updates, on_startup=[db.on_startup])
+    runner.skip_updates = skip_updates
+    runner.start_polling(reset_webhook=True)
+
+
+@cli.command()
+def webhook():
+    from app.utils.executor import runner
+
+    from app import config
+
+    runner.start_webhook(webhook_path=f"/webhook/{config.SECRET_KEY}", port=config.BOT_PUBLIC_PORT)

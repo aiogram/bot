@@ -9,6 +9,7 @@ services:
       - redis
       - postgres
     environment:
+      BOT_PUBLIC_PORT: 80
       TELEGRAM_TOKEN:
       DOMAIN:
       REDIS_HOST: redis

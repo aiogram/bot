@@ -1,7 +1,12 @@
+import secrets
+
 from envparse import env
 
 TELEGRAM_TOKEN = env.str("TELEGRAM_TOKEN")
 DOMAIN = env.str("DOMAIN", default="example.com")
+BOT_PUBLIC_PORT = env.int("BOT_PUBLIC_PORT", default=8080)
+SECRET_KEY = secrets.token_urlsafe(48)
+WEBHOOK_URL = f"https://{DOMAIN}/webhook/{SECRET_KEY}"
 
 REDIS_HOST = env.str("REDIS_HOST", default="localhost")
 REDIS_PORT = env.int("REDIS_PORT", default=6379)
