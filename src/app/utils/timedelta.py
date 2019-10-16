@@ -25,11 +25,14 @@ def parse_timedelta(value: str) -> datetime.timedelta:
     if not match:
         raise TimedeltaParseError("Invalid time format")
 
-    result = datetime.timedelta()
-    for match in PATTERN.finditer(value):
-        value, modifier = match.groups()
+    try:
+        result = datetime.timedelta()
+        for match in PATTERN.finditer(value):
+            value, modifier = match.groups()
 
-        result += int(value) * MODIFIERS[modifier]
+            result += int(value) * MODIFIERS[modifier]
+    except OverflowError:
+        raise TimedeltaParseError("Timedelta value is too large")
 
     return result
 
