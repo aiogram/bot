@@ -45,7 +45,9 @@ async def cmd_ro(message: types.Message, chat: Chat):
     await message.reply_to_message.answer(
         _("Read-only activated for user {user}. duration: {duration}").format(
             user=message.reply_to_message.from_user.get_mention(),
-            duration=format_timedelta(duration, locale=chat.language, granularity="seconds"),
+            duration=format_timedelta(
+                duration, locale=chat.language, granularity="seconds", format="short"
+            ),
         )
     )
     return True
@@ -78,7 +80,9 @@ async def cmd_ban(message: types.Message, chat: Chat):
     await message.reply_to_message.answer(
         _("User {user} banned for {duration}.").format(
             user=message.reply_to_message.from_user.get_mention(),
-            duration=format_timedelta(duration, locale=chat.language, granularity="seconds"),
+            duration=format_timedelta(
+                duration, locale=chat.language, granularity="seconds", format="short"
+            ),
         )
     )
     return True
