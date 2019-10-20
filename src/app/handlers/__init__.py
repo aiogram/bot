@@ -1,3 +1,3 @@
 # Import all submodules here
 
-from . import base, simple_admin
+from . import base, chat_settings, simple_admin
