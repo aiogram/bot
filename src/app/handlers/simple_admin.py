@@ -6,11 +6,12 @@ from aiogram import types
 from aiogram.utils import exceptions
 from aiogram.utils.exceptions import Unauthorized
 from aiogram.utils.markdown import hlink, quote_html
+from babel.dates import format_timedelta
+from loguru import logger
+
 from app.misc import bot, dp, i18n
 from app.models.chat import Chat
 from app.utils.timedelta import parse_timedelta_from_message
-from babel.dates import format_timedelta
-from loguru import logger
 
 _ = i18n.gettext
 
