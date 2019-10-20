@@ -1,11 +1,16 @@
+import asyncio
+from contextlib import suppress
+from typing import List
+
 from aiogram import types
 from aiogram.utils import exceptions
-from babel.dates import format_timedelta
-from loguru import logger
-
-from app.misc import dp, i18n
+from aiogram.utils.exceptions import Unauthorized
+from aiogram.utils.markdown import hlink, quote_html
+from app.misc import bot, dp, i18n
 from app.models.chat import Chat
 from app.utils.timedelta import parse_timedelta_from_message
+from babel.dates import format_timedelta
+from loguru import logger
 
 _ = i18n.gettext
 
@@ -76,3 +81,35 @@ async def cmd_ban(message: types.Message, chat: Chat):
         )
     )
     return True
+
+
+@dp.message_handler(text_contains="@admin", state="*")
+@dp.message_handler(commands=["report"], commands_prefix="!/", state="*")
+async def text_report_admins(message: types.Message):
+    if not message.reply_to_message:
+        return await message.reply(
+            _(
+                "Please use this command is only in reply to message what do you want to report "
+                "and this message will be reported to chat administrators."
+            )
+        )
+
+    admins: List[types.ChatMember] = await message.chat.get_administrators()
+    text = _("[ALERT] User {user} is reported message in chat {chat}.").format(
+        user=message.from_user.get_mention(),
+        chat=hlink(
+            message.chat.title,
+            f"https://t.me/{message.chat.username}/{message.reply_to_message.message_id}",
+        )
+        if message.chat.username
+        else quote_html(repr(message.chat.title)),
+    )
+
+    for admin in admins:
+        if admin.user.is_bot:
+            continue
+        with suppress(Unauthorized):
+            await bot.send_message(admin.user.id, text)
+        await asyncio.sleep(0.3)
+
+    await message.reply_to_message.reply("This message is reported to chat administrators.")
