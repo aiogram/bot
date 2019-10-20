@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-16 23:45+0300\n"
+"POT-Creation-Date: 2019-10-20 20:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: app/handlers/base.py:14
+#: app/handlers/base.py:15
 msgid "Hello, {user}. My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:40
+#: app/handlers/chat_settings.py:34 app/handlers/chat_settings.py:63
+msgid "Invalid chat"
+msgstr ""
+
+#: app/handlers/chat_settings.py:46
+msgid "Choose chat language"
+msgstr ""
+
+#: app/handlers/chat_settings.py:67
+msgid "You cannot change settings of this chat!"
+msgstr ""
+
+#: app/handlers/chat_settings.py:72
+msgid "Language changed to {new_language}"
+msgstr ""
+
+#: app/handlers/chat_settings.py:82
+msgid "Settings saved"
+msgstr ""
+
+#: app/handlers/simple_admin.py:46
 msgid "Read-only activated for user {user}. duration: {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:73
+#: app/handlers/simple_admin.py:79
 msgid "User {user} banned for {duration}."
+msgstr ""
+
+#: app/handlers/simple_admin.py:92
+msgid ""
+"Please use this command is only in reply to message what do you want to report and this message "
+"will be reported to chat administrators."
+msgstr ""
+
+#: app/handlers/simple_admin.py:99
+msgid "[ALERT] User {user} is reported message in chat {chat}."
+msgstr ""
+
+#: app/handlers/simple_admin.py:116
+msgid "This message is reported to chat administrators."
+msgstr ""
+
+#: app/services/chat_settings.py:22
+msgid "Settings for chat {chat_title}"
+msgstr ""
+
+#: app/services/chat_settings.py:37
+msgid "{flag} Language"
+msgstr ""
+
+#: app/services/chat_settings.py:47
+msgid "Done"
 msgstr ""
 

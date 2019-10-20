@@ -113,4 +113,4 @@ async def text_report_admins(message: types.Message):
             await bot.send_message(admin.user.id, text)
         await asyncio.sleep(0.3)
 
-    await message.reply_to_message.reply("This message is reported to chat administrators.")
+    await message.reply_to_message.reply(_("This message is reported to chat administrators."))
