@@ -1,13 +1,18 @@
-from __future__ import annotations
-
-import sqlalchemy as sa
-
-from app.models.db import BaseModel
+from app.models.db import BaseModel, TimedBaseModel, db
 
 
-class Chat(BaseModel):
+class Chat(TimedBaseModel):
     __tablename__ = "chats"
 
-    id = sa.Column(sa.BigInteger, primary_key=True, index=True)
-    type = sa.Column(sa.String)
-    language = sa.Column(sa.String(12), default="en")
+    id = db.Column(db.BigInteger, primary_key=True, index=True)
+    type = db.Column(db.String)
+    language = db.Column(db.String(12), default="en")
+
+
+class ChatRelatedModel(BaseModel):
+    __abstract__ = True
+
+    chat_id = db.Column(
+        db.ForeignKey(f"{Chat.__tablename__}.id", ondelete="CASCADE", onupdate="CASCADE"),
+        nullable=False,
+    )

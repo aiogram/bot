@@ -7,11 +7,11 @@ ENV PYTHONPATH "${PYTHONPATH}:/app"
 WORKDIR /app
 
 COPY docker-entrypoint.sh /usr/bin/docker-entrypoint
-RUN chmod +x /usr/bin/docker-entrypoint
 COPY Pipfile* /app/
 RUN pip install pipenv && \
 	pipenv install --system --deploy && \
-	rm Pipfile*
+	rm Pipfile* && \
+	chmod +x /usr/bin/docker-entrypoint
 ADD src /app/
 RUN pybabel compile -d locales -D bot && find . -name "*.po*" -type f -delete
 

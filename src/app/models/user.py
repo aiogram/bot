@@ -1,11 +1,18 @@
 from __future__ import annotations
 
-import sqlalchemy as sa
-
-from app.models.db import BaseModel
+from app.models.db import BaseModel, TimedBaseModel, db
 
 
-class User(BaseModel):
+class User(TimedBaseModel):
     __tablename__ = "users"
 
-    id = sa.Column(sa.Integer, primary_key=True, index=True, unique=True)
+    id = db.Column(db.Integer, primary_key=True, index=True, unique=True)
+
+
+class UserRelatedModel(BaseModel):
+    __abstract__ = True
+
+    user_id = db.Column(
+        db.ForeignKey(f"{User.__tablename__}.id", ondelete="CASCADE", onupdate="CASCADE"),
+        nullable=False,
+    )

@@ -26,6 +26,10 @@ migrate:
 	cd src
 	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic upgrade head
 
+migration:
+	cd src
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic revision --autogenerate -m "${message}"
+
 texts-compile:
 	pipenv run texts_compile
 
