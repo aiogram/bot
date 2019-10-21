@@ -1,3 +1,9 @@
-# Import all submodules here
+"""
+Import all submodules here
 
-from . import base, chat_settings, simple_admin
+isort:skip_file
+"""
+
+from . import base
+from . import chat_settings
+from . import simple_admin
