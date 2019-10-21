@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Docker image and deploy application
 
 on:
   push:
@@ -6,11 +6,8 @@ on:
       - master
 
 jobs:
-
   build:
- 
     runs-on: ubuntu-latest
- 
     steps:
     - uses: actions/checkout@v1
     - name: Publish to Github Registry
@@ -21,3 +18,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: docker.illemius.xyz
+    - name: Trigger deploy
+      users: wei/curl@v1
+      with:
+        -X POST ${{ secrets.ILLEMIUS_WEBHOOK_URL }}
