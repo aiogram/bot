@@ -44,7 +44,7 @@ def polling(skip_updates: bool, autoreload: bool):
     if autoreload and aiohttp_autoreload:
         logger.warning("Application started in live-reload mode. Please disable it in production!")
         aiohttp_autoreload.start()
-    elif not autoreload and not aiohttp_autoreload:
+    elif autoreload and not aiohttp_autoreload:
         click.echo("`aiohttp_autoreload` is not installed.", err=True)
 
     runner.skip_updates = skip_updates
@@ -54,7 +54,6 @@ def polling(skip_updates: bool, autoreload: bool):
 @cli.command()
 def webhook():
     from app.utils.executor import runner
-
     from app import config
 
     runner.start_webhook(webhook_path=f"/webhook/{config.SECRET_KEY}", port=config.BOT_PUBLIC_PORT)
