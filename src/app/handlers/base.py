@@ -1,5 +1,6 @@
-from aiogram import md, types
+from aiogram import types
 from aiogram.dispatcher.filters import CommandStart
+from aiogram.utils.markdown import hlink, quote_html
 from loguru import logger
 
 from app.misc import dp, i18n
@@ -13,8 +14,8 @@ async def cmd_start(message: types.Message, user: User):
     logger.info("User {user} start conversation with bot", user=message.from_user.id)
     await message.answer(
         _("Hello, {user}. My source code: {source_url}").format(
-            user=md.quote_html(message.from_user.full_name),
-            source_url=md.hlink("GitHub", "https://github.com/aiogram/bot"),
+            user=quote_html(message.from_user.full_name),
+            source_url=hlink("GitHub", "https://github.com/aiogram/bot"),
         )
     )
 

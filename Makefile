@@ -30,6 +30,10 @@ migration:
 	cd src
 	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic revision --autogenerate -m "${message}"
 
+downgrade:
+	cd src
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic downgrade -1
+
 texts-compile:
 	pipenv run texts_compile
 

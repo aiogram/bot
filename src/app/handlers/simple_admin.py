@@ -11,6 +11,7 @@ from loguru import logger
 
 from app.misc import bot, dp, i18n
 from app.models.chat import Chat
+from app.models.user import User
 from app.utils.timedelta import parse_timedelta_from_message
 
 _ = i18n.gettext
@@ -88,8 +89,10 @@ async def cmd_ban(message: types.Message, chat: Chat):
     return True
 
 
-@dp.message_handler(text_contains="@admin", state="*")
-@dp.message_handler(commands=["report"], commands_prefix="!/", state="*")
+@dp.message_handler(types.ChatType.is_group_or_super_group, text_contains="@admin", state="*")
+@dp.message_handler(
+    types.ChatType.is_group_or_super_group, commands=["report"], commands_prefix="!/", state="*"
+)
 async def text_report_admins(message: types.Message):
     if not message.reply_to_message:
         return await message.reply(
@@ -110,11 +113,15 @@ async def text_report_admins(message: types.Message):
         else quote_html(repr(message.chat.title)),
     )
 
-    for admin in admins:
-        if admin.user.is_bot:
-            continue
-        with suppress(Unauthorized):
-            await bot.send_message(admin.user.id, text)
-        await asyncio.sleep(0.3)
+    admin_ids = [
+        admin.user.id for admin in admins if admin.is_chat_admin() and not admin.user.is_bot
+    ]
+    if admin_ids:
+        for admin in await User.query.where(
+            User.id.in_(admin_ids) & (User.do_not_disturb == False)
+        ).gino.all():  # NOQA
+            with suppress(Unauthorized):
+                await bot.send_message(admin.id, text)
+            await asyncio.sleep(0.3)
 
     await message.reply_to_message.reply(_("This message is reported to chat administrators."))

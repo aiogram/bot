@@ -5,7 +5,7 @@ set -e
 PYTHON="python -O"
 APP="${PYTHON} -m app"
 
-${PYTHON} before_start.py
+# ${PYTHON} before_start.py
 
 case "$1" in
 run-webhook)
@@ -13,6 +13,9 @@ run-webhook)
   ;;
 run-polling)
   ${APP} polling
+  ;;
+migrate)
+  alembic upgrade head
   ;;
 *)
   ${@}
