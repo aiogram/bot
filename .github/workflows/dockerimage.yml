@@ -19,6 +19,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: docker.illemius.xyz
     - name: Trigger deploy
-      users: wei/curl@v1
+      uses: wei/curl@v1
       with:
         -X POST ${{ secrets.ILLEMIUS_WEBHOOK_URL }}
