@@ -56,4 +56,4 @@ def webhook():
     from app.utils.executor import runner
     from app import config
 
-    runner.start_webhook(webhook_path=f"/webhook/{config.SECRET_KEY}", port=config.BOT_PUBLIC_PORT)
+    runner.start_webhook(webhook_path=config.WEBHOOK_PATH, port=config.BOT_PUBLIC_PORT)
