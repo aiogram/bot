@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 00:05+0300\n"
+"POT-Creation-Date: 2019-10-22 00:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,11 +69,15 @@ msgstr ""
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: app/handlers/chat_settings.py:91
+#: app/handlers/chat_settings.py:93
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:106
+#: app/handlers/chat_settings.py:107
+msgid "Do not disturb mode reconfigured"
+msgstr ""
+
+#: app/handlers/chat_settings.py:117
 msgid "Settings saved"
 msgstr ""
 

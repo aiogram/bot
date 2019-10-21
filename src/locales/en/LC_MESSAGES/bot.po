@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 00:05+0300\n"
+"POT-Creation-Date: 2019-10-22 00:21+0300\n"
 "PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
-"X-Generator: Poedit 2.2.1\n"
 
 #: app/handlers/base.py:17
 msgid ""
@@ -72,11 +71,15 @@ msgstr ""
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: app/handlers/chat_settings.py:91
+#: app/handlers/chat_settings.py:93
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:106
+#: app/handlers/chat_settings.py:107
+msgid "Do not disturb mode reconfigured"
+msgstr ""
+
+#: app/handlers/chat_settings.py:117
 msgid "Settings saved"
 msgstr ""
 
@@ -121,3 +124,4 @@ msgstr ""
 #: app/services/chat_settings.py:68
 msgid "{status} Do not disturb"
 msgstr ""
+

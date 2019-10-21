@@ -3,7 +3,7 @@ from functools import partial
 
 from aiogram import types
 from aiogram.dispatcher.filters.filters import OrFilter
-from aiogram.utils.exceptions import MessageCantBeDeleted
+from aiogram.utils.exceptions import MessageCantBeDeleted, MessageNotModified
 from loguru import logger
 
 from app.misc import bot, dp, i18n
@@ -100,6 +100,15 @@ async def cq_chat_settings_choose_language(
         i18n.ctx_locale.set(target_language)
         text, markup = get_user_settings_markup(chat, user)
     await query.message.edit_text(text, reply_markup=markup)
+
+
+@dp.callback_query_handler(cb_user_settings.filter(property="do_not_disturb", value="switch"))
+async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User, chat: Chat):
+    await query.answer(_("Do not disturb mode reconfigured"))
+    await user.update(do_not_disturb=~User.do_not_disturb).apply()
+    text, markup = get_user_settings_markup(chat, user)
+    with suppress(MessageNotModified):
+        await query.message.edit_text(text, reply_markup=markup)
 
 
 @dp.callback_query_handler(cb_chat_settings.filter(property="done", value="true"))
