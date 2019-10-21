@@ -1,5 +1,5 @@
 FROM python:3.7-slim-buster as production
-LABEL maintainer="jroot.junior@gmail.com" \
+LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
       description="Telegram Bot"
 
 EXPOSE 80
@@ -9,9 +9,9 @@ WORKDIR /app
 COPY docker-entrypoint.sh /usr/bin/docker-entrypoint
 COPY Pipfile* /app/
 RUN pip install pipenv && \
-	pipenv install --system --deploy && \
-	rm Pipfile* && \
-	chmod +x /usr/bin/docker-entrypoint
+    pipenv install --system --deploy && \
+    rm Pipfile* && \
+    chmod +x /usr/bin/docker-entrypoint
 ADD src /app/
 RUN pybabel compile -d locales -D bot && find . -name "*.po*" -type f -delete
 
