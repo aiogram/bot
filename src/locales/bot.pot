@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-20 20:53+0300\n"
+"POT-Creation-Date: 2019-10-21 21:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,61 +17,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: app/handlers/base.py:15
+#: app/handlers/base.py:16
 msgid "Hello, {user}. My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:34 app/handlers/chat_settings.py:63
+#: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82
 msgid "Invalid chat"
 msgstr ""
 
-#: app/handlers/chat_settings.py:46
+#: app/handlers/chat_settings.py:60
 msgid "Choose chat language"
 msgstr ""
 
-#: app/handlers/chat_settings.py:67
+#: app/handlers/chat_settings.py:86
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: app/handlers/chat_settings.py:72
+#: app/handlers/chat_settings.py:91
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:82
+#: app/handlers/chat_settings.py:106
 msgid "Settings saved"
 msgstr ""
 
-#: app/handlers/simple_admin.py:46
+#: app/handlers/simple_admin.py:47
 msgid "Read-only activated for user {user}. duration: {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:79
+#: app/handlers/simple_admin.py:82
 msgid "User {user} banned for {duration}."
 msgstr ""
 
-#: app/handlers/simple_admin.py:92
+#: app/handlers/simple_admin.py:99
 msgid ""
 "Please use this command is only in reply to message what do you want to report and this message "
 "will be reported to chat administrators."
 msgstr ""
 
-#: app/handlers/simple_admin.py:99
+#: app/handlers/simple_admin.py:106
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr ""
 
-#: app/handlers/simple_admin.py:116
+#: app/handlers/simple_admin.py:127
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: app/services/chat_settings.py:22
+#: app/services/chat_settings.py:25
 msgid "Settings for chat {chat_title}"
 msgstr ""
 
-#: app/services/chat_settings.py:37
+#: app/services/chat_settings.py:40 app/services/chat_settings.py:78
 msgid "{flag} Language"
 msgstr ""
 
-#: app/services/chat_settings.py:47
+#: app/services/chat_settings.py:50 app/services/chat_settings.py:86
 msgid "Done"
+msgstr ""
+
+#: app/services/chat_settings.py:63
+msgid "Personal settings"
+msgstr ""
+
+#: app/services/chat_settings.py:68
+msgid "{status} Do not disturb"
 msgstr ""
 

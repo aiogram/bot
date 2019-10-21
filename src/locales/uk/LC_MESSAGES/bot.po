@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-20 20:53+0300\n"
-"PO-Revision-Date: 2019-10-20 20:54+0300\n"
+"POT-Creation-Date: 2019-10-21 21:50+0300\n"
+"PO-Revision-Date: 2019-10-21 21:51+0300\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Generated-By: Babel 2.7.0\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: app/handlers/base.py:15
+#: app/handlers/base.py:16
 msgid "Hello, {user}. My source code: {source_url}"
 msgstr ""
 "Привіт, {user}!\n"
@@ -29,35 +29,35 @@ msgstr ""
 "\n"
 "Мій код: {source_url}"
 
-#: app/handlers/chat_settings.py:34 app/handlers/chat_settings.py:63
+#: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82
 msgid "Invalid chat"
 msgstr "Невірний чат"
 
-#: app/handlers/chat_settings.py:46
+#: app/handlers/chat_settings.py:60
 msgid "Choose chat language"
 msgstr "Обери мову для чату"
 
-#: app/handlers/chat_settings.py:67
+#: app/handlers/chat_settings.py:86
 msgid "You cannot change settings of this chat!"
 msgstr "Ти не можеш міняти налаштування цього чату!"
 
-#: app/handlers/chat_settings.py:72
+#: app/handlers/chat_settings.py:91
 msgid "Language changed to {new_language}"
 msgstr "Мову змінено на {new_language}"
 
-#: app/handlers/chat_settings.py:82
+#: app/handlers/chat_settings.py:106
 msgid "Settings saved"
 msgstr "Налаштування збережено"
 
-#: app/handlers/simple_admin.py:46
+#: app/handlers/simple_admin.py:47
 msgid "Read-only activated for user {user}. duration: {duration}"
 msgstr "Користувачу {user} заборонено писати в чаті на {duration}."
 
-#: app/handlers/simple_admin.py:79
+#: app/handlers/simple_admin.py:82
 msgid "User {user} banned for {duration}."
 msgstr "Користувача {user} заблоковано на {duration}."
 
-#: app/handlers/simple_admin.py:92
+#: app/handlers/simple_admin.py:99
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
@@ -65,22 +65,30 @@ msgstr ""
 "Будь ласка, використовуй дану команду тільки у відповідь на інше "
 "повідомлення і я повідомлю про нього адміністрації чату."
 
-#: app/handlers/simple_admin.py:99
+#: app/handlers/simple_admin.py:106
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥Користувач {user} кличе адміністрацію в чаті {chat}."
 
-#: app/handlers/simple_admin.py:116
+#: app/handlers/simple_admin.py:127
 msgid "This message is reported to chat administrators."
 msgstr "Я повідомим адміністрацію чату про це повідомлення."
 
-#: app/services/chat_settings.py:22
+#: app/services/chat_settings.py:25
 msgid "Settings for chat {chat_title}"
 msgstr "Налаштування чату {chat_title}"
 
-#: app/services/chat_settings.py:37
+#: app/services/chat_settings.py:40 app/services/chat_settings.py:78
 msgid "{flag} Language"
 msgstr "{flag} Мова"
 
-#: app/services/chat_settings.py:47
+#: app/services/chat_settings.py:50 app/services/chat_settings.py:86
 msgid "Done"
 msgstr "Завершити"
+
+#: app/services/chat_settings.py:63
+msgid "Personal settings"
+msgstr "Персональні налаштування"
+
+#: app/services/chat_settings.py:68
+msgid "{status} Do not disturb"
+msgstr "{status} Не турбувати"
