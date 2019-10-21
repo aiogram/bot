@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-21 21:50+0300\n"
-"PO-Revision-Date: 2019-10-21 21:51+0300\n"
+"POT-Creation-Date: 2019-10-22 00:05+0300\n"
+"PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
@@ -21,13 +21,50 @@ msgstr ""
 "Generated-By: Babel 2.7.0\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: app/handlers/base.py:16
-msgid "Hello, {user}. My source code: {source_url}"
+#: app/handlers/base.py:17
+msgid ""
+"Hello, {user}.\n"
+"Send /help if you want to read my commands list and also you can change "
+"language by sending /settings command.\n"
+"My source code: {source_url}"
 msgstr ""
-"Привіт, {user}!\n"
-"Я <b>aiogram</b> бот.\n"
+"Привіт, {user}.\n"
+"Надішли /help якщо хочеш побачити список моїх команд, або /settings "
+"якщо хочеш змінити мову.\n"
 "\n"
 "Мій код: {source_url}"
+
+#: app/handlers/base.py:34
+msgid "Here you can read the list of my commands:"
+msgstr "Тут описаний список моїх команд:"
+
+#: app/handlers/base.py:35
+msgid "/start - Start conversation with bot"
+msgstr "/start - Почати діалог з ботом"
+
+#: app/handlers/base.py:36
+msgid "/help - Get this message"
+msgstr "/help - Отримати дане повідомлення"
+
+#: app/handlers/base.py:37
+msgid "/settings - Chat or user settings"
+msgstr "/settings - Налаштування чату або профілю"
+
+#: app/handlers/base.py:47
+msgid "Available only in groups:"
+msgstr "Доступно тільки в чатах:"
+
+#: app/handlers/base.py:48
+msgid "/report, !report, @admin - Report message to chat administrators"
+msgstr "/report, !report, @admin - Поскаржитись на повідомлення"
+
+#: app/handlers/base.py:49
+msgid "!ro - Set RO mode for user"
+msgstr "!ro - Заборонити користувачу писати в чат"
+
+#: app/handlers/base.py:50
+msgid "!ban - Ban user"
+msgstr "!ban - Заблокувати користувача в чаті"
 
 #: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82
 msgid "Invalid chat"
@@ -50,12 +87,12 @@ msgid "Settings saved"
 msgstr "Налаштування збережено"
 
 #: app/handlers/simple_admin.py:47
-msgid "Read-only activated for user {user}. duration: {duration}"
-msgstr "Користувачу {user} заборонено писати в чаті на {duration}."
+msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
+msgstr "Користувачу {user} <b>заборонено писати</b> в чаті на {duration}"
 
 #: app/handlers/simple_admin.py:82
-msgid "User {user} banned for {duration}."
-msgstr "Користувача {user} заблоковано на {duration}."
+msgid "User {user} <b>banned</b> for {duration}"
+msgstr "Користувача {user} <b>заблоковано</b> на {duration}"
 
 #: app/handlers/simple_admin.py:99
 msgid ""
