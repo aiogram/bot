@@ -1,10 +1,10 @@
 from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, CommandStart
-from aiogram.utils.markdown import hbold, hlink, quote_html
-from app.misc import dp, i18n
-from app.models.chat import Chat
-from app.models.user import User
+from aiogram.utils.markdown import hbold, hlink
 from loguru import logger
+
+from app.misc import dp, i18n
+from app.models.user import User
 
 _ = i18n.gettext
 

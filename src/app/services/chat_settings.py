@@ -14,7 +14,6 @@ cb_user_settings = CallbackData("user", "property", "value")
 
 _ = i18n.gettext
 
-
 FLAG_STATUS = ["❌", "✅"]
 
 
