@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 00:21+0300\n"
+"POT-Creation-Date: 2019-10-22 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: app/handlers/base.py:17
+#: app/handlers/base.py:16
 msgid ""
 "Hello, {user}.\n"
 "Send /help if you want to read my commands list and also you can change language by sending "
@@ -25,36 +25,44 @@ msgid ""
 "My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/base.py:34
+#: app/handlers/base.py:33
 msgid "Here you can read the list of my commands:"
 msgstr ""
 
+#: app/handlers/base.py:34
+msgid "{command} - Start conversation with bot"
+msgstr ""
+
 #: app/handlers/base.py:35
-msgid "/start - Start conversation with bot"
+msgid "{command} - Get this message"
 msgstr ""
 
 #: app/handlers/base.py:36
-msgid "/help - Get this message"
+msgid "{command} - Chat or user settings"
 msgstr ""
 
-#: app/handlers/base.py:37
-msgid "/settings - Chat or user settings"
+#: app/handlers/base.py:45
+msgid "In chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/base.py:47
+#: app/handlers/base.py:51
 msgid "Available only in groups:"
 msgstr ""
 
-#: app/handlers/base.py:48
-msgid "/report, !report, @admin - Report message to chat administrators"
+#: app/handlers/base.py:52
+msgid "{command} - Report message to chat administrators"
 msgstr ""
 
-#: app/handlers/base.py:49
-msgid "!ro - Set RO mode for user"
+#: app/handlers/base.py:55
+msgid "{command} - Set RO mode for user"
 msgstr ""
 
-#: app/handlers/base.py:50
-msgid "!ban - Ban user"
+#: app/handlers/base.py:56
+msgid "{command} - Ban user"
+msgstr ""
+
+#: app/handlers/base.py:58
+msgid "In private chats this commands list can be other"
 msgstr ""
 
 #: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82

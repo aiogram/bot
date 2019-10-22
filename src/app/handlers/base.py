@@ -1,11 +1,10 @@
 from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, CommandStart
 from aiogram.utils.markdown import hbold, hlink, quote_html
-from loguru import logger
-
 from app.misc import dp, i18n
 from app.models.chat import Chat
 from app.models.user import User
+from loguru import logger
 
 _ = i18n.gettext
 
@@ -32,22 +31,31 @@ async def cmd_start(message: types.Message, user: User):
 async def cmd_help(message: types.Message):
     text = [
         hbold(_("Here you can read the list of my commands:")),
-        _("/start - Start conversation with bot"),
-        _("/help - Get this message"),
-        _("/settings - Chat or user settings"),
+        _("{command} - Start conversation with bot").format(command="/start"),
+        _("{command} - Get this message").format(command="/help"),
+        _("{command} - Chat or user settings").format(command="/settings"),
         "",
     ]
 
     if types.ChatType.is_private(message):
-        # text.extend([hbold(_("Available only in PM with bot:"))])
-        pass
+        text.extend(
+            [
+                # hbold(_("Available only in PM with bot:")),
+                # "",
+                _("In chats this commands list can be other")
+            ]
+        )
     else:
         text.extend(
             [
                 hbold(_("Available only in groups:")),
-                _("/report, !report, @admin - Report message to chat administrators"),
-                _("!ro - Set RO mode for user"),
-                _("!ban - Ban user"),
+                _("{command} - Report message to chat administrators").format(
+                    command="/report, !report, @admin"
+                ),
+                _("{command} - Set RO mode for user").format(command="!ro"),
+                _("{command} - Ban user").format(command="!ban"),
+                "",
+                _("In private chats this commands list can be other"),
             ]
         )
     await message.reply("\n".join(text))

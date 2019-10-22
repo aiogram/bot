@@ -8,20 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 00:21+0300\n"
-"PO-Revision-Date: 2019-10-22 00:22+0300\n"
+"POT-Creation-Date: 2019-10-22 21:24+0300\n"
+"PO-Revision-Date: 2019-10-22 21:15+0300\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
-"X-Generator: Poedit 2.2.1\n"
 
-#: app/handlers/base.py:17
+#: app/handlers/base.py:16
 msgid ""
 "Hello, {user}.\n"
 "Send /help if you want to read my commands list and also you can change "
@@ -34,39 +33,45 @@ msgstr ""
 "\n"
 "Мои исходники: {source_url}"
 
-#: app/handlers/base.py:34
+#: app/handlers/base.py:33
 msgid "Here you can read the list of my commands:"
 msgstr "Вот список моих команд:"
 
+#: app/handlers/base.py:34
+msgid "{command} - Start conversation with bot"
+msgstr "{command} - Начать диалог с ботом"
+
 #: app/handlers/base.py:35
-msgid "/start - Start conversation with bot"
-msgstr "/start - Начать диалог с ботом"
+msgid "{command} - Get this message"
+msgstr "{command} - Получить данное сообщение"
 
 #: app/handlers/base.py:36
-msgid "/help - Get this message"
-msgstr "/help - Получить данное сообщение"
+msgid "{command} - Chat or user settings"
+msgstr "{command} - Настройки чата или персональные"
 
-#: app/handlers/base.py:37
-msgid "/settings - Chat or user settings"
-msgstr "/settings - Настройки чата или персональные"
+#: app/handlers/base.py:45
+msgid "In chats this commands list can be other"
+msgstr "В чатах этот список команд может отличатся"
 
-#: app/handlers/base.py:47
+#: app/handlers/base.py:51
 msgid "Available only in groups:"
 msgstr "Следующие команды доступны только в чатах:"
 
-#: app/handlers/base.py:48
-msgid "/report, !report, @admin - Report message to chat administrators"
-msgstr ""
-"/report, !report, @admin - Пожаловаться на сообщение и позвать "
-"администрацию чата"
+#: app/handlers/base.py:52
+msgid "{command} - Report message to chat administrators"
+msgstr "{command} - Пожаловаться на сообщение и позвать администрацию чата"
 
-#: app/handlers/base.py:49
-msgid "!ro - Set RO mode for user"
-msgstr "!ro - Отправить пользователя в RO"
+#: app/handlers/base.py:55
+msgid "{command} - Set RO mode for user"
+msgstr "{command} - Отправить пользователя в RO"
 
-#: app/handlers/base.py:50
-msgid "!ban - Ban user"
-msgstr "!ban - Забанить пользователя"
+#: app/handlers/base.py:56
+msgid "{command} - Ban user"
+msgstr "{command} - Забанить пользователя"
+
+#: app/handlers/base.py:58
+msgid "In private chats this commands list can be other"
+msgstr "В приватных чатах этот список может отличатся"
 
 #: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82
 msgid "Invalid chat"
@@ -135,3 +140,4 @@ msgstr "Персональные настройки"
 #: app/services/chat_settings.py:68
 msgid "{status} Do not disturb"
 msgstr "{status} Не беспокоить"
+
