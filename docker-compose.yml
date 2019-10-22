@@ -15,6 +15,7 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_DB_FSM:
+      REDIS_DB_JOBSTORE:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       POSTGRES_PASSWORD:

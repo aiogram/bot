@@ -14,6 +14,8 @@ WEBHOOK_URL = f"https://{DOMAIN}{WEBHOOK_PATH}"
 REDIS_HOST = env.str("REDIS_HOST", default="localhost")
 REDIS_PORT = env.int("REDIS_PORT", default=6379)
 REDIS_DB_FSM = env.int("REDIS_DB_FSM", default=0)
+REDIS_DB_JOBSTORE = env.int("REDIS_DB_JOBSTORE", default=1)
+
 POSTGRES_HOST = env.str("POSTGRES_HOST", default="localhost")
 POSTGRES_PORT = env.int("POSTGRES_PORT", default=5432)
 POSTGRES_PASSWORD = env.str("POSTGRES_PASSWORD", default="")

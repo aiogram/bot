@@ -36,6 +36,8 @@ aioredis = "==1.3.0"
 cchardet = "==2.1.4"
 aiodns = "==2.0.0"
 tenacity = "==5.1.1"
+apscheduler = "==3.6.1"
+redis = "*"
 
 [pipenv]
 allow_prereleases = true
