@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+  bot:
+    image: docker.illemius.xyz/aiogram/bot:latest
+    depends_on:
+      - redis
+      - postgres
+    command: [run-webhook]
+    environment:
+      RUN_MIGRATIONS: 'true'
+      WEBHOOK_BASE_PATH:
+    networks:
+     - default
+     - web
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement: &placement
+        constraints:
+          - node.labels.aiogram_bot == true
+      update_config:
+        parallelism: 2
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+      labels:
+        traefik.enable: true
+        traefik.docker.network: web
+        traefik.http.routers.aiogram-bot-https.entrypoints: web-secure
+        traefik.http.routers.aiogram-bot-https.rule: Host(`${DOMAIN}`) && PathPrefix(`${WEBHOOK_BASE_PATH}`)
+        traefik.http.routers.aiogram-bot-https.service: aiogram-bot
+        traefik.http.routers.aiogram-bot-https.tls: true
+        traefik.http.services.aiogram-bot.loadbalancer.server.port: 80
+
+  redis:
+    networks:
+      - default
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement: *placement
+
+  postgres:
+    networks:
+      - default
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement: *placement
+
+networks:
+  default:
+    driver: overlay
+  web:
+    driver: overlay
+    external: true

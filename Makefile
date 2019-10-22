@@ -1,6 +1,22 @@
 include .env
 
 .ONESHELL:
+.DEFAULT_GOAL := default
+
+tail := 200
+
+# =================================================================================================
+# Base
+# =================================================================================================
+
+default:help
+
+help:
+	@echo "aiogram bot"
+
+# =================================================================================================
+# Development
+# =================================================================================================
 
 shell:
 	pipenv shell
@@ -18,6 +34,9 @@ entrypoint:
 texts-update:
 	pipenv run texts_update
 
+texts-compile:
+	pipenv run texts_compile
+
 alembic:
 	cd src
 	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic ${args}
@@ -34,23 +53,43 @@ downgrade:
 	cd src
 	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic downgrade -1
 
-texts-compile:
-	pipenv run texts_compile
+# =================================================================================================
+# Docker
+# =================================================================================================
 
 docker-config:
 	docker-compose config
 
-docker-ps:
-	docker-compose ps
-
-docker-destroy:
-	docker-compose down -v --remove-orphans
-
 docker-build:
 	docker-compose build
+
+docker-up-db:
+	docker-compose up -d redis postgres
 
 docker-up:
 	docker-compose up -d
 
-docker-up-db:
-	docker-compose up -d redis postgres
+docker-ps:
+	docker-compose ps
+
+docker-down:
+	docker-compose down
+
+docker-destroy:
+	docker-compose down -v --remove-orphans
+
+docker-app-migrate:
+	docker-compose exec bot alembic upgrade head
+
+# =================================================================================================
+# Application in Docker
+# =================================================================================================
+
+app-create: docker-build docker-down docker-up docker-app-migrate
+
+app-logs:
+	docker-compose logs -f --tail=${tail} ${args}
+
+app-stop: docker-down
+
+app-start: docker-down docker-up
