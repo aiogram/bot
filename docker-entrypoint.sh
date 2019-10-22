@@ -5,7 +5,7 @@ set -e
 PYTHON="python -O"
 APP="${PYTHON} -m app"
 
-# ${PYTHON} before_start.py
+${PYTHON} before_start.py
 
 if [[ ! -z "${RUN_MIGRATIONS}" ]]; then
   alembic upgrade head

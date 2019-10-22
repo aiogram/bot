@@ -23,3 +23,9 @@ class BaseRedis:
         if not self.closed:
             self._redis.close()
             await self._redis.wait_closed()
+
+    @property
+    def redis(self) -> aioredis.Redis:
+        if self.closed:
+            raise RuntimeError("Redis connection is not opened")
+        return self._redis
