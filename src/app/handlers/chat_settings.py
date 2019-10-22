@@ -9,13 +9,13 @@ from loguru import logger
 from app.misc import bot, dp, i18n
 from app.models.chat import Chat
 from app.models.user import User
-from app.services.chat_settings import (
+from app.utils.chat_admin import get_chat_administrator
+from app.utils.chat_settings import (
     cb_chat_settings,
     cb_user_settings,
     get_chat_settings_markup,
     get_user_settings_markup,
 )
-from app.utils.chat_admin import get_chat_administrator
 
 _ = i18n.gettext
 

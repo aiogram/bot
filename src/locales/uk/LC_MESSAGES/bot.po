@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 21:24+0300\n"
+"POT-Creation-Date: 2019-10-22 23:33+0300\n"
 "PO-Revision-Date: 2019-10-22 21:15+0300\n"
 "Last-Translator: \n"
 "Language: uk\n"
@@ -121,23 +121,23 @@ msgstr "🔥Користувач {user} кличе адміністрацію в
 msgid "This message is reported to chat administrators."
 msgstr "Я повідомим адміністрацію чату про це повідомлення."
 
-#: app/services/chat_settings.py:25
+#: app/utils/chat_settings.py:24
 msgid "Settings for chat {chat_title}"
 msgstr "Налаштування чату {chat_title}"
 
-#: app/services/chat_settings.py:40 app/services/chat_settings.py:78
+#: app/utils/chat_settings.py:39 app/utils/chat_settings.py:77
 msgid "{flag} Language"
 msgstr "{flag} Мова"
 
-#: app/services/chat_settings.py:50 app/services/chat_settings.py:86
+#: app/utils/chat_settings.py:49 app/utils/chat_settings.py:85
 msgid "Done"
 msgstr "Завершити"
 
-#: app/services/chat_settings.py:63
+#: app/utils/chat_settings.py:62
 msgid "Personal settings"
 msgstr "Персональні налаштування"
 
-#: app/services/chat_settings.py:68
+#: app/utils/chat_settings.py:67
 msgid "{status} Do not disturb"
 msgstr "{status} Не турбувати"
 
