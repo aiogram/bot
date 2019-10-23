@@ -88,17 +88,17 @@ async def cq_chat_settings_choose_language(
     else:
         target_chat_id = None
 
+    if callback_data["@"] == "chat":
+        text, markup = get_chat_settings_markup(await bot.get_chat(target_chat_id), chat)
+    else:
+        i18n.ctx_locale.set(target_language)
+        text, markup = get_user_settings_markup(chat, user)
     await chat.update(language=target_language).apply()
     await query.answer(
         _("Language changed to {new_language}").format(
             new_language=i18n.AVAILABLE_LANGUAGES[target_language].title
         )
     )
-    if callback_data["@"] == "chat":
-        text, markup = get_chat_settings_markup(await bot.get_chat(target_chat_id), chat)
-    else:
-        i18n.ctx_locale.set(target_language)
-        text, markup = get_user_settings_markup(chat, user)
     await query.message.edit_text(text, reply_markup=markup)
 
 
