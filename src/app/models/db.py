@@ -1,6 +1,9 @@
 import datetime
 
+from aiogram import Dispatcher
+from aiogram.utils.executor import Executor
 from gino import Gino
+from loguru import logger
 
 from app import config
 
@@ -23,5 +26,18 @@ class TimedBaseModel(BaseModel):
     )
 
 
-async def on_startup(_):
+async def on_startup(dispatcher: Dispatcher):
+    logger.info("Setup PostgreSQL Connection")
     await db.set_bind(config.POSTGRES_URI)
+
+
+async def on_shutdown(dispatcher: Dispatcher):
+    bind = db.pop_bind()
+    if bind:
+        logger.info("Close PostgreSQL Connection")
+        await bind.close()
+
+
+def setup(executor: Executor):
+    executor.on_startup(on_startup)
+    executor.on_shutdown(on_shutdown)

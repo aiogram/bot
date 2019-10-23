@@ -15,7 +15,8 @@ async def on_startup_webhook(dispatcher: Dispatcher):
     await dispatcher.bot.set_webhook(config.WEBHOOK_URL)
 
 
-runner.on_startup(db.on_startup)
-runner.on_startup(on_startup_webhook, webhook=True, polling=False)
-runner.on_startup(apscheduller.on_startup)
-runner.on_shutdown(apscheduller.on_shutdown)
+def setup():
+    logger.info("Configure executor...")
+    db.setup(runner)
+    apscheduller.setup(runner)
+    runner.on_startup(on_startup_webhook, webhook=True, polling=False)

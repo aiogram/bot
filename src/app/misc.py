@@ -2,8 +2,9 @@ from pathlib import Path
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
+from loguru import logger
 
-from app import config, middlewares
+from app import config
 from app.middlewares.i18n import I18nMiddleware
 
 app_dir: Path = Path(__file__).parent.parent
@@ -17,9 +18,13 @@ i18n = I18nMiddleware("bot", locales_dir, default="en")
 
 def setup():
     from app import filters
+    from app import middlewares
+    from app.utils import executor
 
     middlewares.setup(dp)
     filters.setup(dp)
+    executor.setup()
 
+    logger.info("Configure handlers...")
     # noinspection PyUnresolvedReferences
     import app.handlers

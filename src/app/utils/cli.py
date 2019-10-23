@@ -9,7 +9,16 @@ except ImportError:
 
 
 @click.group()
-def cli():
+@click.option(
+    "--autoreload", is_flag=True, default=False, help="Reload application on file changes"
+)
+def cli(autoreload: bool):
+    if autoreload and aiohttp_autoreload:
+        logger.warning("Application started in live-reload mode. Please disable it in production!")
+        aiohttp_autoreload.start()
+    elif autoreload and not aiohttp_autoreload:
+        click.echo("`aiohttp_autoreload` is not installed.", err=True)
+
     from app.utils import logging
     from app import misc
 
@@ -29,23 +38,14 @@ def version():
 
 @cli.command()
 @click.option("--skip-updates", is_flag=True, default=False, help="Skip pending updates")
-@click.option(
-    "--autoreload", is_flag=True, default=False, help="Reload application on file changes"
-)
-def polling(skip_updates: bool, autoreload: bool):
+def polling(skip_updates: bool):
     """
     Application runner in polling mode
 
     :param skip_updates: Skip pending updates
-    :param autoreload: autoreload application on file changes
     """
-    from app.utils.executor import runner
 
-    if autoreload and aiohttp_autoreload:
-        logger.warning("Application started in live-reload mode. Please disable it in production!")
-        aiohttp_autoreload.start()
-    elif autoreload and not aiohttp_autoreload:
-        click.echo("`aiohttp_autoreload` is not installed.", err=True)
+    from app.utils.executor import runner
 
     runner.skip_updates = skip_updates
     runner.start_polling(reset_webhook=True)

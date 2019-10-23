@@ -1,9 +1,11 @@
 from aiogram import Dispatcher
+from loguru import logger
 
 from app.filters.has_permissions import BotHasPermissions
 
 
 def setup(dispatcher: Dispatcher):
+    logger.info("Configure filters...")
     from .is_reply import IsReplyFilter
     from .has_permissions import HasPermissions
 
