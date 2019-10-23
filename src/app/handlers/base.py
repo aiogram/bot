@@ -29,6 +29,7 @@ async def cmd_start(message: types.Message, user: User):
 
 @dp.message_handler(CommandHelp())
 async def cmd_help(message: types.Message):
+    logger.info("User {user} read help in {chat}", user=message.from_user.id, chat=message.chat.id)
     text = [
         hbold(_("Here you can read the list of my commands:")),
         _("{command} - Start conversation with bot").format(command="/start"),

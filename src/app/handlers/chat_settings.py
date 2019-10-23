@@ -39,6 +39,11 @@ async def cmd_chat_settings(message: types.Message, chat: Chat, user: User):
 @dp.callback_query_handler(cb_chat_settings.filter(property="language", value="change"))
 @dp.callback_query_handler(cb_user_settings.filter(property="language", value="change"))
 async def cq_chat_settings_language(query: types.CallbackQuery, chat: Chat, callback_data: dict):
+    logger.info(
+        "User {user} wants to change language in chat {chat}",
+        user=query.from_user.id,
+        chat=chat.id,
+    )
     if callback_data["@"] == "chat":
         target_chat_id = int(callback_data["id"])
         chat = await Chat.query.where(Chat.id == target_chat_id).gino.first()
@@ -74,6 +79,12 @@ async def cq_chat_settings_choose_language(
     query: types.CallbackQuery, chat: Chat, user: User, callback_data: dict
 ):
     target_language = callback_data["value"]
+    logger.info(
+        "User {user} set language in chat {chat} to '{language}'",
+        user=query.from_user.id,
+        chat=chat.id,
+        language=target_language,
+    )
 
     if callback_data["@"] == "chat":
         target_chat_id = int(callback_data["id"])
@@ -104,6 +115,7 @@ async def cq_chat_settings_choose_language(
 
 @dp.callback_query_handler(cb_user_settings.filter(property="do_not_disturb", value="switch"))
 async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User, chat: Chat):
+    logger.info("User {user} switch DND mode", user=query.from_user.id)
     await query.answer(_("Do not disturb mode reconfigured"))
     await user.update(do_not_disturb=~User.do_not_disturb).apply()
     text, markup = get_user_settings_markup(chat, user)
@@ -113,6 +125,9 @@ async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User
 
 @dp.callback_query_handler(cb_chat_settings.filter(property="done", value="true"))
 @dp.callback_query_handler(cb_user_settings.filter(property="done", value="true"))
-async def cq_chat_settings_done(query: types.CallbackQuery):
+async def cq_chat_settings_done(query: types.CallbackQuery, chat: Chat):
+    logger.info(
+        "User {user} close settings menu for chat {chat}", user=query.from_user.id, chat=chat.id
+    )
     await query.answer(_("Settings saved"), show_alert=True)
     await query.message.delete()

@@ -94,6 +94,13 @@ async def cmd_ban(message: types.Message, chat: Chat):
     types.ChatType.is_group_or_super_group, commands=["report"], commands_prefix="!/", state="*"
 )
 async def text_report_admins(message: types.Message):
+    logger.info(
+        "User {user} report message {message} in chat {chat} from user {from_user}",
+        user=message.from_user.id,
+        message=message.message_id,
+        chat=message.chat.id,
+        from_user=message.reply_to_message.from_user.id,
+    )
     if not message.reply_to_message:
         return await message.reply(
             _(
@@ -122,6 +129,7 @@ async def text_report_admins(message: types.Message):
         ).gino.all():  # NOQA
             with suppress(Unauthorized):
                 await bot.send_message(admin.id, text)
+                logger.info("Send alert message to admin {admin}", admin=admin.id)
             await asyncio.sleep(0.3)
 
     await message.reply_to_message.reply(_("This message is reported to chat administrators."))
