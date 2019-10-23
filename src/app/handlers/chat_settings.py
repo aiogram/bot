@@ -123,6 +123,28 @@ async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User
         await query.message.edit_text(text, reply_markup=markup)
 
 
+@dp.callback_query_handler(cb_chat_settings.filter(property="join", value="switch"))
+async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, callback_data: dict):
+    target_chat_id = int(callback_data["id"])
+    chat = await Chat.query.where(Chat.id == target_chat_id).gino.first()
+    if not chat:
+        return await query.answer(_("Invalid chat"), show_alert=True)
+
+    member = await get_chat_administrator(chat.id, query.message.from_user.id)
+    if not member or not member.is_chat_admin():
+        await query.answer(_("You cannot change settings of this chat!"), show_alert=True)
+        return await query.message.delete()
+
+    logger.info(
+        "User {user} switch join filter mode in chat {chat}", user=query.from_user.id, chat=chat.id
+    )
+    await query.answer(_("Join filter re-configured"))
+    await chat.update(join_filter=~Chat.join_filter).apply()
+    text, markup = get_chat_settings_markup(await bot.get_chat(chat.id), chat)
+    with suppress(MessageNotModified):
+        await query.message.edit_text(text, reply_markup=markup)
+
+
 @dp.callback_query_handler(cb_chat_settings.filter(property="done", value="true"))
 @dp.callback_query_handler(cb_user_settings.filter(property="done", value="true"))
 async def cq_chat_settings_done(query: types.CallbackQuery, chat: Chat):

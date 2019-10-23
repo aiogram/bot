@@ -5,11 +5,12 @@ from contextlib import suppress
 from aiogram import types
 from aiogram.dispatcher.handler import SkipHandler
 from aiogram.utils.callback_data import CallbackData
-from aiogram.utils.exceptions import MessageToDeleteNotFound
+from aiogram.utils.exceptions import BadRequest, MessageToDeleteNotFound
 from loguru import logger
 
 from app import config
 from app.misc import dp, i18n
+from app.models.chat import Chat
 from app.services.join_list import join_list
 
 _ = i18n.gettext
@@ -18,7 +19,10 @@ cb_join_list = CallbackData("join_chat", "answer")
 
 
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
-async def new_chat_member(message: types.Message):
+async def new_chat_member(message: types.Message, chat: Chat):
+    if not chat.join_filter:
+        return False
+
     if message.from_user not in message.new_chat_members:
         logger.opt(lazy=True).info(
             "User {user} add new members to chat {chat}: {new_members}",
@@ -36,10 +40,19 @@ async def new_chat_member(message: types.Message):
 
     users = {}
     for new_member in message.new_chat_members:
-        await message.chat.restrict(
-            new_member.id, permissions=types.ChatPermissions(can_send_messages=False)
-        )
-        users[new_member.id] = new_member.get_mention()
+        try:
+            await message.chat.restrict(
+                new_member.id, permissions=types.ChatPermissions(can_send_messages=False)
+            )
+            users[new_member.id] = new_member.get_mention()
+        except BadRequest as e:
+            logger.error(
+                "Cannot restrict chat member {user} in chat {chat} with error: {error}",
+                user=new_member.id,
+                chat=chat.id,
+                error=e,
+            )
+            continue
 
     buttons = [
         types.InlineKeyboardButton(_("I'm human"), callback_data=cb_join_list.new(answer="human")),

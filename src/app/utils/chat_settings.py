@@ -24,16 +24,16 @@ def get_chat_settings_markup(
         _("Settings for chat {chat_title}").format(chat_title=hbold(telegram_chat.title)),
         InlineKeyboardMarkup(
             inline_keyboard=[
-                # [
-                #     InlineKeyboardButton(
-                #         text=_("{status} Join filter").format(
-                #             status=FLAG_STATUS[chat.join_filter]
-                #         ),
-                #         callback_data=cb_chat_settings.new(
-                #             id=chat.id, property="join", value="switch"
-                #         ),
-                #     )
-                # ],
+                [
+                    InlineKeyboardButton(
+                        text=_("{status} Join filter").format(
+                            status=FLAG_STATUS[chat.join_filter]
+                        ),
+                        callback_data=cb_chat_settings.new(
+                            id=chat.id, property="join", value="switch"
+                        ),
+                    )
+                ],
                 [
                     InlineKeyboardButton(
                         text=_("{flag} Language").format(
