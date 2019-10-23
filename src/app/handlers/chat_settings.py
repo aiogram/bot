@@ -124,7 +124,7 @@ async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User
 
 
 @dp.callback_query_handler(cb_chat_settings.filter(property="join", value="switch"))
-async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, callback_data: dict):
+async def cq_chat_settings_join_filter_switch(query: types.CallbackQuery, callback_data: dict):
     target_chat_id = int(callback_data["id"])
     chat = await Chat.query.where(Chat.id == target_chat_id).gino.first()
     if not chat:

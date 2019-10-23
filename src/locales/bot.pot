@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 23:33+0300\n"
+"POT-Creation-Date: 2019-10-23 23:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,68 +25,103 @@ msgid ""
 "My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/base.py:33
+#: app/handlers/base.py:34
 msgid "Here you can read the list of my commands:"
 msgstr ""
 
-#: app/handlers/base.py:34
+#: app/handlers/base.py:35
 msgid "{command} - Start conversation with bot"
 msgstr ""
 
-#: app/handlers/base.py:35
+#: app/handlers/base.py:36
 msgid "{command} - Get this message"
 msgstr ""
 
-#: app/handlers/base.py:36
+#: app/handlers/base.py:37
 msgid "{command} - Chat or user settings"
 msgstr ""
 
-#: app/handlers/base.py:45
+#: app/handlers/base.py:46
 msgid "In chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/base.py:51
+#: app/handlers/base.py:52
 msgid "Available only in groups:"
 msgstr ""
 
-#: app/handlers/base.py:52
+#: app/handlers/base.py:53
 msgid "{command} - Report message to chat administrators"
 msgstr ""
 
-#: app/handlers/base.py:55
+#: app/handlers/base.py:56
 msgid "{command} - Set RO mode for user"
 msgstr ""
 
-#: app/handlers/base.py:56
+#: app/handlers/base.py:57
 msgid "{command} - Ban user"
 msgstr ""
 
-#: app/handlers/base.py:58
+#: app/handlers/base.py:59
 msgid "In private chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/chat_settings.py:46 app/handlers/chat_settings.py:82
+#: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93 app/handlers/chat_settings.py:131
 msgid "Invalid chat"
 msgstr ""
 
-#: app/handlers/chat_settings.py:60
+#: app/handlers/chat_settings.py:65
 msgid "Choose chat language"
 msgstr ""
 
-#: app/handlers/chat_settings.py:86
+#: app/handlers/chat_settings.py:97 app/handlers/chat_settings.py:135
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: app/handlers/chat_settings.py:93
+#: app/handlers/chat_settings.py:109
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:107
+#: app/handlers/chat_settings.py:119
 msgid "Do not disturb mode reconfigured"
 msgstr ""
 
-#: app/handlers/chat_settings.py:117
+#: app/handlers/chat_settings.py:141
+msgid "Join filter re-configured"
+msgstr ""
+
+#: app/handlers/chat_settings.py:154
 msgid "Settings saved"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:58
+msgid "I'm human"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:59
+msgid "I'm bot"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:60
+msgid "I'm pet"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:64
+msgid ""
+"Welcome {users} in this chat.\n"
+"Please confirm that you are human. In this chat enabled users filter.\n"
+"So if you don't answer to my question i will fe forced to remove you from this chat."
+msgstr ""
+
+#: app/handlers/new_chat_members.py:99
+msgid "This message is not for you!"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:102
+msgid "Good answer!"
+msgstr ""
+
+#: app/handlers/new_chat_members.py:109
+msgid "Bad answer."
 msgstr ""
 
 #: app/handlers/simple_admin.py:47
@@ -97,22 +132,26 @@ msgstr ""
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:99
+#: app/handlers/simple_admin.py:106
 msgid ""
 "Please use this command is only in reply to message what do you want to report and this message "
 "will be reported to chat administrators."
 msgstr ""
 
-#: app/handlers/simple_admin.py:106
+#: app/handlers/simple_admin.py:113
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr ""
 
-#: app/handlers/simple_admin.py:127
+#: app/handlers/simple_admin.py:135
 msgid "This message is reported to chat administrators."
 msgstr ""
 
 #: app/utils/chat_settings.py:24
 msgid "Settings for chat {chat_title}"
+msgstr ""
+
+#: app/utils/chat_settings.py:29
+msgid "{status} Join filter"
 msgstr ""
 
 #: app/utils/chat_settings.py:39 app/utils/chat_settings.py:77
