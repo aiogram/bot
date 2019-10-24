@@ -9,7 +9,7 @@ health = HealthCheck()
 
 
 def setup(executor: Executor):
-    executor.on_startup(on_startup)
+    executor.on_startup(on_startup, webhook=True, polling=False)
 
 
 async def on_startup(dispatcher: Dispatcher):
