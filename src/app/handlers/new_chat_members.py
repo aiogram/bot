@@ -1,4 +1,5 @@
 import asyncio
+import datetime
 import random
 from contextlib import suppress
 
@@ -21,6 +22,15 @@ cb_join_list = CallbackData("join_chat", "answer")
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
 async def new_chat_member(message: types.Message, chat: Chat):
     if not chat.join_filter:
+        return False
+
+    if message.date < datetime.datetime.now() - datetime.timedelta(minutes=1):
+        logger.warning(
+            "Join message {message} in chat {chat} is too old. Skip filtering. (Age: {age})",
+            message=message.message_id,
+            chat=chat.id,
+            age=datetime.datetime.now() - message.date,
+        )
         return False
 
     if message.from_user not in message.new_chat_members:

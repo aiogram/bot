@@ -15,7 +15,7 @@ jobstores = {
     )
 }
 executors = {DEFAULT: AsyncIOExecutor()}
-job_defaults = {"coalesce": False, "max_instances": 3}
+job_defaults = {"coalesce": False, "max_instances": 3, "misfire_grace_time": 3600}
 
 scheduler = AsyncIOScheduler(
     jobstores=jobstores, executors=executors, job_defaults=job_defaults, timezone=utc

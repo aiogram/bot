@@ -18,6 +18,6 @@ async def on_startup_webhook(dispatcher: Dispatcher):
 def setup():
     logger.info("Configure executor...")
     db.setup(runner)
-    apscheduller.setup(runner)
     join_list.setup(runner)
+    apscheduller.setup(runner)
     runner.on_startup(on_startup_webhook, webhook=True, polling=False)
