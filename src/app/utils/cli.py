@@ -76,7 +76,7 @@ def webhook():
 @click.option("--remove", "--rm", is_flag=True, default=False, help="Remove superuser rights")
 def superuser(user_id: int, remove: bool):
     from app.utils.executor import runner
-    from app.utils.superadmin import create_super_user
+    from app.utils.superuser import create_super_user
 
     try:
         result = runner.start(create_super_user(user_id, remove))
