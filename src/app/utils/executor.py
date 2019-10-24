@@ -5,7 +5,7 @@ from loguru import logger
 from app import config
 from app.misc import dp
 from app.models import db
-from app.services import apscheduller, join_list
+from app.services import apscheduller, healthcheck, join_list
 
 runner = Executor(dp)
 
@@ -20,4 +20,5 @@ def setup():
     db.setup(runner)
     join_list.setup(runner)
     apscheduller.setup(runner)
+    healthcheck.setup(runner)
     runner.on_startup(on_startup_webhook, webhook=True, polling=False)

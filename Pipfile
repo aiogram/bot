@@ -38,6 +38,8 @@ aiodns = "==2.0.0"
 tenacity = "==5.1.1"
 apscheduler = "==3.6.1"
 redis = "==3.3.11"
+aiohttp-healthcheck = "==1.3.1"
+requests = "*"
 
 [pipenv]
 allow_prereleases = true

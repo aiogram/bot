@@ -2,6 +2,10 @@ FROM python:3.7-slim-buster as production
 LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
       description="Telegram Bot"
 
+HEALTHCHECK \
+    --start-period=15s \
+    CMD python -c "import requests;assert requests.get('http://localhost:80/healthcheck').status_code == 200" || exit 1
+
 EXPOSE 80
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 WORKDIR /app
