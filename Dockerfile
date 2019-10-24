@@ -5,7 +5,7 @@ LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
 HEALTHCHECK \
     --start-period=15s \
     CMD python -c "import requests;assert requests.get('http://localhost:80/healthcheck').status_code == 200" || exit 1
-
+STOPSIGNAL SIGINT
 EXPOSE 80
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 WORKDIR /app
