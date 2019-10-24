@@ -8,6 +8,7 @@ class Chat(TimedBaseModel):
 
     id = db.Column(db.BigInteger, primary_key=True, index=True)
     type = db.Column(db.String)
+    is_official = db.Column(db.Boolean, server_default=expression.false())
 
     language = db.Column(db.String(12), default="en")
     join_filter = db.Column(db.Boolean, server_default=expression.false())
