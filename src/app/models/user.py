@@ -10,6 +10,8 @@ class User(TimedBaseModel):
 
     id = db.Column(db.Integer, primary_key=True, index=True, unique=True)
 
+    superuser = db.Column(db.Boolean, server_default=expression.false())
+
     start_conversation = db.Column(db.Boolean, server_default=expression.false())
     do_not_disturb = db.Column(
         db.Boolean, default=False, server_default=expression.false(), nullable=False

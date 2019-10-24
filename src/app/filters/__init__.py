@@ -1,13 +1,12 @@
 from aiogram import Dispatcher
 from loguru import logger
 
-from app.filters.has_permissions import BotHasPermissions
-
 
 def setup(dispatcher: Dispatcher):
     logger.info("Configure filters...")
     from .is_reply import IsReplyFilter
-    from .has_permissions import HasPermissions
+    from .has_permissions import BotHasPermissions, HasPermissions
+    from .superuser import IsSuperuserFilter
 
     text_messages = [
         dispatcher.message_handlers,
@@ -19,3 +18,4 @@ def setup(dispatcher: Dispatcher):
     dispatcher.filters_factory.bind(IsReplyFilter, event_handlers=text_messages)
     dispatcher.filters_factory.bind(HasPermissions, event_handlers=text_messages)
     dispatcher.filters_factory.bind(BotHasPermissions, event_handlers=text_messages)
+    dispatcher.filters_factory.bind(IsSuperuserFilter)
