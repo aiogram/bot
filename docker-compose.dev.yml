@@ -2,6 +2,8 @@ version: '3.7'
 
 services:
   bot:
+    command:
+      - run-polling
     ports:
       - ${BOT_PUBLIC_PORT}:80
 

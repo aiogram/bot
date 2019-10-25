@@ -7,7 +7,6 @@ verify_ssl = true
 python_version = "3.7"
 
 [scripts]
-lint = "./scripts/lint.sh"
 app = "python -m app"
 texts_update = "./scripts/exportTexts.sh"
 texts_compile = "./scripts/compileTexts.sh"

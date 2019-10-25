@@ -30,11 +30,10 @@ and as admin-helper in our community chats.
 
 ### Project structure
 
-- All source code located in `src` directory.
-- All text translations is placed in `src/locales`
-- Migrations is placed in `src/migrations`
-- Application package is in `src/app`
-- Entry-point is `src/app/__main__.py`
+- Application package is in `app`
+- All text translations is placed in `locales`
+- Migrations is placed in `migrations`
+- Entry-point is `app/__main__.py` (Can be executed as `python -m app`)
 ...
 
 ### Contributing

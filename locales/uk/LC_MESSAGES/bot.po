@@ -8,18 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-23 23:24+0300\n"
+"POT-Creation-Date: 2019-10-25 17:11+0300\n"
 "PO-Revision-Date: 2019-10-23 23:31+0300\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
-"X-Generator: Poedit 2.2.1\n"
 
 #: app/handlers/base.py:16
 msgid ""
@@ -103,24 +102,24 @@ msgstr "Фільтр входу користувачів переналашто�
 msgid "Settings saved"
 msgstr "Налаштування збережено"
 
-#: app/handlers/new_chat_members.py:58
+#: app/handlers/new_chat_members.py:68
 msgid "I'm human"
 msgstr "Я людина"
 
-#: app/handlers/new_chat_members.py:59
+#: app/handlers/new_chat_members.py:69
 msgid "I'm bot"
 msgstr "Я бот"
 
-#: app/handlers/new_chat_members.py:60
+#: app/handlers/new_chat_members.py:70
 msgid "I'm pet"
 msgstr "Я кіт"
 
-#: app/handlers/new_chat_members.py:64
+#: app/handlers/new_chat_members.py:74
 msgid ""
 "Welcome {users} in this chat.\n"
 "Please confirm that you are human. In this chat enabled users filter.\n"
-"So if you don't answer to my question i will fe forced to remove you "
-"from this chat."
+"So if you don't answer to my question i will fe forced to remove you from"
+" this chat."
 msgstr ""
 "Вітаю, {users}.\n"
 "Будь ласка, підтверди що ти людина. В цьому чаті ввімкнуто фільтр нових "
@@ -128,15 +127,15 @@ msgstr ""
 "Отже, якщо ти не дасиш відповідь на моє запитання, я буду змушений "
 "вигнати тебе з чату."
 
-#: app/handlers/new_chat_members.py:99
+#: app/handlers/new_chat_members.py:109
 msgid "This message is not for you!"
 msgstr "Це повідомлення не для тебе!"
 
-#: app/handlers/new_chat_members.py:102
+#: app/handlers/new_chat_members.py:112
 msgid "Good answer!"
 msgstr "Гарна відповідь!"
 
-#: app/handlers/new_chat_members.py:109
+#: app/handlers/new_chat_members.py:119
 msgid "Bad answer."
 msgstr "Погана відповідь."
 
@@ -187,3 +186,4 @@ msgstr "Персональні налаштування"
 #: app/utils/chat_settings.py:67
 msgid "{status} Do not disturb"
 msgstr "{status} Не турбувати"
+

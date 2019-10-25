@@ -1,24 +1,31 @@
 version: '3.7'
 
+x-deploy: &base-deploy
+  restart_policy:
+    condition: on-failure
+  placement:
+    constraints:
+      - node.labels.aiogram_bot == true
+
 services:
   bot:
     image: docker.illemius.xyz/aiogram/bot:latest
-    depends_on:
-      - redis
-      - postgres
-    command: [run-webhook]
+    command:
+      - run-webhook
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests;assert requests.get('http://localhost:80/healthcheck').status_code == 200"]
+      start_period: 5s
     environment:
       RUN_MIGRATIONS: 'true'
       WEBHOOK_BASE_PATH:
     networks:
      - default
      - web
+    depends_on:
+      - redis
+      - postgres
     deploy:
-      restart_policy:
-        condition: on-failure
-      placement: &placement
-        constraints:
-          - node.labels.aiogram_bot == true
+      <<: *base-deploy
       update_config:
         parallelism: 2
         delay: 10s
@@ -37,17 +44,13 @@ services:
     networks:
       - default
     deploy:
-      restart_policy:
-        condition: on-failure
-      placement: *placement
+      <<: *base-deploy
 
   postgres:
     networks:
       - default
     deploy:
-      restart_policy:
-        condition: on-failure
-      placement: *placement
+      <<: *base-deploy
 
 networks:
   default:

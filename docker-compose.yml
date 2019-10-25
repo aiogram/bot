@@ -5,6 +5,7 @@ services:
     build:
       context: .
     restart: on-failure
+    stop_signal: SIGINT
     depends_on:
       - redis
       - postgres
