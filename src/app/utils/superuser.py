@@ -14,7 +14,7 @@ async def create_super_user(user_id: int, remove: bool) -> bool:
         user=user.id,
         register_date=user.created_at,
     )
-    await user.update(superuser=not remove).apply()
+    await user.update(is_superuser=not remove).apply()
     if remove:
         logger.warning("User {user} now IS NOT superuser", user=user_id)
     else:
