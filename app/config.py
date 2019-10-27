@@ -27,3 +27,5 @@ POSTGRES_URI = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST
 
 JOIN_CONFIRM_DURATION = datetime.timedelta(minutes=2)
 JOIN_NO_MEDIA_DURATION = datetime.timedelta(minutes=2)
+
+SUPERUSER_STARTUP_NOTIFIER = env.bool('SUPERUSER_STARTUP_NOTIFIER', default=False)
