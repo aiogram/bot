@@ -72,9 +72,10 @@ async def new_chat_member(message: types.Message, chat: Chat):
     random.shuffle(buttons)
     msg = await message.reply(
         _(
-            "Welcome {users} in this chat.\n"
-            "Please confirm that you are human. In this chat enabled users filter.\n"
-            "So if you don't answer to my question i will fe forced to remove you from this chat."
+            "{users}, Welcome to the chat. \n"
+            "Please confirm that you are a human. "
+            "User filter is enabled in this chat, so if you don't answer my question, "
+            "I will be forced to remove you from this chat."
         ).format(users=", ".join(users.values())),
         reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[buttons]),
     )

@@ -3,10 +3,11 @@ include .env
 tail := 200
 PYTHONPATH := $(shell pwd):${PYTHONPATH}
 
-PROJECT=aiogram_bot
-LOCALES_DOMAIN=bot
-LOCALES_DIR=locales
-VERSION=0.1
+PROJECT := aiogram_bot
+LOCALES_DOMAIN := bot
+LOCALES_DIR := locales
+VERSION := 0.1
+PIPENV_VERBOSITY := -1
 
 # =================================================================================================
 # Base

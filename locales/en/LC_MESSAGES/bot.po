@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-25 17:11+0300\n"
+"POT-Creation-Date: 2019-10-27 18:42+0200\n"
 "PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -110,21 +110,21 @@ msgstr ""
 
 #: app/handlers/new_chat_members.py:74
 msgid ""
-"Welcome {users} in this chat.\n"
-"Please confirm that you are human. In this chat enabled users filter.\n"
-"So if you don't answer to my question i will fe forced to remove you from"
-" this chat."
+"{users}, Welcome to the chat. \n"
+"Please confirm that you are a human. User filter is enabled in this chat,"
+" so if you don't answer my question, I will be forced to remove you from "
+"this chat."
 msgstr ""
 
-#: app/handlers/new_chat_members.py:109
+#: app/handlers/new_chat_members.py:110
 msgid "This message is not for you!"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:112
+#: app/handlers/new_chat_members.py:113
 msgid "Good answer!"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:119
+#: app/handlers/new_chat_members.py:120
 msgid "Bad answer."
 msgstr ""
 
@@ -173,4 +173,12 @@ msgstr ""
 #: app/utils/chat_settings.py:67
 msgid "{status} Do not disturb"
 msgstr ""
+
+#~ msgid ""
+#~ "Welcome {users} in this chat.\n"
+#~ "Please confirm that you are human. In this chat enabled users filter.\n"
+#~ "So if you don't answer to my "
+#~ "question i will fe forced to "
+#~ "remove you from this chat."
+#~ msgstr ""
 
