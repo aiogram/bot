@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-27 18:42+0200\n"
+"POT-Creation-Date: 2019-10-29 00:23+0200\n"
 "PO-Revision-Date: 2019-10-23 23:31+0300\n"
 "Last-Translator: \n"
 "Language: uk\n"
@@ -161,6 +161,14 @@ msgstr "🔥Користувач {user} кличе адміністрацію в
 #: app/handlers/simple_admin.py:135
 msgid "This message is reported to chat administrators."
 msgstr "Я повідомим адміністрацію чату про це повідомлення."
+
+#: app/handlers/superuser.py:25
+msgid "Successful changed is_superuser to {is_superuser} for user {user}"
+msgstr ""
+
+#: app/handlers/superuser.py:30
+msgid "Failed to set is_superuser to {is_superuser} for user {user}"
+msgstr ""
 
 #: app/utils/chat_settings.py:24
 msgid "Settings for chat {chat_title}"
