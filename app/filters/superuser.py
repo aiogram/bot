@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from aiogram.dispatcher.filters import BoundFilter
 from aiogram.dispatcher.handler import ctx_data
 
+from app.models.user import User
+
 
 @dataclass
 class IsSuperuserFilter(BoundFilter):
@@ -11,5 +13,5 @@ class IsSuperuserFilter(BoundFilter):
 
     async def check(self, obj) -> bool:
         data = ctx_data.get()
-        user = data["user"]
-        return user.superuser
+        user: User = data["user"]
+        return user.is_superuser
