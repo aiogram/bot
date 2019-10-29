@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 23:26+0200\n"
-"PO-Revision-Date: 2019-10-23 23:27+0300\n"
+"POT-Creation-Date: 2019-10-29 23:32+0200\n"
+"PO-Revision-Date: 2019-10-29 23:29+0200\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr "{command} - Настройки чата или персональные"
 
 #: app/handlers/base.py:39
 msgid "{command} - My version"
-msgstr ""
+msgstr "{command} - Версия"
 
 #: app/handlers/base.py:48
 msgid "In chats this commands list can be other"
@@ -77,11 +77,13 @@ msgstr "{command} - Забанить пользователя"
 msgid "In private chats this commands list can be other"
 msgstr "В приватных чатах этот список может отличатся"
 
-#: app/handlers/base.py:69
+#: app/handlers/base.py:70
 msgid ""
 "My Engine:\n"
 "{aiogram}"
 msgstr ""
+"Моя версия:\n"
+"{aiogram}"
 
 #: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93
 #: app/handlers/chat_settings.py:131
@@ -106,7 +108,7 @@ msgstr "Настройки режима \"Не беспокоить\" измен
 
 #: app/handlers/chat_settings.py:141
 msgid "Join filter re-configured"
-msgstr "Настройки "
+msgstr "Фильтр входа в чат перенастроен"
 
 #: app/handlers/chat_settings.py:154
 msgid "Settings saved"
@@ -175,10 +177,14 @@ msgstr "Я сообщил про это сообщение администра�
 #: app/handlers/superuser.py:25
 msgid "Successful changed is_superuser to {is_superuser} for user {user}"
 msgstr ""
+"Успешно обновлен флаг is_superuser на {is_superuser} для пользователя "
+"{user}"
 
 #: app/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
+"Не удалось изменить флаг is_superuser {is_superuser} для "
+"пользователя{user}"
 
 #: app/utils/chat_settings.py:24
 msgid "Settings for chat {chat_title}"

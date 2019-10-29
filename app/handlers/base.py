@@ -1,7 +1,7 @@
 from aiogram import __main__ as aiogram_core
 from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, CommandStart
-from aiogram.utils.markdown import hbold, hlink
+from aiogram.utils.markdown import hbold, hlink, quote_html
 from loguru import logger
 
 from app.misc import dp, i18n
@@ -66,7 +66,9 @@ async def cmd_help(message: types.Message):
 
 @dp.message_handler(commands=["version"])
 async def cmd_version(message: types.Message):
-    await message.reply(_("My Engine:\n{aiogram}").format(aiogram=aiogram_core.SysInfo()))
+    await message.reply(
+        _("My Engine:\n{aiogram}").format(aiogram=quote_html(str(aiogram_core.SysInfo())))
+    )
 
 
 @dp.errors_handler()

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 23:26+0200\n"
+"POT-Creation-Date: 2019-10-29 23:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "In private chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/base.py:69
+#: app/handlers/base.py:70
 msgid ""
 "My Engine:\n"
 "{aiogram}"

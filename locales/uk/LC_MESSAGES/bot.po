@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 23:26+0200\n"
-"PO-Revision-Date: 2019-10-23 23:31+0300\n"
+"POT-Creation-Date: 2019-10-29 23:32+0200\n"
+"PO-Revision-Date: 2019-10-29 23:30+0200\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr "{command} - Налаштування чату або профілю"
 
 #: app/handlers/base.py:39
 msgid "{command} - My version"
-msgstr ""
+msgstr "{command} - Моя версія"
 
 #: app/handlers/base.py:48
 msgid "In chats this commands list can be other"
@@ -77,11 +77,13 @@ msgstr "{command} - Заблокувати користувача в чаті"
 msgid "In private chats this commands list can be other"
 msgstr "В приватних повідомленях цей список може відрізнятись"
 
-#: app/handlers/base.py:69
+#: app/handlers/base.py:70
 msgid ""
 "My Engine:\n"
 "{aiogram}"
 msgstr ""
+"Моя версія:\n"
+"{aiogram}"
 
 #: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93
 #: app/handlers/chat_settings.py:131
@@ -174,11 +176,11 @@ msgstr "Я повідомим адміністрацію чату про це п
 
 #: app/handlers/superuser.py:25
 msgid "Successful changed is_superuser to {is_superuser} for user {user}"
-msgstr ""
+msgstr "Успішно встановлено is_superuser на {is_superuser} для користувача {user}"
 
 #: app/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
-msgstr ""
+msgstr "Не вдалось встановити is_superuser на {is_superuser} користувачу {user}"
 
 #: app/utils/chat_settings.py:24
 msgid "Settings for chat {chat_title}"
