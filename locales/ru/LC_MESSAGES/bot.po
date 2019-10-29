@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 00:23+0200\n"
+"POT-Creation-Date: 2019-10-29 23:26+0200\n"
 "PO-Revision-Date: 2019-10-23 23:27+0300\n"
 "Last-Translator: \n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: app/handlers/base.py:16
+#: app/handlers/base.py:17
 msgid ""
 "Hello, {user}.\n"
 "Send /help if you want to read my commands list and also you can change "
@@ -33,45 +33,55 @@ msgstr ""
 "\n"
 "Мои исходники: {source_url}"
 
-#: app/handlers/base.py:34
+#: app/handlers/base.py:35
 msgid "Here you can read the list of my commands:"
 msgstr "Вот список моих команд:"
 
-#: app/handlers/base.py:35
+#: app/handlers/base.py:36
 msgid "{command} - Start conversation with bot"
 msgstr "{command} - Начать диалог с ботом"
 
-#: app/handlers/base.py:36
+#: app/handlers/base.py:37
 msgid "{command} - Get this message"
 msgstr "{command} - Получить данное сообщение"
 
-#: app/handlers/base.py:37
+#: app/handlers/base.py:38
 msgid "{command} - Chat or user settings"
 msgstr "{command} - Настройки чата или персональные"
 
-#: app/handlers/base.py:46
+#: app/handlers/base.py:39
+msgid "{command} - My version"
+msgstr ""
+
+#: app/handlers/base.py:48
 msgid "In chats this commands list can be other"
 msgstr "В чатах этот список команд может отличатся"
 
-#: app/handlers/base.py:52
+#: app/handlers/base.py:54
 msgid "Available only in groups:"
 msgstr "Следующие команды доступны только в чатах:"
 
-#: app/handlers/base.py:53
+#: app/handlers/base.py:55
 msgid "{command} - Report message to chat administrators"
 msgstr "{command} - Пожаловаться на сообщение и позвать администрацию чата"
 
-#: app/handlers/base.py:56
+#: app/handlers/base.py:58
 msgid "{command} - Set RO mode for user"
 msgstr "{command} - Отправить пользователя в RO"
 
-#: app/handlers/base.py:57
+#: app/handlers/base.py:59
 msgid "{command} - Ban user"
 msgstr "{command} - Забанить пользователя"
 
-#: app/handlers/base.py:59
+#: app/handlers/base.py:61
 msgid "In private chats this commands list can be other"
 msgstr "В приватных чатах этот список может отличатся"
+
+#: app/handlers/base.py:69
+msgid ""
+"My Engine:\n"
+"{aiogram}"
+msgstr ""
 
 #: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93
 #: app/handlers/chat_settings.py:131

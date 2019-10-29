@@ -1,3 +1,4 @@
+from aiogram import __main__ as aiogram_core
 from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, CommandStart
 from aiogram.utils.markdown import hbold, hlink
@@ -35,6 +36,7 @@ async def cmd_help(message: types.Message):
         _("{command} - Start conversation with bot").format(command="/start"),
         _("{command} - Get this message").format(command="/help"),
         _("{command} - Chat or user settings").format(command="/settings"),
+        _("{command} - My version").format(command="/version"),
         "",
     ]
 
@@ -60,6 +62,11 @@ async def cmd_help(message: types.Message):
             ]
         )
     await message.reply("\n".join(text))
+
+
+@dp.message_handler(commands=["version"])
+async def cmd_version(message: types.Message):
+    await message.reply(_("My Engine:\n{aiogram}").format(aiogram=aiogram_core.SysInfo()))
 
 
 @dp.errors_handler()
