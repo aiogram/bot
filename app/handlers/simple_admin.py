@@ -4,7 +4,7 @@ from typing import List
 
 from aiogram import types
 from aiogram.utils import exceptions
-from aiogram.utils.exceptions import Unauthorized
+from aiogram.utils.exceptions import BadRequest, Unauthorized
 from aiogram.utils.markdown import hlink, quote_html
 from babel.dates import format_timedelta
 from loguru import logger
@@ -133,3 +133,26 @@ async def text_report_admins(message: types.Message):
             await asyncio.sleep(0.3)
 
     await message.reply_to_message.reply(_("This message is reported to chat administrators."))
+
+
+@dp.message_handler(
+    types.ChatType.is_group_or_super_group,
+    commands=["do_not_click", "leave"],
+    bot_can_restrict_members=True,
+)
+async def cmd_leave(message: types.Message):
+    try:
+        await message.chat.kick(user_id=message.from_user.id)
+        await message.chat.unban(user_id=message.from_user.id)
+        msg = await message.answer(
+            _("User {user} leave this chat...").format(user=message.from_user.get_mention())
+        )
+    except BadRequest:
+        msg = None
+
+    await asyncio.sleep(10)
+
+    with suppress(BadRequest):
+        await message.delete()
+        if msg:
+            await msg.delete()

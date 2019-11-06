@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 23:32+0200\n"
+"POT-Creation-Date: 2019-11-06 11:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,6 +154,10 @@ msgstr ""
 
 #: app/handlers/simple_admin.py:135
 msgid "This message is reported to chat administrators."
+msgstr ""
+
+#: app/handlers/simple_admin.py:148
+msgid "User {user} leave this chat..."
 msgstr ""
 
 #: app/handlers/superuser.py:25
