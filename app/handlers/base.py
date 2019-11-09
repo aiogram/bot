@@ -10,7 +10,7 @@ from app.models.user import User
 _ = i18n.gettext
 
 
-@dp.message_handler(CommandStart(), types.ChatType.is_private)
+@dp.message_handler(CommandStart())
 async def cmd_start(message: types.Message, user: User):
     logger.info("User {user} start conversation with bot", user=message.from_user.id)
     await message.answer(
