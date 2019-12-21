@@ -1,0 +1,210 @@
+# Translations template for aiogram_bot.
+# Copyright (C) 2019 Illemius
+# This file is distributed under the same license as the aiogram_bot project.
+# xXMeliodas <navycis@me.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: aiogram_bot 0.1\n"
+"Report-Msgid-Bugs-To: navycis@me.com\n"
+"POT-Creation-Date: 2019-11-06 11:44+0200\n"
+"PO-Revision-Date: 2019-12-21 13:23+0100\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: xXMeliodas @Telegram\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+#: app/handlers/base.py:17
+msgid ""
+"Hello, {user}.\n"
+"Send /help if you want to read my commands list and also you can change "
+"language by sending /settings command.\n"
+"My source code: {source_url}"
+msgstr ""
+"Hallo, {user}.\n"
+"Sende /help, um meine Befehlsliste anzuzeigen. Um die Sprache zu ändern, "
+"sende /settings."
+
+#: app/handlers/base.py:35
+msgid "Here you can read the list of my commands:"
+msgstr "Hier können Sie die Liste meiner Befehle lesen:"
+
+#: app/handlers/base.py:36
+msgid "{command} - Start conversation with bot"
+msgstr "{command} - Startet den Bot"
+
+#: app/handlers/base.py:37
+msgid "{command} - Get this message"
+msgstr "{command} - Zeige diese Nachricht"
+
+#: app/handlers/base.py:38
+msgid "{command} - Chat or user settings"
+msgstr "{command} -  Chat oder Private Einstellungen"
+
+#: app/handlers/base.py:39
+msgid "{command} - My version"
+msgstr "{command} - Meine Version"
+
+#: app/handlers/base.py:48
+msgid "In chats this commands list can be other"
+msgstr "Diese Liste könnte in Gruppen anders aussehen"
+
+#: app/handlers/base.py:54
+msgid "Available only in groups:"
+msgstr "Nur in Gruppen verfügbar:"
+
+#: app/handlers/base.py:55
+msgid "{command} - Report message to chat administrators"
+msgstr "{command} - Admins benachrichtigen"
+
+#: app/handlers/base.py:58
+msgid "{command} - Set RO mode for user"
+msgstr "{command} - Nur-Lese-Modus aktivieren"
+
+#: app/handlers/base.py:59
+msgid "{command} - Ban user"
+msgstr "{command} - Sperrt einen Nutzer"
+
+#: app/handlers/base.py:61
+msgid "In private chats this commands list can be other"
+msgstr "Privat kann diese Liste anders aussehen"
+
+#: app/handlers/base.py:70
+msgid ""
+"My Engine:\n"
+"{aiogram}"
+msgstr ""
+"Meine Engine:\n"
+"{aiogram}"
+
+#: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93
+#: app/handlers/chat_settings.py:131
+msgid "Invalid chat"
+msgstr "Ungültiger Chat"
+
+#: app/handlers/chat_settings.py:65
+msgid "Choose chat language"
+msgstr "Sprache wählen"
+
+#: app/handlers/chat_settings.py:97 app/handlers/chat_settings.py:135
+msgid "You cannot change settings of this chat!"
+msgstr "Du darfst die Einstellungen dieses Chats nicht ändern!"
+
+#: app/handlers/chat_settings.py:109
+msgid "Language changed to {new_language}"
+msgstr "Sprache geändert zu: {new_language}"
+
+#: app/handlers/chat_settings.py:119
+msgid "Do not disturb mode reconfigured"
+msgstr "Nicht-Stören Modus neu konfiguriert"
+
+#: app/handlers/chat_settings.py:141
+msgid "Join filter re-configured"
+msgstr "Beitrittsfilter neu konfiguriert"
+
+#: app/handlers/chat_settings.py:154
+msgid "Settings saved"
+msgstr "Einstellungen gespeichert"
+
+#: app/handlers/new_chat_members.py:68
+msgid "I'm human"
+msgstr "Ich bin ein Mensch"
+
+#: app/handlers/new_chat_members.py:69
+msgid "I'm bot"
+msgstr "Ich bin ein Bot"
+
+#: app/handlers/new_chat_members.py:70
+msgid "I'm pet"
+msgstr "Ich bin dein Diener"
+
+#: app/handlers/new_chat_members.py:74
+msgid ""
+"{users}, Welcome to the chat. \n"
+"Please confirm that you are a human. User filter is enabled in this chat, so "
+"if you don't answer my question, I will be forced to remove you from this "
+"chat."
+msgstr ""
+"{users}, Willkommen im Chat!\n"
+"Bitte bestätige, dass du ein Mensch bist. Solltest du dich weigern zu "
+"antworten, bin ich gezwungen, dich aus dieser Gruppe zu entfernen."
+
+#: app/handlers/new_chat_members.py:110
+msgid "This message is not for you!"
+msgstr "Diese Nachricht ist nicht an dich gerichtet!"
+
+#: app/handlers/new_chat_members.py:113
+msgid "Good answer!"
+msgstr "Gute Antwort!"
+
+#: app/handlers/new_chat_members.py:120
+msgid "Bad answer."
+msgstr "Schlechte Antwort."
+
+#: app/handlers/simple_admin.py:47
+msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
+msgstr "{user} wurde <b>gemuted</b>! Dauer: {duration}"
+
+#: app/handlers/simple_admin.py:82
+msgid "User {user} <b>banned</b> for {duration}"
+msgstr "{user} wurde <b>gebannt</b>! Dauer: {duration}"
+
+#: app/handlers/simple_admin.py:106
+msgid ""
+"Please use this command is only in reply to message what do you want to "
+"report and this message will be reported to chat administrators."
+msgstr ""
+"Bitte antworte auf eine Nachricht um diese den Admins der Gruppe zu melden."
+
+#: app/handlers/simple_admin.py:113
+msgid "[ALERT] User {user} is reported message in chat {chat}."
+msgstr "{user} wurde in {chat} gemeldet."
+
+#: app/handlers/simple_admin.py:135
+msgid "This message is reported to chat administrators."
+msgstr "Die Nachricht wurde an die Admins weitergeleitet."
+
+#: app/handlers/simple_admin.py:148
+msgid "User {user} leave this chat..."
+msgstr "{user} hat die Gruppe verlassen."
+
+#: app/handlers/superuser.py:25
+msgid "Successful changed is_superuser to {is_superuser} for user {user}"
+msgstr ""
+"User: {user}\n"
+"Neuer Status: {is_superuser}"
+
+#: app/handlers/superuser.py:30
+msgid "Failed to set is_superuser to {is_superuser} for user {user}"
+msgstr ""
+"Beim ändern der Berechtigung von {user} zu {is_superuser} ist ein Fehler "
+"aufgetreten!"
+
+#: app/utils/chat_settings.py:24
+msgid "Settings for chat {chat_title}"
+msgstr "Einstellungen für {chat_title}"
+
+#: app/utils/chat_settings.py:29
+msgid "{status} Join filter"
+msgstr "Joinschutz: {status}"
+
+#: app/utils/chat_settings.py:39 app/utils/chat_settings.py:77
+msgid "{flag} Language"
+msgstr "Sprache: {flag}"
+
+#: app/utils/chat_settings.py:49 app/utils/chat_settings.py:85
+msgid "Done"
+msgstr "Fertig"
+
+#: app/utils/chat_settings.py:62
+msgid "Personal settings"
+msgstr "Persönliche Einstellungen"
+
+#: app/utils/chat_settings.py:67
+msgid "{status} Do not disturb"
+msgstr "Nicht strören: {status}"
