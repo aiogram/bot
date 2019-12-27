@@ -44,7 +44,7 @@ msgstr "{command} - Zeige diese Nachricht"
 
 #: app/handlers/base.py:38
 msgid "{command} - Chat or user settings"
-msgstr "{command} -  Chat oder Private Einstellungen"
+msgstr "{command} - Chat oder Private Einstellungen"
 
 #: app/handlers/base.py:39
 msgid "{command} - My version"
