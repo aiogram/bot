@@ -119,7 +119,6 @@ async def cq_join_list(query: types.CallbackQuery, callback_data: dict):
     else:
         await query.answer(_("Bad answer."), show_alert=True)
         await asyncio.sleep(2)
-        await query.message.chat.kick(query.from_user.id)
         await query.message.chat.unban(query.from_user.id)
 
     users_list = await join_list.check_list(

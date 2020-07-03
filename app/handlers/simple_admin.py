@@ -142,7 +142,6 @@ async def text_report_admins(message: types.Message):
 )
 async def cmd_leave(message: types.Message):
     try:
-        await message.chat.kick(user_id=message.from_user.id)
         await message.chat.unban(user_id=message.from_user.id)
         msg = await message.answer(
             _("User {user} leave this chat...").format(user=message.from_user.get_mention())
