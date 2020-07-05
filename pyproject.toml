@@ -1,3 +1,41 @@
+[tool.poetry]
+name = "aiogram_bot"
+version = "0.1.0"
+description = ""
+authors = ["Alex Root Junior <jroot.junior@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+aiogram = "^2.4"
+click = "^7.0"
+loguru = "^0.3.2"
+uvloop = "^0.14.0"
+aiohttp = "^3.6.2"
+envparse = "^0.2.0"
+sqlalchemy = "^1.3.10"
+sqlalchemy-utils = "^0.34.2"
+psycopg2-binary = "^2.8.4"
+asyncpg = "^0.19.0"
+gino = "^0.8.3"
+alembic = "^1.2.1"
+aioredis = "^1.3.0"
+cchardet = "^2.1.4"
+aiodns = "^2.0.0"
+tenacity = "^5.1.1"
+apscheduler = "^3.6.1"
+redis = "^3.3.11"
+aiohttp-healthcheck = "^1.3.1"
+requests = "^2.22.0"
+
+
+[tool.poetry.dev-dependencies]
+black = "^19.3b0"
+isort = "^4.3.21"
+flake8 = "^3.7.8"
+ipython = "^7.8.0"
+aiohttp-autoreload = "^0.0.1"
+
 [tool.black]
 line-length = 99
 include = '\.pyi?$'
@@ -12,3 +50,7 @@ exclude = '''
   | dist
 )/
 '''
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+

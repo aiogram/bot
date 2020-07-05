@@ -36,6 +36,14 @@ def get_chat_settings_markup(
                 ],
                 [
                     InlineKeyboardButton(
+                        text=_("Words blacklist"),
+                        callback_data=cb_chat_settings.new(
+                            id=chat.id, property="blacklist", value="change"
+                        ),
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
                         text=_("{flag} Language").format(
                             flag=i18n.AVAILABLE_LANGUAGES[chat.language].flag
                         ),

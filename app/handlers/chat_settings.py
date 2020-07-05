@@ -7,6 +7,7 @@ from aiogram.utils.exceptions import MessageCantBeDeleted, MessageNotModified
 from loguru import logger
 
 from app.misc import bot, dp, i18n
+from app.models.blacklist_word import BlackListWord
 from app.models.chat import Chat
 from app.models.user import User
 from app.utils.chat_admin import get_chat_administrator
@@ -16,6 +17,7 @@ from app.utils.chat_settings import (
     get_chat_settings_markup,
     get_user_settings_markup,
 )
+from app.utils.words_blacklist import build_blacklist_page
 
 _ = i18n.gettext
 
@@ -153,3 +155,20 @@ async def cq_chat_settings_done(query: types.CallbackQuery, chat: Chat):
     )
     await query.answer(_("Settings saved"), show_alert=True)
     await query.message.delete()
+
+
+@dp.callback_query_handler(cb_chat_settings.filter(property="blacklist", value="change"))
+async def cq_chat_settings_words_blacklist(
+    query: types.CallbackQuery, chat: Chat, callback_data: dict
+):
+    target_chat_id = int(callback_data["id"])
+    logger.info(
+        "User {user} wants to configure blacklisted words for chat {chat}",
+        user=query.from_user.id,
+        chat=target_chat_id,
+    )
+
+    await query.answer(_("Loading blacklisted words..."))
+
+    text, markup = await build_blacklist_page(chat_id=target_chat_id)
+    await query.message.answer(text, reply_markup=markup)
