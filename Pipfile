@@ -19,7 +19,7 @@ ipython = "==7.8.0"
 aiohttp-autoreload = "==0.0.1"
 
 [packages]
-aiogram = "==2.4"
+aiogram = "==2.9.2"
 click = "==7.0"
 loguru = "==0.3.2"
 uvloop = "==0.13.0"

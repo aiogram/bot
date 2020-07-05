@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster as production
+FROM python:3.8-slim-buster as production
 LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
       description="Telegram Bot"
 
