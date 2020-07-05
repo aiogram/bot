@@ -3,7 +3,7 @@
 set -e
 
 PYTHON="python -O"
-APP="${PYTHON} -m app"
+APP="exec ${PYTHON} -m app"
 
 ${PYTHON} -m app.utils.before_start
 
