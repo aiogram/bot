@@ -51,10 +51,14 @@ async def new_chat_member(message: types.Message, chat: Chat):
     users = {}
     for new_member in message.new_chat_members:
         try:
-            await message.chat.restrict(
-                new_member.id, permissions=types.ChatPermissions(can_send_messages=False)
-            )
-            users[new_member.id] = new_member.get_mention()
+            chat_member = await message.chat.get_member(new_member.id)
+            if chat_member.status == "restricted":
+                return False  # ignore user that's been restricted to avoid capcha abusing.
+            else:
+                await message.chat.restrict(
+                    new_member.id, permissions=types.ChatPermissions(can_send_messages=False)
+                )
+                users[new_member.id] = new_member.get_mention()
         except BadRequest as e:
             logger.error(
                 "Cannot restrict chat member {user} in chat {chat} with error: {error}",
@@ -119,7 +123,6 @@ async def cq_join_list(query: types.CallbackQuery, callback_data: dict):
     else:
         await query.answer(_("Bad answer."), show_alert=True)
         await asyncio.sleep(2)
-        await query.message.chat.kick(query.from_user.id)
         await query.message.chat.unban(query.from_user.id)
 
     users_list = await join_list.check_list(
