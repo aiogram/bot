@@ -8,7 +8,7 @@ _ = i18n.gettext
 
 @dp.message_handler(commands=["set_superuser"], commands_prefix="!", is_superuser=True)
 async def cmd_superuser(message: types.Message):
-    args = message.get_args()
+    args = message.text.partition(" ")[2]
     if not args or not args[0].isdigit():
         return False
     args = args.split()
