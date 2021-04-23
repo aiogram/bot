@@ -86,6 +86,14 @@ async def new_chat_member(message: types.Message, chat: Chat):
     await join_list.create_list(
         chat_id=message.chat.id, message_id=msg.message_id, users=users.keys()
     )
+    try:
+        await message.delete()
+    except BadRequest as e:
+        logger.error(
+            "Cannot delete join message in chat {chat} with error: {error}",
+            chat=chat.id,
+            error=e,
+        )
     return True
 
 
