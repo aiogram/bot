@@ -18,6 +18,7 @@ class I18nMiddleware(BaseI18nMiddleware):
     AVAILABLE_LANGUAGES = {
         "en": LanguageData("🇺🇸", "English"),
         "ru": LanguageData("🇷🇺", "Русский"),
+        "uz": LanguageData("UZ", "O\'zbekcha"),
         "uk": LanguageData("🇺🇦", "Українська"),
     }
 
