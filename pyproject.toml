@@ -5,7 +5,7 @@ description = ""
 authors = ["Alex Root Junior <jroot.junior@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 aiogram = "^2.14.3"
 click = "^8.0.1"
 loguru = "^0.5.3"
