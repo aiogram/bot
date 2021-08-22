@@ -38,7 +38,7 @@ def parse_timedelta(value: str) -> datetime.timedelta:
 
 
 async def parse_timedelta_from_message(
-    message: types.Message
+    message: types.Message,
 ) -> typing.Optional[datetime.timedelta]:
     _, *args = message.text.split()
 

@@ -17,8 +17,7 @@ i18n = I18nMiddleware("bot", locales_dir, default="en")
 
 
 def setup():
-    from aiogram_bot import filters
-    from aiogram_bot import middlewares
+    from aiogram_bot import filters, middlewares
     from aiogram_bot.utils import executor
 
     middlewares.setup(dp)

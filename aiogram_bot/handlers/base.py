@@ -37,15 +37,12 @@ async def cmd_help(message: types.Message):
         _("{command} - Get this message").format(command="/help"),
         _("{command} - Chat or user settings").format(command="/settings"),
         _("{command} - My version").format(command="/version"),
+        _("{command} - Publish content to HasteBin").format(command="/paste"),
         "",
     ]
 
     if message.chat.type in {types.ChatType.PRIVATE}:
-        text.extend(
-            [
-                _("In chats this commands list can be other")
-            ]
-        )
+        text.extend([_("In chats this commands list can be other")])
     else:
         text.extend(
             [

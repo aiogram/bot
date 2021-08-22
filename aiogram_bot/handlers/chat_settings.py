@@ -21,7 +21,9 @@ _ = i18n.gettext
 
 
 @dp.message_handler(
-    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], commands=["settings"], user_can_change_info=True
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
+    commands=["settings"],
+    user_can_change_info=True,
 )
 @dp.message_handler(chat_type=types.ChatType.PRIVATE, commands=["settings"])
 async def cmd_chat_settings(message: types.Message, chat: Chat, user: User):

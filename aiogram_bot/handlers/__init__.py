@@ -9,3 +9,4 @@ from . import base
 from . import chat_settings
 from . import new_chat_members
 from . import superuser
+from . import hastebin

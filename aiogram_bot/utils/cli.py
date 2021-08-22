@@ -12,8 +12,8 @@ except ImportError:
 
 @click.group()
 def cli():
-    from aiogram_bot.utils import logging
     from aiogram_bot import misc
+    from aiogram_bot.utils import logging
 
     logging.setup()
     misc.setup()
@@ -65,8 +65,8 @@ def webhook():
     """
     Run application in webhook mode
     """
-    from aiogram_bot.utils.executor import runner
     from aiogram_bot import config
+    from aiogram_bot.utils.executor import runner
 
     runner.start_webhook(webhook_path=config.WEBHOOK_PATH, port=config.BOT_PUBLIC_PORT)
 

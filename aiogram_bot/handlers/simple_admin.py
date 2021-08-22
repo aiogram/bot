@@ -89,9 +89,14 @@ async def cmd_ban(message: types.Message, chat: Chat):
     return True
 
 
-@dp.message_handler(chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], text_contains="@admin", state="*")
 @dp.message_handler(
-    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], commands=["report"], commands_prefix="!/", state="*"
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], text_contains="@admin", state="*"
+)
+@dp.message_handler(
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
+    commands=["report"],
+    commands_prefix="!/",
+    state="*",
 )
 async def text_report_admins(message: types.Message):
     logger.info(
@@ -125,7 +130,7 @@ async def text_report_admins(message: types.Message):
     ]
     if admin_ids:
         for admin in await User.query.where(
-            User.id.in_(admin_ids) & (User.do_not_disturb == False)
+            User.id.in_(admin_ids) & (User.do_not_disturb == False)  # NOQA
         ).gino.all():  # NOQA
             with suppress(Unauthorized):
                 await bot.send_message(admin.id, text)

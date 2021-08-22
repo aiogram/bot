@@ -23,13 +23,13 @@ help:
 # =================================================================================================
 
 isort:
-	pipenv run isort --recursive .
+	poetry run isort aiogram_bot
 
 black:
-	pipenv run black .
+	poetry run black aiogram_bot
 
 flake8:
-	pipenv run flake8 .
+	poetry run flake8 aiogram_bot
 
 lint: isort black flake8
 
@@ -37,45 +37,45 @@ entrypoint:
 	pipenv run bash ../docker-entrypoint.sh ${args}
 
 texts-update:
-	pipenv run pybabel extract . \
+	poetry run pybabel extract . \
     	-o ${LOCALES_DIR}/${LOCALES_DOMAIN}.pot \
     	--project=${PROJECT} \
     	--version=${VERSION} \
     	--copyright-holder=Illemius \
     	-k __:1,2 \
     	--sort-by-file -w 99
-	pipenv run pybabel update \
+	poetry run pybabel update \
 		-d ${LOCALES_DIR} \
 		-D ${LOCALES_DOMAIN} \
 		--update-header-comment \
 		-i ${LOCALES_DIR}/${LOCALES_DOMAIN}.pot
 
 texts-compile:
-	pipenv run pybabel compile -d locales -D bot
+	poetry run pybabel compile -d locales -D bot
 
 texts-create-language:
-	pipenv run pybabel init -i locales/bot.pot -d locales -D bot -l ${language}
+	poetry run pybabel init -i locales/bot.pot -d locales -D bot -l ${language}
 
 alembic:
-	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic ${args}
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} poetry run alembic ${args}
 
 migrate:
-	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic upgrade head
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} poetry run alembic upgrade head
 
 migration:
-	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic revision --autogenerate -m "${message}"
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} poetry run alembic revision --autogenerate -m "${message}"
 
 downgrade:
-	PYTHONPATH=$(shell pwd):${PYTHONPATH} pipenv run alembic downgrade -1
+	PYTHONPATH=$(shell pwd):${PYTHONPATH} poetry run alembic downgrade -1
 
 beforeStart: docker-up-db migrate texts-compile
 
 app:
-	pipenv run python -m app ${args}
+	pipenv run python -m aiogram_bot ${args}
 
 start:
 	$(MAKE) beforeStart
-	$(MAKE) app args="run-polling"
+	$(MAKE) aiogram_bot args="run-polling"
 
 # =================================================================================================
 # Docker

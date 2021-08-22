@@ -4,8 +4,8 @@ from loguru import logger
 
 def setup(dispatcher: Dispatcher):
     logger.info("Configure filters...")
-    from .is_reply import IsReplyFilter
     from .has_permissions import BotHasPermissions, HasPermissions
+    from .is_reply import IsReplyFilter
     from .superuser import IsSuperuserFilter
 
     text_messages = [

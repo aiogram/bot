@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-22 15:09+0300\n"
+"POT-Creation-Date: 2021-08-22 18:05+0300\n"
 "PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -47,65 +47,75 @@ msgstr ""
 msgid "{command} - My version"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:46
+#: aiogram_bot/handlers/base.py:40
+msgid "{command} - Publish content to HasteBin"
+msgstr ""
+
+#: aiogram_bot/handlers/base.py:45
 msgid "In chats this commands list can be other"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:52
+#: aiogram_bot/handlers/base.py:49
 msgid "Available only in groups:"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:53
+#: aiogram_bot/handlers/base.py:50
 msgid "{command} - Report message to chat administrators"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:56
+#: aiogram_bot/handlers/base.py:53
 msgid "{command} - Set RO mode for user"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:57
+#: aiogram_bot/handlers/base.py:54
 msgid "{command} - Ban user"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:59
+#: aiogram_bot/handlers/base.py:56
 msgid "In private chats this commands list can be other"
 msgstr ""
 
-#: aiogram_bot/handlers/base.py:68
+#: aiogram_bot/handlers/base.py:65
 msgid ""
 "My Engine:\n"
 "{aiogram}"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:51
-#: aiogram_bot/handlers/chat_settings.py:93
-#: aiogram_bot/handlers/chat_settings.py:131
+#: aiogram_bot/handlers/chat_settings.py:53
+#: aiogram_bot/handlers/chat_settings.py:95
+#: aiogram_bot/handlers/chat_settings.py:133
 msgid "Invalid chat"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:65
+#: aiogram_bot/handlers/chat_settings.py:67
 msgid "Choose chat language"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:97
-#: aiogram_bot/handlers/chat_settings.py:135
+#: aiogram_bot/handlers/chat_settings.py:99
+#: aiogram_bot/handlers/chat_settings.py:137
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:109
+#: aiogram_bot/handlers/chat_settings.py:111
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:119
+#: aiogram_bot/handlers/chat_settings.py:121
 msgid "Do not disturb mode reconfigured"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:141
+#: aiogram_bot/handlers/chat_settings.py:143
 msgid "Join filter re-configured"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:154
+#: aiogram_bot/handlers/chat_settings.py:156
 msgid "Settings saved"
+msgstr ""
+
+#: aiogram_bot/handlers/hastebin.py:24
+msgid ""
+"Message originally posted by {author} was moved to {url} service\n"
+"Content size: {size} bytes"
 msgstr ""
 
 #: aiogram_bot/handlers/new_chat_members.py:72
@@ -156,21 +166,21 @@ msgstr ""
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:106
+#: aiogram_bot/handlers/simple_admin.py:111
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:113
+#: aiogram_bot/handlers/simple_admin.py:118
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥🔥🔥 User {user} is reported message in chat {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:135
+#: aiogram_bot/handlers/simple_admin.py:140
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:147
+#: aiogram_bot/handlers/simple_admin.py:152
 msgid "User {user} leave this chat..."
 msgstr ""
 
@@ -205,3 +215,4 @@ msgstr ""
 #: aiogram_bot/utils/chat_settings.py:67
 msgid "{status} Do not disturb"
 msgstr ""
+
