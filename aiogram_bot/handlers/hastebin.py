@@ -26,8 +26,8 @@ async def command_paste(message: types.Message):
         dst = message
         messages_to_delete.append(dst)
 
-    if not content:
-        return
+    if not content or (len(content) < 30 and content.count('\n') < 2):
+        return await message.reply(_("Content to move is too short!"))
 
     content = content.encode()
     response = await hastebin.create_document(content)
@@ -41,7 +41,7 @@ async def command_paste(message: types.Message):
         url=md.hlink("HasteBin", document_url),
         size=len(content),
     )
-    await dst.reply(text)
+    await dst.reply(text, allow_sending_without_reply=True)
 
     for message_to_delete in messages_to_delete:
         with suppress(TelegramAPIError):

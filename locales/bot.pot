@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-22 18:05+0300\n"
+"POT-Creation-Date: 2021-08-22 18:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,7 +108,11 @@ msgstr ""
 msgid "Settings saved"
 msgstr ""
 
-#: aiogram_bot/handlers/hastebin.py:24
+#: aiogram_bot/handlers/hastebin.py:30
+msgid "Content to move is too short!"
+msgstr ""
+
+#: aiogram_bot/handlers/hastebin.py:36
 msgid ""
 "Message originally posted by {author} was moved to {url} service\n"
 "Content size: {size} bytes"
