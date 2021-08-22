@@ -1,6 +1,10 @@
-from aiogram import md, types
+from contextlib import suppress
 
-from aiogram_bot.misc import dp, i18n
+from aiogram import md, types
+from aiogram.types.chat_member import ChatMemberAdministrator, ChatMemberOwner
+from aiogram.utils.exceptions import TelegramAPIError
+
+from aiogram_bot.misc import bot, dp, i18n
 from aiogram_bot.services.hastebin import hastebin
 
 _ = i18n.gettext
@@ -8,12 +12,20 @@ _ = i18n.gettext
 
 @dp.message_handler(commands=["paste"])
 async def command_paste(message: types.Message):
+    messages_to_delete = []
     if message.reply_to_message:
-        dst = message.reply_to_message
         content = message.reply_to_message.text
+        dst = message.reply_to_message
+        member = await bot.get_chat_member(message.chat.id, message.from_user.id)
+        if isinstance(member, ChatMemberOwner) or (
+            isinstance(member, ChatMemberAdministrator) and member.can_delete_messages
+        ):
+            messages_to_delete.append(dst)
     else:
-        dst = message
         content = message.get_args()
+        dst = message
+        messages_to_delete.append(dst)
+
     if not content:
         return
 
@@ -30,3 +42,7 @@ async def command_paste(message: types.Message):
         size=len(content),
     )
     await dst.reply(text)
+
+    for message_to_delete in messages_to_delete:
+        with suppress(TelegramAPIError):
+            await message_to_delete.delete()
