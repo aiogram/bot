@@ -13,7 +13,7 @@ _ = i18n.gettext
 @dp.message_handler(commands=["paste"])
 async def command_paste(message: types.Message):
     messages_to_delete = []
-    if message.reply_to_message:
+    if message.reply_to_message and message.reply_to_message.from_user.id != bot.id:
         content = message.reply_to_message.text
         dst = message.reply_to_message
         member = await bot.get_chat_member(message.chat.id, message.from_user.id)
