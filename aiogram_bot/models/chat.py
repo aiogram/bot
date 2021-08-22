@@ -1,6 +1,6 @@
 from sqlalchemy.sql import expression
 
-from app.models.db import BaseModel, TimedBaseModel, db
+from aiogram_bot.models.db import BaseModel, TimedBaseModel, db
 
 
 class Chat(TimedBaseModel):

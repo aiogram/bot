@@ -5,9 +5,9 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.callback_data import CallbackData
 from aiogram.utils.markdown import hbold
 
-from app.misc import i18n
-from app.models.chat import Chat
-from app.models.user import User
+from aiogram_bot.misc import i18n
+from aiogram_bot.models.chat import Chat
+from aiogram_bot.models.user import User
 
 cb_chat_settings = CallbackData("chat", "id", "property", "value")
 cb_user_settings = CallbackData("user", "property", "value")
@@ -37,7 +37,7 @@ def get_chat_settings_markup(
                 [
                     InlineKeyboardButton(
                         text=_("{flag} Language").format(
-                            flag=i18n.AVAILABLE_LANGUAGES[chat.language].flag
+                            flag=i18n.AVAILABLE_LANGUAGES[i18n.ctx_locale.get()].flag
                         ),
                         callback_data=cb_chat_settings.new(
                             id=chat.id, property="language", value="change"

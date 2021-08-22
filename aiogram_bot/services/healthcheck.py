@@ -3,7 +3,7 @@ from aiogram.utils.executor import Executor
 from aiohttp_healthcheck import HealthCheck
 from loguru import logger
 
-from app import config
+from aiogram_bot import config
 
 health = HealthCheck()
 
@@ -13,7 +13,7 @@ def setup(executor: Executor):
 
 
 async def on_startup(dispatcher: Dispatcher):
-    from app.utils.executor import runner
+    from aiogram_bot.utils.executor import runner
 
     logger.info("Setup healthcheck")
 
@@ -24,7 +24,7 @@ async def on_startup(dispatcher: Dispatcher):
 
 
 async def check_redis():
-    from app.misc import storage
+    from aiogram_bot.misc import storage
 
     try:
         redis = await storage.redis()
@@ -35,7 +35,7 @@ async def check_redis():
 
 
 async def check_postgres():
-    from app.models.db import db
+    from aiogram_bot.models.db import db
 
     try:
         version = await db.scalar("select version();")
@@ -45,7 +45,7 @@ async def check_postgres():
 
 
 async def check_webhook():
-    from app.misc import bot
+    from aiogram_bot.misc import bot
 
     webhook = await bot.get_webhook_info()
     if webhook.url and webhook.url == config.WEBHOOK_URL:

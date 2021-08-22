@@ -4,8 +4,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 from loguru import logger
 
-from app import config
-from app.middlewares.i18n import I18nMiddleware
+from aiogram_bot import config
+from aiogram_bot.middlewares.i18n import I18nMiddleware
 
 app_dir: Path = Path(__file__).parent.parent
 locales_dir = app_dir / "locales"
@@ -17,9 +17,9 @@ i18n = I18nMiddleware("bot", locales_dir, default="en")
 
 
 def setup():
-    from app import filters
-    from app import middlewares
-    from app.utils import executor
+    from aiogram_bot import filters
+    from aiogram_bot import middlewares
+    from aiogram_bot.utils import executor
 
     middlewares.setup(dp)
     filters.setup(dp)
@@ -27,4 +27,4 @@ def setup():
 
     logger.info("Configure handlers...")
     # noinspection PyUnresolvedReferences
-    import app.handlers
+    import aiogram_bot.handlers

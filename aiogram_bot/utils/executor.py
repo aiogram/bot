@@ -6,11 +6,11 @@ from aiogram.utils.exceptions import TelegramAPIError
 from aiogram.utils.executor import Executor
 from loguru import logger
 
-from app import config
-from app.misc import dp
-from app.models import db
-from app.models.user import User
-from app.services import apscheduller, healthcheck, join_list
+from aiogram_bot import config
+from aiogram_bot.misc import dp
+from aiogram_bot.models import db
+from aiogram_bot.models.user import User
+from aiogram_bot.services import apscheduller, healthcheck, join_list
 
 runner = Executor(dp)
 

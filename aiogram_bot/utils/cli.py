@@ -12,8 +12,8 @@ except ImportError:
 
 @click.group()
 def cli():
-    from app.utils import logging
-    from app import misc
+    from aiogram_bot.utils import logging
+    from aiogram_bot import misc
 
     logging.setup()
     misc.setup()
@@ -53,7 +53,7 @@ def polling(skip_updates: bool):
     Start application in polling mode
     """
 
-    from app.utils.executor import runner
+    from aiogram_bot.utils.executor import runner
 
     runner.skip_updates = skip_updates
     runner.start_polling(reset_webhook=True)
@@ -65,8 +65,8 @@ def webhook():
     """
     Run application in webhook mode
     """
-    from app.utils.executor import runner
-    from app import config
+    from aiogram_bot.utils.executor import runner
+    from aiogram_bot import config
 
     runner.start_webhook(webhook_path=config.WEBHOOK_PATH, port=config.BOT_PUBLIC_PORT)
 
@@ -75,8 +75,8 @@ def webhook():
 @click.argument("user_id", type=int)
 @click.option("--remove", "--rm", is_flag=True, default=False, help="Remove superuser rights")
 def superuser(user_id: int, remove: bool):
-    from app.utils.executor import runner
-    from app.utils.superuser import create_super_user
+    from aiogram_bot.utils.executor import runner
+    from aiogram_bot.utils.superuser import create_super_user
 
     try:
         result = runner.start(create_super_user(user_id, remove))

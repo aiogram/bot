@@ -9,10 +9,10 @@ from aiogram.utils.markdown import hlink, quote_html
 from babel.dates import format_timedelta
 from loguru import logger
 
-from app.misc import bot, dp, i18n
-from app.models.chat import Chat
-from app.models.user import User
-from app.utils.timedelta import parse_timedelta_from_message
+from aiogram_bot.misc import bot, dp, i18n
+from aiogram_bot.models.chat import Chat
+from aiogram_bot.models.user import User
+from aiogram_bot.utils.timedelta import parse_timedelta_from_message
 
 _ = i18n.gettext
 
@@ -89,9 +89,9 @@ async def cmd_ban(message: types.Message, chat: Chat):
     return True
 
 
-@dp.message_handler(types.ChatType.is_group_or_super_group, text_contains="@admin", state="*")
+@dp.message_handler(chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], text_contains="@admin", state="*")
 @dp.message_handler(
-    types.ChatType.is_group_or_super_group, commands=["report"], commands_prefix="!/", state="*"
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], commands=["report"], commands_prefix="!/", state="*"
 )
 async def text_report_admins(message: types.Message):
     logger.info(
@@ -136,7 +136,7 @@ async def text_report_admins(message: types.Message):
 
 
 @dp.message_handler(
-    types.ChatType.is_group_or_super_group,
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
     commands=["do_not_click", "leave"],
     bot_can_restrict_members=True,
 )

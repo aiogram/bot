@@ -1,7 +1,7 @@
 from aiogram import types
 
-from app.misc import dp, i18n
-from app.utils.superuser import create_super_user
+from aiogram_bot.misc import dp, i18n
+from aiogram_bot.utils.superuser import create_super_user
 
 _ = i18n.gettext
 

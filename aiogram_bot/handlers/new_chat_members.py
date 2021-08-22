@@ -9,10 +9,10 @@ from aiogram.utils.callback_data import CallbackData
 from aiogram.utils.exceptions import BadRequest, MessageToDeleteNotFound
 from loguru import logger
 
-from app import config
-from app.misc import dp, i18n
-from app.models.chat import Chat
-from app.services.join_list import join_list
+from aiogram_bot import config
+from aiogram_bot.misc import dp, i18n
+from aiogram_bot.models.chat import Chat
+from aiogram_bot.services.join_list import join_list
 
 _ = i18n.gettext
 
@@ -24,7 +24,7 @@ async def new_chat_member(message: types.Message, chat: Chat):
     if not chat.join_filter:
         return False
 
-    if message.date < datetime.datetime.now() - datetime.timedelta(minutes=1):
+    if message.date < datetime.datetime.now() - datetime.timedelta(minutes=30):
         logger.warning(
             "Join message {message} in chat {chat} is too old. Skip filtering. (Age: {age})",
             message=message.message_id,
@@ -69,11 +69,20 @@ async def new_chat_member(message: types.Message, chat: Chat):
             continue
 
     buttons = [
-        types.InlineKeyboardButton(_("I'm human"), callback_data=cb_join_list.new(answer="human")),
         types.InlineKeyboardButton(_("I'm bot"), callback_data=cb_join_list.new(answer="bot")),
         types.InlineKeyboardButton(_("I'm pet"), callback_data=cb_join_list.new(answer="pet")),
+        types.InlineKeyboardButton(
+            _("I'm spammer"), callback_data=cb_join_list.new(answer="spammer")
+        ),
+        types.InlineKeyboardButton(
+            _("I'm scammer"), callback_data=cb_join_list.new(answer="scammer")
+        ),
     ]
     random.shuffle(buttons)
+    buttons.insert(
+        random.randint(1, len(buttons)),
+        types.InlineKeyboardButton(_("I'm human"), callback_data=cb_join_list.new(answer="human")),
+    )
     msg = await message.reply(
         _(
             "{users}, Welcome to the chat. \n"
@@ -81,7 +90,7 @@ async def new_chat_member(message: types.Message, chat: Chat):
             "User filter is enabled in this chat, so if you don't answer my question, "
             "I will be forced to remove you from this chat."
         ).format(users=", ".join(users.values())),
-        reply_markup=types.InlineKeyboardMarkup(inline_keyboard=[buttons]),
+        reply_markup=types.InlineKeyboardMarkup(row_width=3).add(*buttons),
     )
     await join_list.create_list(
         chat_id=message.chat.id, message_id=msg.message_id, users=users.keys()

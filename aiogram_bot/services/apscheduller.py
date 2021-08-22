@@ -5,7 +5,7 @@ from apscheduler.jobstores.redis import RedisJobStore
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pytz import utc
 
-from app import config
+from aiogram_bot import config
 
 DEFAULT = "default"
 

@@ -4,8 +4,8 @@ from aiogram.dispatcher.filters import CommandHelp, CommandStart
 from aiogram.utils.markdown import hbold, hlink, quote_html
 from loguru import logger
 
-from app.misc import dp, i18n
-from app.models.user import User
+from aiogram_bot.misc import dp, i18n
+from aiogram_bot.models.user import User
 
 _ = i18n.gettext
 
@@ -40,11 +40,9 @@ async def cmd_help(message: types.Message):
         "",
     ]
 
-    if types.ChatType.is_private(message):
+    if message.chat.type in {types.ChatType.PRIVATE}:
         text.extend(
             [
-                # hbold(_("Available only in PM with bot:")),
-                # "",
                 _("In chats this commands list can be other")
             ]
         )

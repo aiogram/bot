@@ -4,9 +4,9 @@ import tenacity
 from loguru import logger
 from tenacity import _utils
 
-from app import config
-from app.models.db import db
-from app.utils.redis import BaseRedis
+from aiogram_bot import config
+from aiogram_bot.models.db import db
+from aiogram_bot.utils.redis import BaseRedis
 
 TIMEOUT_BETWEEN_ATTEMPTS = 2
 MAX_TIMEOUT = 30
