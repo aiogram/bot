@@ -3,9 +3,9 @@
 set -e
 
 PYTHON="python -O"
-APP="exec ${PYTHON} -m app"
+APP="exec ${PYTHON} -m aiogram_bot"
 
-${PYTHON} -m app.utils.before_start
+${PYTHON} -m aiogram_bot.utils.before_start
 
 function migrate () {
   if [[ ! -z "${RUN_MIGRATIONS}" ]]; then
