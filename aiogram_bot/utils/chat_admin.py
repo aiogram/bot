@@ -2,7 +2,7 @@ from typing import Optional
 
 from aiogram.types import ChatMember
 
-from app.misc import bot
+from aiogram_bot.misc import bot
 
 
 async def get_chat_administrator(chat_id: int, user_id: int) -> Optional[ChatMember]:

@@ -8,10 +8,10 @@ from aiogram.utils.exceptions import MessageToDeleteNotFound
 from aiogram.utils.executor import Executor
 from loguru import logger
 
-from app import config
-from app.misc import bot
-from app.services.apscheduller import scheduler
-from app.utils.redis import BaseRedis
+from aiogram_bot import config
+from aiogram_bot.misc import bot
+from aiogram_bot.services.apscheduller import scheduler
+from aiogram_bot.utils.redis import BaseRedis
 
 JOB_PREFIX = "join_list_cleaner"
 

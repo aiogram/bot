@@ -1,6 +1,6 @@
 from loguru import logger
 
-from app.models.user import User
+from aiogram_bot.models.user import User
 
 
 async def create_super_user(user_id: int, remove: bool) -> bool:

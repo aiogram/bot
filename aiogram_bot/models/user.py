@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from sqlalchemy.sql import expression
 
-from app.models.db import BaseModel, TimedBaseModel, db
+from aiogram_bot.models.db import BaseModel, TimedBaseModel, db
 
 
 class User(TimedBaseModel):

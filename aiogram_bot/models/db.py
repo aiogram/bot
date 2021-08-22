@@ -7,7 +7,7 @@ from aiogram.utils.executor import Executor
 from gino import Gino
 from loguru import logger
 
-from app import config
+from aiogram_bot import config
 
 db = Gino()
 

@@ -6,11 +6,11 @@ from aiogram.dispatcher.filters.filters import OrFilter
 from aiogram.utils.exceptions import MessageCantBeDeleted, MessageNotModified
 from loguru import logger
 
-from app.misc import bot, dp, i18n
-from app.models.chat import Chat
-from app.models.user import User
-from app.utils.chat_admin import get_chat_administrator
-from app.utils.chat_settings import (
+from aiogram_bot.misc import bot, dp, i18n
+from aiogram_bot.models.chat import Chat
+from aiogram_bot.models.user import User
+from aiogram_bot.utils.chat_admin import get_chat_administrator
+from aiogram_bot.utils.chat_settings import (
     cb_chat_settings,
     cb_user_settings,
     get_chat_settings_markup,
@@ -21,15 +21,15 @@ _ = i18n.gettext
 
 
 @dp.message_handler(
-    types.ChatType.is_group_or_super_group, commands=["settings"], user_can_change_info=True
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], commands=["settings"], user_can_change_info=True
 )
-@dp.message_handler(types.ChatType.is_private, commands=["settings"])
+@dp.message_handler(chat_type=types.ChatType.PRIVATE, commands=["settings"])
 async def cmd_chat_settings(message: types.Message, chat: Chat, user: User):
     logger.info("User {user} wants to configure chat {chat}", user=user.id, chat=chat.id)
     with suppress(MessageCantBeDeleted):
         await message.delete()
 
-    if types.ChatType.is_private(message.chat):
+    if message.chat.type in {types.ChatType.PRIVATE}:
         text, markup = get_user_settings_markup(chat, user)
     else:
         text, markup = get_chat_settings_markup(message.chat, chat)
@@ -99,10 +99,10 @@ async def cq_chat_settings_choose_language(
     else:
         target_chat_id = None
 
+    i18n.ctx_locale.set(target_language)
     if callback_data["@"] == "chat":
         text, markup = get_chat_settings_markup(await bot.get_chat(target_chat_id), chat)
     else:
-        i18n.ctx_locale.set(target_language)
         text, markup = get_user_settings_markup(chat, user)
     await chat.update(language=target_language).apply()
     await query.answer(
