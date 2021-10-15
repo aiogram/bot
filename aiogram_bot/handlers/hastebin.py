@@ -41,7 +41,13 @@ async def command_paste(message: types.Message):
         url=md.hlink("HasteBin", document_url),
         size=len(content),
     )
-    await dst.reply(text, allow_sending_without_reply=True)
+
+    reply_markup = types.InlineKeyboardMarkup(
+        _("Open paste"),
+        url=document_url
+    )
+
+    await dst.reply(text, allow_sending_without_reply=True, reply_markup=reply_markup)
 
     for message_to_delete in messages_to_delete:
         with suppress(TelegramAPIError):
