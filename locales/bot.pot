@@ -118,6 +118,10 @@ msgid ""
 "Content size: {size} bytes"
 msgstr ""
 
+#: aiogram_bot/handlers/hastebin.py:46
+msgid "Open paste"
+msgstr ""
+
 #: aiogram_bot/handlers/new_chat_members.py:72
 msgid "I'm bot"
 msgstr ""
