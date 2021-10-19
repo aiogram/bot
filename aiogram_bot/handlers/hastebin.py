@@ -43,8 +43,10 @@ async def command_paste(message: types.Message):
     )
 
     reply_markup = types.InlineKeyboardMarkup(
-        _("Open paste"),
-        url=document_url
+        types.InlineKeyboardButton(
+            _("Open paste"),
+            url=document_url
+        )
     )
 
     await dst.reply(text, allow_sending_without_reply=True, reply_markup=reply_markup)
