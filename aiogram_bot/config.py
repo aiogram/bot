@@ -30,3 +30,5 @@ JOIN_NO_MEDIA_DURATION = datetime.timedelta(minutes=2)
 
 SUPERUSER_STARTUP_NOTIFIER = env.bool("SUPERUSER_STARTUP_NOTIFIER", default=False)
 HASTEBIN_URL = env.str("HASTEBIN_URL", default="https://paste.aiogram.dev")
+
+AIOGRAM_JAIL_LINK = "https://t.me/aiogram_jail"

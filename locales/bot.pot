@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-22 18:46+0300\n"
+"POT-Creation-Date: 2021-11-24 10:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 #: aiogram_bot/handlers/base.py:17
 msgid ""
 "Hello, {user}.\n"
-"Send /help if you want to read my commands list and also you can change language by sending "
-"/settings command.\n"
+"Send /help if you want to read my commands list and also you can change "
+"language by sending /settings command.\n"
 "My source code: {source_url}"
 msgstr ""
 
@@ -79,7 +79,8 @@ msgid ""
 "{aiogram}"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:53 aiogram_bot/handlers/chat_settings.py:95
+#: aiogram_bot/handlers/chat_settings.py:53
+#: aiogram_bot/handlers/chat_settings.py:95
 #: aiogram_bot/handlers/chat_settings.py:133
 msgid "Invalid chat"
 msgstr ""
@@ -88,7 +89,8 @@ msgstr ""
 msgid "Choose chat language"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:99 aiogram_bot/handlers/chat_settings.py:137
+#: aiogram_bot/handlers/chat_settings.py:99
+#: aiogram_bot/handlers/chat_settings.py:137
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
@@ -141,8 +143,9 @@ msgstr ""
 #: aiogram_bot/handlers/new_chat_members.py:87
 msgid ""
 "{users}, Welcome to the chat. \n"
-"Please confirm that you are a human. User filter is enabled in this chat, so if you don't answer"
-" my question, I will be forced to remove you from this chat."
+"Please confirm that you are a human. User filter is enabled in this chat,"
+" so if you don't answer my question, I will be forced to remove you from "
+"this chat and you will be <a href='{jail_link}'>imprisoned</a>."
 msgstr ""
 
 #: aiogram_bot/handlers/new_chat_members.py:123
@@ -157,29 +160,37 @@ msgstr ""
 msgid "Bad answer."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:47
-msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
-msgstr ""
-
-#: aiogram_bot/handlers/simple_admin.py:82
-msgid "User {user} <b>banned</b> for {duration}"
-msgstr ""
-
-#: aiogram_bot/handlers/simple_admin.py:111
+#: aiogram_bot/handlers/simple_admin.py:48
 msgid ""
-"Please use this command is only in reply to message what do you want to report and this message "
-"will be reported to chat administrators."
+"<b>Read-only</b> activated for user {user}. Duration: {duration}\n"
+"Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat "
+"where you can tell your opinion about the work of the administrators and "
+"it will definitely be heard!"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:118
+#: aiogram_bot/handlers/simple_admin.py:89
+msgid ""
+"User {user} <b>banned</b> for {duration}\n"
+"Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat "
+"where you can tell your opinion about the work of the administrators and "
+"it will definitely be heard!"
+msgstr ""
+
+#: aiogram_bot/handlers/simple_admin.py:124
+msgid ""
+"Please use this command is only in reply to message what do you want to "
+"report and this message will be reported to chat administrators."
+msgstr ""
+
+#: aiogram_bot/handlers/simple_admin.py:131
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:140
+#: aiogram_bot/handlers/simple_admin.py:153
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:152
+#: aiogram_bot/handlers/simple_admin.py:165
 msgid "User {user} leave this chat..."
 msgstr ""
 

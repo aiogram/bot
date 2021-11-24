@@ -8,6 +8,7 @@ from aiogram.utils.exceptions import BadRequest, Unauthorized
 from aiogram.utils.markdown import hlink, quote_html
 from babel.dates import format_timedelta
 from loguru import logger
+from aiogram_bot import config
 
 from aiogram_bot.misc import bot, dp, i18n
 from aiogram_bot.models.chat import Chat
@@ -44,8 +45,14 @@ async def cmd_ro(message: types.Message, chat: Chat):
         return False
 
     await message.reply_to_message.answer(
-        _("<b>Read-only</b> activated for user {user}. Duration: {duration}").format(
+        _(
+            "<b>Read-only</b> activated for user {user}. Duration: {duration}\n"
+            "Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat where you can "
+            "tell your opinion about the work of the administrators and it "
+            "will definitely be heard!"
+        ).format(
             user=message.reply_to_message.from_user.get_mention(),
+            jail_link=config.AIOGRAM_JAIL_LINK,
             duration=format_timedelta(
                 duration, locale=chat.language, granularity="seconds", format="short"
             ),
@@ -79,8 +86,14 @@ async def cmd_ban(message: types.Message, chat: Chat):
         return False
 
     await message.reply_to_message.answer(
-        _("User {user} <b>banned</b> for {duration}").format(
+        _(
+            "User {user} <b>banned</b> for {duration}\n"
+            "Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat where you can "
+            "tell your opinion about the work of the administrators and it "
+            "will definitely be heard!"
+        ).format(
             user=message.reply_to_message.from_user.get_mention(),
+            jail_link=config.AIOGRAM_JAIL_LINK,
             duration=format_timedelta(
                 duration, locale=chat.language, granularity="seconds", format="short"
             ),
