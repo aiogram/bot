@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-22 18:46+0300\n"
+"POT-Creation-Date: 2021-11-24 10:40+0000\n"
 "PO-Revision-Date: 2019-11-06 11:40+0200\n"
 "Last-Translator: \n"
 "Language: ru\n"
@@ -153,16 +153,17 @@ msgid "I'm human"
 msgstr "Я человек"
 
 #: aiogram_bot/handlers/new_chat_members.py:87
+#, fuzzy
 msgid ""
 "{users}, Welcome to the chat. \n"
 "Please confirm that you are a human. User filter is enabled in this chat,"
 " so if you don't answer my question, I will be forced to remove you from "
-"this chat."
+"this chat and you will be <a href='{jail_link}'>imprisoned</a>."
 msgstr ""
 "Привет, {users}!\n"
 "Пожалуйста подтверди, что ты человек. В этом чате включен фильтр новых "
 "пользователей, поэтому, если ты не ответишь на мой вопрос, я буду "
-"вынужден прогнать тебя из чата."
+"вынужден прогнать тебя из чата и отправить в <a href='{jail_link}'>тюрьму</a>."
 
 #: aiogram_bot/handlers/new_chat_members.py:123
 msgid "This message is not for you!"
@@ -176,15 +177,29 @@ msgstr "Хороший ответ!"
 msgid "Bad answer."
 msgstr "Плохой ответ."
 
-#: aiogram_bot/handlers/simple_admin.py:47
-msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
-msgstr "Пользователь {user} помещен в <b>RO</b> на {duration}"
+#: aiogram_bot/handlers/simple_admin.py:48
+msgid ""
+"<b>Read-only</b> activated for user {user}. Duration: {duration}\n"
+"Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat "
+"where you can tell your opinion about the work of the administrators and "
+"it will definitely be heard!"
+msgstr ""
+"Пользователь {user} помещен в <b>RO</b> на {duration}\n"
+"Теперь вам открыт доступ к <a href='{jail_link}'>Aiogram Jail</a>, чат где вы можете "
+"высказать своё мнение о работе администраторов и оно будет обязательно услышано!"
 
-#: aiogram_bot/handlers/simple_admin.py:82
-msgid "User {user} <b>banned</b> for {duration}"
-msgstr "Пользователь {user} <b>забанен</b> на {duration}"
+#: aiogram_bot/handlers/simple_admin.py:89
+msgid ""
+"User {user} <b>banned</b> for {duration}\n"
+"Now you have access to <a href='{jail_link}'>Aiogram Jail</a>, a chat "
+"where you can tell your opinion about the work of the administrators and "
+"it will definitely be heard!"
+msgstr ""
+"Пользователь {user} <b>забанен</b> на {duration}\n"
+"Теперь вам открыт доступ к <a href='{jail_link}'>Aiogram Jail</a>, чат где вы можете "
+"высказать своё мнение о работе администраторов и оно будет обязательно услышано!"
 
-#: aiogram_bot/handlers/simple_admin.py:111
+#: aiogram_bot/handlers/simple_admin.py:124
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
@@ -192,15 +207,15 @@ msgstr ""
 "Пожалуйста, используй эту команду только в ответ на другое сообщение и я "
 "сообщу про него администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:118
+#: aiogram_bot/handlers/simple_admin.py:131
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥 Пользователь {user} сообщает про сообщение в чате {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:140
+#: aiogram_bot/handlers/simple_admin.py:153
 msgid "This message is reported to chat administrators."
 msgstr "Я сообщил про это сообщение администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:152
+#: aiogram_bot/handlers/simple_admin.py:165
 msgid "User {user} leave this chat..."
 msgstr "Пользователь {user} покинул этот чат..."
 
@@ -239,4 +254,10 @@ msgstr "Персональные настройки"
 #: aiogram_bot/utils/chat_settings.py:67
 msgid "{status} Do not disturb"
 msgstr "{status} Не беспокоить"
+
+#~ msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
+#~ msgstr "Пользователь {user} помещен в <b>RO</b> на {duration}"
+
+#~ msgid "User {user} <b>banned</b> for {duration}"
+#~ msgstr "Пользователь {user} <b>забанен</b> на {duration}"
 

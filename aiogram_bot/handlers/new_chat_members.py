@@ -88,8 +88,8 @@ async def new_chat_member(message: types.Message, chat: Chat):
             "{users}, Welcome to the chat. \n"
             "Please confirm that you are a human. "
             "User filter is enabled in this chat, so if you don't answer my question, "
-            "I will be forced to remove you from this chat."
-        ).format(users=", ".join(users.values())),
+            "I will be forced to remove you from this chat and you will be <a href='{jail_link}'>imprisoned</a>."
+        ).format(users=", ".join(users.values()), jail_link=config.AIOGRAM_JAIL_LINK),
         reply_markup=types.InlineKeyboardMarkup(row_width=3).add(*buttons),
     )
     await join_list.create_list(
