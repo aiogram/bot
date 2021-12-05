@@ -1,3 +1,4 @@
+import sentry_sdk
 from aiogram import __main__ as aiogram_core
 from aiogram import types
 from aiogram.dispatcher.filters import CommandHelp, CommandStart
@@ -72,4 +73,5 @@ async def errors_handler(update: types.Update, exception: Exception):
         raise exception
     except Exception as e:
         logger.exception("Cause exception {e} in update {update}", e=e, update=update)
+        sentry_sdk.capture_exception(e)
     return True
