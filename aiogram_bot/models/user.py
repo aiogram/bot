@@ -8,7 +8,7 @@ from aiogram_bot.models.db import BaseModel, TimedBaseModel, db
 class User(TimedBaseModel):
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key=True, index=True, unique=True)
+    id = db.Column(db.BigInteger, primary_key=True, index=True, unique=True)
 
     is_superuser = db.Column(db.Boolean, server_default=expression.false())
     start_conversation = db.Column(db.Boolean, server_default=expression.false())
