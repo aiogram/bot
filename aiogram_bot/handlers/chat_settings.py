@@ -15,6 +15,9 @@ from aiogram_bot.utils.chat_settings import (
     cb_user_settings,
     get_chat_settings_markup,
     get_user_settings_markup,
+    PROPERTY_JOIN,
+    PROPERTY_BAN_CHANNELS,
+    PROPERTY_DEL_CHANNEL_MESSAGES,
 )
 
 _ = i18n.gettext
@@ -125,9 +128,20 @@ async def cq_user_settings_do_not_disturb(query: types.CallbackQuery, user: User
         await query.message.edit_text(text, reply_markup=markup)
 
 
-@dp.callback_query_handler(cb_chat_settings.filter(property="join", value="switch"))
+@dp.callback_query_handler(cb_chat_settings.filter(property="done", value="true"))
+@dp.callback_query_handler(cb_user_settings.filter(property="done", value="true"))
+async def cq_chat_settings_done(query: types.CallbackQuery, chat: Chat):
+    logger.info(
+        "User {user} close settings menu for chat {chat}", user=query.from_user.id, chat=chat.id
+    )
+    await query.answer(_("Settings saved"), show_alert=True)
+    await query.message.delete()
+
+
+@dp.callback_query_handler(cb_chat_settings.filter(value="switch"))
 async def cq_chat_settings_join_filter_switch(query: types.CallbackQuery, callback_data: dict):
     target_chat_id = int(callback_data["id"])
+    property_name = callback_data["property"]
     chat = await Chat.query.where(Chat.id == target_chat_id).gino.first()
     if not chat:
         return await query.answer(_("Invalid chat"), show_alert=True)
@@ -138,20 +152,22 @@ async def cq_chat_settings_join_filter_switch(query: types.CallbackQuery, callba
         return await query.message.delete()
 
     logger.info(
-        "User {user} switch join filter mode in chat {chat}", user=query.from_user.id, chat=chat.id
+        "User {user} switch property {property} in chat {chat}",
+        user=query.from_user.id,
+        property=property_name,
+        chat=chat.id,
     )
-    await query.answer(_("Join filter re-configured"))
-    await chat.update(join_filter=~Chat.join_filter).apply()
+    if property_name == PROPERTY_JOIN:
+        await chat.update(join_filter=~Chat.join_filter).apply()
+    elif property_name == PROPERTY_BAN_CHANNELS:
+        await chat.update(ban_channels=~Chat.ban_channels).apply()
+    elif property_name == PROPERTY_DEL_CHANNEL_MESSAGES:
+        await chat.update(delete_channel_messages=~Chat.delete_channel_messages).apply()
+    else:
+        await query.answer(_("Invalid property"), cache_time=3)
+        return False
+    await query.answer(_("Settings updated"), cache_time=1)
+
     text, markup = get_chat_settings_markup(await bot.get_chat(chat.id), chat)
     with suppress(MessageNotModified):
         await query.message.edit_text(text, reply_markup=markup)
-
-
-@dp.callback_query_handler(cb_chat_settings.filter(property="done", value="true"))
-@dp.callback_query_handler(cb_user_settings.filter(property="done", value="true"))
-async def cq_chat_settings_done(query: types.CallbackQuery, chat: Chat):
-    logger.info(
-        "User {user} close settings menu for chat {chat}", user=query.from_user.id, chat=chat.id
-    )
-    await query.answer(_("Settings saved"), show_alert=True)
-    await query.message.delete()

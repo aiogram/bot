@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-09 22:07+0200\n"
+"POT-Creation-Date: 2021-12-09 23:51+0200\n"
 "PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -81,35 +81,39 @@ msgid ""
 "{aiogram}"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:53
-#: aiogram_bot/handlers/chat_settings.py:95
-#: aiogram_bot/handlers/chat_settings.py:133
+#: aiogram_bot/handlers/chat_settings.py:56
+#: aiogram_bot/handlers/chat_settings.py:98
+#: aiogram_bot/handlers/chat_settings.py:147
 msgid "Invalid chat"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:67
+#: aiogram_bot/handlers/chat_settings.py:70
 msgid "Choose chat language"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:99
-#: aiogram_bot/handlers/chat_settings.py:137
+#: aiogram_bot/handlers/chat_settings.py:102
+#: aiogram_bot/handlers/chat_settings.py:151
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:111
+#: aiogram_bot/handlers/chat_settings.py:114
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:121
+#: aiogram_bot/handlers/chat_settings.py:124
 msgid "Do not disturb mode reconfigured"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:143
-msgid "Join filter re-configured"
+#: aiogram_bot/handlers/chat_settings.py:137
+msgid "Settings saved"
 msgstr ""
 
-#: aiogram_bot/handlers/chat_settings.py:156
-msgid "Settings saved"
+#: aiogram_bot/handlers/chat_settings.py:167
+msgid "Invalid property"
+msgstr ""
+
+#: aiogram_bot/handlers/chat_settings.py:169
+msgid "Settings updated"
 msgstr ""
 
 #: aiogram_bot/handlers/hastebin.py:30
@@ -162,36 +166,40 @@ msgstr ""
 msgid "Bad answer."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:41
+#: aiogram_bot/handlers/simple_admin.py:50
 msgid ""
 "Channel {channel} was permanently banned and the channel owner will no "
 "longer be able to send messages here on behalf of any of his channels."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:77
+#: aiogram_bot/handlers/simple_admin.py:86
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:112
+#: aiogram_bot/handlers/simple_admin.py:121
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:141
+#: aiogram_bot/handlers/simple_admin.py:150
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:148
+#: aiogram_bot/handlers/simple_admin.py:157
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥🔥🔥 User {user} is reported message in chat {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:170
+#: aiogram_bot/handlers/simple_admin.py:179
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:182
+#: aiogram_bot/handlers/simple_admin.py:191
 msgid "User {user} leave this chat..."
+msgstr ""
+
+#: aiogram_bot/handlers/simple_admin.py:227
+msgid "Channel {channel} allowed in this chat"
 msgstr ""
 
 #: aiogram_bot/handlers/superuser.py:25
@@ -202,27 +210,35 @@ msgstr ""
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:24
+#: aiogram_bot/utils/chat_settings.py:29
 msgid "Settings for chat {chat_title}"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:29
+#: aiogram_bot/utils/chat_settings.py:34
 msgid "{status} Join filter"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:39 aiogram_bot/utils/chat_settings.py:77
+#: aiogram_bot/utils/chat_settings.py:44
+msgid "{status} Ban channels"
+msgstr ""
+
+#: aiogram_bot/utils/chat_settings.py:54
+msgid "{status} Delete channel messages"
+msgstr ""
+
+#: aiogram_bot/utils/chat_settings.py:64 aiogram_bot/utils/chat_settings.py:102
 msgid "{flag} Language"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:49 aiogram_bot/utils/chat_settings.py:85
+#: aiogram_bot/utils/chat_settings.py:74 aiogram_bot/utils/chat_settings.py:110
 msgid "Done"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:62
+#: aiogram_bot/utils/chat_settings.py:87
 msgid "Personal settings"
 msgstr ""
 
-#: aiogram_bot/utils/chat_settings.py:67
+#: aiogram_bot/utils/chat_settings.py:92
 msgid "{status} Do not disturb"
 msgstr ""
 
@@ -232,5 +248,8 @@ msgstr ""
 #~ "longer be able to send messages "
 #~ "here on behalf of any of his "
 #~ "channels"
+#~ msgstr ""
+
+#~ msgid "Join filter re-configured"
 #~ msgstr ""
 

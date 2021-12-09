@@ -1,6 +1,6 @@
 import asyncio
 from contextlib import suppress
-from typing import List
+from typing import List, Optional
 
 from aiogram import types
 from aiogram.utils import exceptions
@@ -9,9 +9,10 @@ from aiogram.utils.markdown import hlink, quote_html
 from babel.dates import format_timedelta
 from loguru import logger
 from magic_filter import F
+from sqlalchemy.dialects.postgresql import insert
 
 from aiogram_bot.misc import bot, dp, i18n
-from aiogram_bot.models.chat import Chat
+from aiogram_bot.models.chat import Chat, ChatAllowedChannels
 from aiogram_bot.models.user import User
 from aiogram_bot.utils.timedelta import parse_timedelta_from_message
 
@@ -25,10 +26,18 @@ _ = i18n.gettext
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
 )
-async def command_ban_sender_chat(message: types.Message):
-    target = message.reply_to_message.sender_chat
+async def command_ban_sender_chat(message: types.Message, target: Optional[types.Chat] = None):
+    if target is None:
+        target = message.reply_to_message.sender_chat
+        to_message = message.reply_to_message
+    else:
+        to_message = message
     try:  # Apply restriction
         await message.chat.ban_sender_chat(sender_chat_id=target.id)
+        await ChatAllowedChannels.delete.where(
+            (ChatAllowedChannels.chat_id == message.chat.id)
+            & (ChatAllowedChannels.channel_id == target.id)
+        ).gino.scalar()
         logger.info(
             "Chat {chat} restricted by {admin}",
             chat=target.id,
@@ -37,7 +46,7 @@ async def command_ban_sender_chat(message: types.Message):
     except exceptions.BadRequest as e:
         logger.error("Failed to restrict chat member: {error!r}", error=e)
         return False
-    await message.reply_to_message.answer(
+    await to_message.answer(
         _(
             "Channel {channel} was permanently banned "
             "and the channel owner will no longer be able to send messages here "
@@ -190,3 +199,30 @@ async def cmd_leave(message: types.Message):
         await message.delete()
         if msg:
             await msg.delete()
+
+
+@dp.message_handler(
+    F.ilter(F.reply_to_message.sender_chat),
+    commands=["approve_channel"],
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
+    user_can_promote_members=True,
+    bot_can_restrict_members=True,
+)
+async def command_allow_channel(message: types.Message):
+    target = message.reply_to_message.sender_chat
+    stmt = (
+        insert(ChatAllowedChannels)
+        .values(
+            chat_id=message.chat.id,
+            channel_id=target.id,
+            added_by=message.from_user.id,
+        )
+        .on_conflict_do_nothing(
+            index_elements=[ChatAllowedChannels.chat_id, ChatAllowedChannels.channel_id],
+        )
+    )
+    await stmt.gino.scalar()
+    await message.chat.unban_sender_chat(target.id)
+    await message.answer(
+        _("Channel {channel} allowed in this chat").format(channel=target.mention)
+    )

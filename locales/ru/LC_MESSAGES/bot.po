@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-09 22:07+0200\n"
-"PO-Revision-Date: 2021-12-09 22:01+0200\n"
+"POT-Creation-Date: 2021-12-09 23:51+0200\n"
+"PO-Revision-Date: 2021-12-09 23:53+0200\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: aiogram_bot/handlers/base.py:18
 msgid ""
@@ -28,8 +29,8 @@ msgid ""
 "My source code: {source_url}"
 msgstr ""
 "Привет, {user}.\n"
-"Отправь /help если хочешь прочитать список моих команд. Так же, если "
-"хочешь изменить язык - отправь команду /settings.\n"
+"Отправь /help если хочешь прочитать список моих команд. Так же, если хочешь "
+"изменить язык - отправь команду /settings.\n"
 "\n"
 "Мои исходники: {source_url}"
 
@@ -89,35 +90,40 @@ msgstr ""
 "Моя версия:\n"
 "{aiogram}"
 
-#: aiogram_bot/handlers/chat_settings.py:53
-#: aiogram_bot/handlers/chat_settings.py:95
-#: aiogram_bot/handlers/chat_settings.py:133
+#: aiogram_bot/handlers/chat_settings.py:56
+#: aiogram_bot/handlers/chat_settings.py:98
+#: aiogram_bot/handlers/chat_settings.py:147
 msgid "Invalid chat"
 msgstr "Неверный чат"
 
-#: aiogram_bot/handlers/chat_settings.py:67
+#: aiogram_bot/handlers/chat_settings.py:70
 msgid "Choose chat language"
 msgstr "Выбери язык для чата"
 
-#: aiogram_bot/handlers/chat_settings.py:99
-#: aiogram_bot/handlers/chat_settings.py:137
+#: aiogram_bot/handlers/chat_settings.py:102
+#: aiogram_bot/handlers/chat_settings.py:151
 msgid "You cannot change settings of this chat!"
 msgstr "Ты не можешь изменять настройки этого чата!"
 
-#: aiogram_bot/handlers/chat_settings.py:111
+#: aiogram_bot/handlers/chat_settings.py:114
 msgid "Language changed to {new_language}"
 msgstr "Язык изменен на {new_language}"
 
-#: aiogram_bot/handlers/chat_settings.py:121
+#: aiogram_bot/handlers/chat_settings.py:124
 msgid "Do not disturb mode reconfigured"
 msgstr "Настройки режима \"Не беспокоить\" изменены"
 
-#: aiogram_bot/handlers/chat_settings.py:143
-msgid "Join filter re-configured"
-msgstr "Фильтр входа в чат перенастроен"
-
-#: aiogram_bot/handlers/chat_settings.py:156
+#: aiogram_bot/handlers/chat_settings.py:137
 msgid "Settings saved"
+msgstr "Настройки сохранены"
+
+#: aiogram_bot/handlers/chat_settings.py:167
+msgid "Invalid property"
+msgstr "Неверный параметр"
+
+#: aiogram_bot/handlers/chat_settings.py:169
+#, fuzzy
+msgid "Settings updated"
 msgstr "Настройки сохранены"
 
 #: aiogram_bot/handlers/hastebin.py:30
@@ -155,14 +161,14 @@ msgstr "Я человек"
 #: aiogram_bot/handlers/new_chat_members.py:87
 msgid ""
 "{users}, Welcome to the chat. \n"
-"Please confirm that you are a human. User filter is enabled in this chat,"
-" so if you don't answer my question, I will be forced to remove you from "
-"this chat."
+"Please confirm that you are a human. User filter is enabled in this chat, so "
+"if you don't answer my question, I will be forced to remove you from this "
+"chat."
 msgstr ""
 "Привет, {users}!\n"
 "Пожалуйста подтверди, что ты человек. В этом чате включен фильтр новых "
-"пользователей, поэтому, если ты не ответишь на мой вопрос, я буду "
-"вынужден прогнать тебя из чата."
+"пользователей, поэтому, если ты не ответишь на мой вопрос, я буду вынужден "
+"прогнать тебя из чата."
 
 #: aiogram_bot/handlers/new_chat_members.py:123
 msgid "This message is not for you!"
@@ -176,23 +182,23 @@ msgstr "Хороший ответ!"
 msgid "Bad answer."
 msgstr "Плохой ответ."
 
-#: aiogram_bot/handlers/simple_admin.py:41
+#: aiogram_bot/handlers/simple_admin.py:50
 msgid ""
 "Channel {channel} was permanently banned and the channel owner will no "
 "longer be able to send messages here on behalf of any of his channels."
 msgstr ""
-"Канал {channel} заблокирован, владелец этого канала больше не сможет "
-"писать от имени любого из своих каналов в этом чате."
+"Канал {channel} заблокирован, его владелец больше не сможет писать от имени "
+"любого из своих каналов в этом чате."
 
-#: aiogram_bot/handlers/simple_admin.py:77
+#: aiogram_bot/handlers/simple_admin.py:86
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr "Пользователь {user} помещен в <b>RO</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:112
+#: aiogram_bot/handlers/simple_admin.py:121
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr "Пользователь {user} <b>забанен</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:141
+#: aiogram_bot/handlers/simple_admin.py:150
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
@@ -200,51 +206,63 @@ msgstr ""
 "Пожалуйста, используй эту команду только в ответ на другое сообщение и я "
 "сообщу про него администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:148
+#: aiogram_bot/handlers/simple_admin.py:157
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥 Пользователь {user} сообщает про сообщение в чате {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:170
+#: aiogram_bot/handlers/simple_admin.py:179
 msgid "This message is reported to chat administrators."
 msgstr "Я сообщил про это сообщение администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:182
+#: aiogram_bot/handlers/simple_admin.py:191
 msgid "User {user} leave this chat..."
 msgstr "Пользователь {user} покинул этот чат..."
+
+#: aiogram_bot/handlers/simple_admin.py:227
+msgid "Channel {channel} allowed in this chat"
+msgstr "Теперь канал {channel} разрешен в этом чате"
 
 #: aiogram_bot/handlers/superuser.py:25
 msgid "Successful changed is_superuser to {is_superuser} for user {user}"
 msgstr ""
-"Успешно обновлен флаг is_superuser на {is_superuser} для пользователя "
-"{user}"
+"Успешно обновлен флаг is_superuser на {is_superuser} для пользователя {user}"
 
 #: aiogram_bot/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
-"Не удалось изменить флаг is_superuser {is_superuser} для "
-"пользователя{user}"
+"Не удалось изменить флаг is_superuser {is_superuser} для пользователя{user}"
 
-#: aiogram_bot/utils/chat_settings.py:24
+#: aiogram_bot/utils/chat_settings.py:29
 msgid "Settings for chat {chat_title}"
 msgstr "Настройки чата {chat_title}"
 
-#: aiogram_bot/utils/chat_settings.py:29
+#: aiogram_bot/utils/chat_settings.py:34
 msgid "{status} Join filter"
 msgstr "{status} Фильтр входа"
 
-#: aiogram_bot/utils/chat_settings.py:39 aiogram_bot/utils/chat_settings.py:77
+#: aiogram_bot/utils/chat_settings.py:44
+msgid "{status} Ban channels"
+msgstr "{status} Банить каналы"
+
+#: aiogram_bot/utils/chat_settings.py:54
+msgid "{status} Delete channel messages"
+msgstr "{status} Удалять сообщения каналов"
+
+#: aiogram_bot/utils/chat_settings.py:64 aiogram_bot/utils/chat_settings.py:102
 msgid "{flag} Language"
 msgstr "{flag} Язык"
 
-#: aiogram_bot/utils/chat_settings.py:49 aiogram_bot/utils/chat_settings.py:85
+#: aiogram_bot/utils/chat_settings.py:74 aiogram_bot/utils/chat_settings.py:110
 msgid "Done"
 msgstr "Завершить"
 
-#: aiogram_bot/utils/chat_settings.py:62
+#: aiogram_bot/utils/chat_settings.py:87
 msgid "Personal settings"
 msgstr "Персональные настройки"
 
-#: aiogram_bot/utils/chat_settings.py:67
+#: aiogram_bot/utils/chat_settings.py:92
 msgid "{status} Do not disturb"
 msgstr "{status} Не беспокоить"
 
+#~ msgid "Join filter re-configured"
+#~ msgstr "Фильтр входа в чат перенастроен"

@@ -16,6 +16,11 @@ _ = i18n.gettext
 
 FLAG_STATUS = ["❌", "✅"]
 
+PROPERTY_JOIN = "join"
+PROPERTY_BAN_CHANNELS = "ban_channels"
+PROPERTY_DEL_CHANNEL_MESSAGES = "del_channel_messages"
+PROPERTY_LANGUAGE = "language"
+
 
 def get_chat_settings_markup(
     telegram_chat: types.Chat, chat: Chat
@@ -30,7 +35,27 @@ def get_chat_settings_markup(
                             status=FLAG_STATUS[chat.join_filter]
                         ),
                         callback_data=cb_chat_settings.new(
-                            id=chat.id, property="join", value="switch"
+                            id=chat.id, property=PROPERTY_JOIN, value="switch"
+                        ),
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        text=_("{status} Ban channels").format(
+                            status=FLAG_STATUS[chat.ban_channels]
+                        ),
+                        callback_data=cb_chat_settings.new(
+                            id=chat.id, property=PROPERTY_BAN_CHANNELS, value="switch"
+                        ),
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        text=_("{status} Delete channel messages").format(
+                            status=FLAG_STATUS[chat.delete_channel_messages]
+                        ),
+                        callback_data=cb_chat_settings.new(
+                            id=chat.id, property=PROPERTY_DEL_CHANNEL_MESSAGES, value="switch"
                         ),
                     )
                 ],
@@ -40,7 +65,7 @@ def get_chat_settings_markup(
                             flag=i18n.AVAILABLE_LANGUAGES[i18n.ctx_locale.get()].flag
                         ),
                         callback_data=cb_chat_settings.new(
-                            id=chat.id, property="language", value="change"
+                            id=chat.id, property=PROPERTY_LANGUAGE, value="change"
                         ),
                     )
                 ],

@@ -12,6 +12,8 @@ class Chat(TimedBaseModel):
 
     language = db.Column(db.String(12), default="en")
     join_filter = db.Column(db.Boolean, server_default=expression.false())
+    ban_channels = db.Column(db.Boolean, server_default=expression.false())
+    delete_channel_messages = db.Column(db.Boolean, server_default=expression.false())
 
 
 class ChatRelatedModel(BaseModel):
@@ -20,4 +22,19 @@ class ChatRelatedModel(BaseModel):
     chat_id = db.Column(
         db.ForeignKey(f"{Chat.__tablename__}.id", ondelete="CASCADE", onupdate="CASCADE"),
         nullable=False,
+        index=True,
+    )
+
+
+class ChatAllowedChannels(TimedBaseModel):
+    __tablename__ = "chats_allowed_channels"
+
+    chat_id = db.Column(
+        db.ForeignKey(f"{Chat.__tablename__}.id", ondelete="CASCADE", onupdate="CASCADE"),
+        nullable=False,
+        primary_key=True,
+    )
+    channel_id = db.Column(db.BigInteger, primary_key=True, nullable=False)
+    added_by = db.Column(
+        db.ForeignKey("users.id", ondelete="CASCADE", onupdate="CASCADE"), nullable=False
     )
