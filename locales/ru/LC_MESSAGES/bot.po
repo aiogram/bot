@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-22 18:46+0300\n"
-"PO-Revision-Date: 2019-11-06 11:40+0200\n"
+"POT-Creation-Date: 2021-12-09 22:07+0200\n"
+"PO-Revision-Date: 2021-12-09 22:01+0200\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: aiogram_bot/handlers/base.py:17
+#: aiogram_bot/handlers/base.py:18
 msgid ""
 "Hello, {user}.\n"
 "Send /help if you want to read my commands list and also you can change "
@@ -33,55 +33,55 @@ msgstr ""
 "\n"
 "Мои исходники: {source_url}"
 
-#: aiogram_bot/handlers/base.py:35
+#: aiogram_bot/handlers/base.py:36
 msgid "Here you can read the list of my commands:"
 msgstr "Вот список моих команд:"
 
-#: aiogram_bot/handlers/base.py:36
+#: aiogram_bot/handlers/base.py:37
 msgid "{command} - Start conversation with bot"
 msgstr "{command} - Начать диалог с ботом"
 
-#: aiogram_bot/handlers/base.py:37
+#: aiogram_bot/handlers/base.py:38
 msgid "{command} - Get this message"
 msgstr "{command} - Получить данное сообщение"
 
-#: aiogram_bot/handlers/base.py:38
+#: aiogram_bot/handlers/base.py:39
 msgid "{command} - Chat or user settings"
 msgstr "{command} - Настройки чата или персональные"
 
-#: aiogram_bot/handlers/base.py:39
+#: aiogram_bot/handlers/base.py:40
 msgid "{command} - My version"
 msgstr "{command} - Версия"
 
-#: aiogram_bot/handlers/base.py:40
+#: aiogram_bot/handlers/base.py:41
 msgid "{command} - Publish content to HasteBin"
 msgstr "{command} - Опубликовать на HasteBin"
 
-#: aiogram_bot/handlers/base.py:45
+#: aiogram_bot/handlers/base.py:46
 msgid "In chats this commands list can be other"
 msgstr "В чатах этот список команд может отличатся"
 
-#: aiogram_bot/handlers/base.py:49
+#: aiogram_bot/handlers/base.py:50
 msgid "Available only in groups:"
 msgstr "Следующие команды доступны только в чатах:"
 
-#: aiogram_bot/handlers/base.py:50
+#: aiogram_bot/handlers/base.py:51
 msgid "{command} - Report message to chat administrators"
 msgstr "{command} - Пожаловаться на сообщение и позвать администрацию чата"
 
-#: aiogram_bot/handlers/base.py:53
+#: aiogram_bot/handlers/base.py:54
 msgid "{command} - Set RO mode for user"
 msgstr "{command} - Отправить пользователя в RO"
 
-#: aiogram_bot/handlers/base.py:54
+#: aiogram_bot/handlers/base.py:55
 msgid "{command} - Ban user"
 msgstr "{command} - Забанить пользователя"
 
-#: aiogram_bot/handlers/base.py:56
+#: aiogram_bot/handlers/base.py:57
 msgid "In private chats this commands list can be other"
 msgstr "В приватных чатах этот список может отличатся"
 
-#: aiogram_bot/handlers/base.py:65
+#: aiogram_bot/handlers/base.py:66
 msgid ""
 "My Engine:\n"
 "{aiogram}"
@@ -176,15 +176,23 @@ msgstr "Хороший ответ!"
 msgid "Bad answer."
 msgstr "Плохой ответ."
 
-#: aiogram_bot/handlers/simple_admin.py:47
+#: aiogram_bot/handlers/simple_admin.py:41
+msgid ""
+"Channel {channel} was permanently banned and the channel owner will no "
+"longer be able to send messages here on behalf of any of his channels."
+msgstr ""
+"Канал {channel} заблокирован, владелец этого канала больше не сможет "
+"писать от имени любого из своих каналов в этом чате."
+
+#: aiogram_bot/handlers/simple_admin.py:77
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr "Пользователь {user} помещен в <b>RO</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:82
+#: aiogram_bot/handlers/simple_admin.py:112
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr "Пользователь {user} <b>забанен</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:111
+#: aiogram_bot/handlers/simple_admin.py:141
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
@@ -192,15 +200,15 @@ msgstr ""
 "Пожалуйста, используй эту команду только в ответ на другое сообщение и я "
 "сообщу про него администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:118
+#: aiogram_bot/handlers/simple_admin.py:148
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥 Пользователь {user} сообщает про сообщение в чате {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:140
+#: aiogram_bot/handlers/simple_admin.py:170
 msgid "This message is reported to chat administrators."
 msgstr "Я сообщил про это сообщение администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:152
+#: aiogram_bot/handlers/simple_admin.py:182
 msgid "User {user} leave this chat..."
 msgstr "Пользователь {user} покинул этот чат..."
 

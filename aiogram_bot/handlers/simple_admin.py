@@ -8,6 +8,7 @@ from aiogram.utils.exceptions import BadRequest, Unauthorized
 from aiogram.utils.markdown import hlink, quote_html
 from babel.dates import format_timedelta
 from loguru import logger
+from magic_filter import F
 
 from aiogram_bot.misc import bot, dp, i18n
 from aiogram_bot.models.chat import Chat
@@ -18,9 +19,38 @@ _ = i18n.gettext
 
 
 @dp.message_handler(
+    F.ilter(F.reply_to_message.sender_chat),
+    commands=["ro", "ban"],
+    commands_prefix="!",
+    user_can_restrict_members=True,
+    bot_can_restrict_members=True,
+)
+async def command_ban_sender_chat(message: types.Message):
+    target = message.reply_to_message.sender_chat
+    try:  # Apply restriction
+        await message.chat.ban_sender_chat(sender_chat_id=target.id)
+        logger.info(
+            "Chat {chat} restricted by {admin}",
+            chat=target.id,
+            admin=message.from_user.id,
+        )
+    except exceptions.BadRequest as e:
+        logger.error("Failed to restrict chat member: {error!r}", error=e)
+        return False
+    await message.reply_to_message.answer(
+        _(
+            "Channel {channel} was permanently banned "
+            "and the channel owner will no longer be able to send messages here "
+            "on behalf of any of his channels."
+        ).format(channel=target.mention)
+    )
+    return True
+
+
+@dp.message_handler(
+    F.ilter(F.reply_to_message),
     commands=["ro"],
     commands_prefix="!",
-    is_reply=True,
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
 )
@@ -55,9 +85,9 @@ async def cmd_ro(message: types.Message, chat: Chat):
 
 
 @dp.message_handler(
+    F.ilter(F.reply_to_message),
     commands=["ban"],
     commands_prefix="!",
-    is_reply=True,
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
 )

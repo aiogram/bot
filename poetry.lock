@@ -8,7 +8,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "aiogram"
-version = "2.16"
+version = "2.17.1"
 description = "Is a pretty simple and fully asynchronous framework for Telegram Bot API"
 category = "main"
 optional = false
@@ -402,6 +402,14 @@ win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
 
 [package.extras]
 dev = ["codecov (>=2.0.15)", "colorama (>=0.3.4)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "tox-travis (>=0.12)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "Sphinx (>=2.2.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)", "black (>=19.10b0)", "isort (>=5.1.1)"]
+
+[[package]]
+name = "magic-filter"
+version = "1.0.4"
+description = "This package provides magic filter based on dynamic attribute getter"
+category = "main"
+optional = false
+python-versions = ">=3.6.2,<4.0.0"
 
 [[package]]
 name = "mako"
@@ -811,7 +819,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8b3c608e0457cff6c8f8f632647707ca8a40512beb1d10812a063d2e4aa9920d"
+content-hash = "377e61d4936d972b724fcbef81e850f7def291f11b3b6a41acdb620be0470266"
 
 [metadata.files]
 aiocontextvars = [
@@ -819,8 +827,8 @@ aiocontextvars = [
     {file = "aiocontextvars-0.2.2.tar.gz", hash = "sha256:f027372dc48641f683c559f247bd84962becaacdc9ba711d583c3871fb5652aa"},
 ]
 aiogram = [
-    {file = "aiogram-2.16-py3-none-any.whl", hash = "sha256:77071300c9535a18eda29afe7196bcafe92d369672b06e3aca36bd0801ea6659"},
-    {file = "aiogram-2.16.tar.gz", hash = "sha256:9c7c510d6eb4fba965461457b8a98a13167384a882f95a273b209097b069defe"},
+    {file = "aiogram-2.17.1-py3-none-any.whl", hash = "sha256:6721a29c90851749d19289249f97bea42d7c8b8e7e5273c5c48a88c87d629143"},
+    {file = "aiogram-2.17.1.tar.gz", hash = "sha256:c37ad3033ba1d6025e6f99cef077f886d68e66bf21365603aa9093dc1d667fae"},
 ]
 aiohttp = [
     {file = "aiohttp-3.8.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:1ed0b6477896559f17b9eaeb6d38e07f7f9ffe40b9f0f9627ae8b9926ae260a8"},
@@ -1129,6 +1137,10 @@ jedi = [
 loguru = [
     {file = "loguru-0.5.3-py3-none-any.whl", hash = "sha256:f8087ac396b5ee5f67c963b495d615ebbceac2796379599820e324419d53667c"},
     {file = "loguru-0.5.3.tar.gz", hash = "sha256:b28e72ac7a98be3d28ad28570299a393dfcd32e5e3f6a353dec94675767b6319"},
+]
+magic-filter = [
+    {file = "magic-filter-1.0.4.tar.gz", hash = "sha256:2b77de98bfef16a990c22b2a68a904b4a99913b656d48cf877367da8ae5f5c84"},
+    {file = "magic_filter-1.0.4-py3-none-any.whl", hash = "sha256:daf869025b9490c4438f1c2d3f4f9bcb8295fa0ffa7fec643bc20486f519f349"},
 ]
 mako = [
     {file = "Mako-1.1.5-py2.py3-none-any.whl", hash = "sha256:6804ee66a7f6a6416910463b00d76a7b25194cd27f1918500c5bd7be2a088a23"},
