@@ -7,6 +7,7 @@ PROJECT := aiogram_bot
 LOCALES_DOMAIN := bot
 LOCALES_DIR := locales
 VERSION := 0.1
+COPYRIGHT := Illemius
 PIPENV_VERBOSITY := -1
 
 # =================================================================================================
@@ -41,7 +42,7 @@ texts-update:
     	-o ${LOCALES_DIR}/${LOCALES_DOMAIN}.pot \
     	--project=${PROJECT} \
     	--version=${VERSION} \
-    	--copyright-holder=Illemius \
+    	--copyright-holder=${COPYRIGHT} \
     	-k __:1,2 \
     	--sort-by-file -w 99
 	poetry run pybabel update \
@@ -51,10 +52,10 @@ texts-update:
 		-i ${LOCALES_DIR}/${LOCALES_DOMAIN}.pot
 
 texts-compile:
-	poetry run pybabel compile -d locales -D bot
+	poetry run pybabel compile -d ${LOCALES_DIR} -D ${LOCALES_DOMAIN}
 
 texts-create-language:
-	poetry run pybabel init -i locales/bot.pot -d locales -D bot -l ${language}
+	poetry run pybabel init -i ${LOCALES_DIR}/${LOCALES_DOMAIN}.pot -d ${LOCALES_DIR} -D ${LOCALES_DOMAIN} -l ${language}
 
 alembic:
 	PYTHONPATH=$(shell pwd):${PYTHONPATH} poetry run alembic ${args}
