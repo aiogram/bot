@@ -1,6 +1,8 @@
 from aiogram import Dispatcher
 from loguru import logger
 
+from aiogram_bot.filters.chat_property import ChatPropertyFilter
+
 
 def setup(dispatcher: Dispatcher):
     logger.info("Configure filters...")
@@ -18,4 +20,5 @@ def setup(dispatcher: Dispatcher):
     dispatcher.filters_factory.bind(IsReplyFilter, event_handlers=text_messages)
     dispatcher.filters_factory.bind(HasPermissions, event_handlers=text_messages)
     dispatcher.filters_factory.bind(BotHasPermissions, event_handlers=text_messages)
+    dispatcher.filters_factory.bind(ChatPropertyFilter, event_handlers=text_messages)
     dispatcher.filters_factory.bind(IsSuperuserFilter)

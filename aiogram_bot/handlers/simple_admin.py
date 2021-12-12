@@ -25,6 +25,7 @@ _ = i18n.gettext
     commands_prefix="!",
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
+    # chat_property="restrict_commands",
 )
 async def command_ban_sender_chat(message: types.Message, target: Optional[types.Chat] = None):
     if target is None:
@@ -62,6 +63,7 @@ async def command_ban_sender_chat(message: types.Message, target: Optional[types
     commands_prefix="!",
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
+    chat_property="restrict_commands",
 )
 async def cmd_ro(message: types.Message, chat: Chat):
     duration = await parse_timedelta_from_message(message)
@@ -99,6 +101,7 @@ async def cmd_ro(message: types.Message, chat: Chat):
     commands_prefix="!",
     user_can_restrict_members=True,
     bot_can_restrict_members=True,
+    chat_property="restrict_commands",
 )
 async def cmd_ban(message: types.Message, chat: Chat):
     duration = await parse_timedelta_from_message(message)
@@ -129,13 +132,17 @@ async def cmd_ban(message: types.Message, chat: Chat):
 
 
 @dp.message_handler(
-    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP], text_contains="@admin", state="*"
+    chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
+    text_contains="@admin",
+    state="*",
+    chat_property="report_to_admins",
 )
 @dp.message_handler(
     chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP],
     commands=["report"],
     commands_prefix="!/",
     state="*",
+    chat_property="report_to_admins",
 )
 async def text_report_admins(message: types.Message):
     logger.info(

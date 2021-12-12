@@ -14,6 +14,8 @@ class Chat(TimedBaseModel):
     join_filter = db.Column(db.Boolean, server_default=expression.false())
     ban_channels = db.Column(db.Boolean, server_default=expression.false())
     delete_channel_messages = db.Column(db.Boolean, server_default=expression.false())
+    report_to_admins = db.Column(db.Boolean, server_default=expression.true())
+    restrict_commands = db.Column(db.Boolean, server_default=expression.true())
 
 
 class ChatRelatedModel(BaseModel):
