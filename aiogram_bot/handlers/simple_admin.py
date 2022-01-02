@@ -1,4 +1,5 @@
 import asyncio
+import datetime
 from contextlib import suppress
 from typing import List, Optional
 
@@ -84,12 +85,16 @@ async def cmd_ro(message: types.Message, chat: Chat):
         logger.error("Failed to restrict chat member: {error!r}", error=e)
         return False
 
+    if duration >= datetime.timedelta(days=367):
+        duration = "forever"
+    else:
+        duration = format_timedelta(
+            duration, locale=chat.language, granularity="seconds", format="short"
+        )
+
     await message.reply_to_message.answer(
         _("<b>Read-only</b> activated for user {user}. Duration: {duration}").format(
-            user=message.reply_to_message.from_user.get_mention(),
-            duration=format_timedelta(
-                duration, locale=chat.language, granularity="seconds", format="short"
-            ),
+            user=message.reply_to_message.from_user.get_mention(), duration=duration
         )
     )
     return True
@@ -120,12 +125,16 @@ async def cmd_ban(message: types.Message, chat: Chat):
         logger.error("Failed to kick chat member: {error!r}", error=e)
         return False
 
+    if duration >= datetime.timedelta(days=367):
+        duration = "forever"
+    else:
+        duration = format_timedelta(
+            duration, locale=chat.language, granularity="seconds", format="short"
+        )
+
     await message.reply_to_message.answer(
         _("User {user} <b>banned</b> for {duration}").format(
-            user=message.reply_to_message.from_user.get_mention(),
-            duration=format_timedelta(
-                duration, locale=chat.language, granularity="seconds", format="short"
-            ),
+            user=message.reply_to_message.from_user.get_mention(), duration=duration
         )
     )
     return True
