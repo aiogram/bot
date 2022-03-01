@@ -140,19 +140,19 @@ msgstr ""
 
 #: aiogram_bot/handlers/new_chat_members.py:72
 msgid "I'm bot"
-msgstr "Я бот"
+msgstr "Я кремлебот"
 
 #: aiogram_bot/handlers/new_chat_members.py:73
 msgid "I'm pet"
-msgstr "Я питомец"
+msgstr "Я животное"
 
 #: aiogram_bot/handlers/new_chat_members.py:75
 msgid "I'm spammer"
-msgstr "Я спамер"
+msgstr "Я палуница"
 
 #: aiogram_bot/handlers/new_chat_members.py:78
 msgid "I'm scammer"
-msgstr "Я скамер"
+msgstr "Я русский корабль"
 
 #: aiogram_bot/handlers/new_chat_members.py:84
 msgid "I'm human"
