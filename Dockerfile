@@ -11,7 +11,8 @@ WORKDIR /app
 # Install Poetry
 RUN set +x \
  && apt update \
- && apt install -y curl \
+ && apt upgrade \
+ && apt install -y curl gcc build-essentials \
  && curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python -\
  && cd /usr/local/bin \
  && ln -s /opt/poetry/bin/poetry \
@@ -21,7 +22,7 @@ RUN set +x \
 # Add code & install dependencies
 ADD . /app/
 RUN chmod +x scripts/* \
- && poetry install -n --no-dev \
+ && poetry install -n --only main \
  && pybabel compile -d locales -D bot
 
 ENTRYPOINT ["docker-entrypoint.sh"]
