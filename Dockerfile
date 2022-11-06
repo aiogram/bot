@@ -12,7 +12,7 @@ WORKDIR /app
 RUN set +x \
  && apt update \
  && apt upgrade -y \
- && apt install -y curl gcc build-essentials \
+ && apt install -y curl gcc build-essential \
  && curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python -\
  && cd /usr/local/bin \
  && ln -s /opt/poetry/bin/poetry \
