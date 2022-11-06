@@ -11,7 +11,7 @@ WORKDIR /app
 # Install Poetry
 RUN set +x \
  && apt update \
- && apt upgrade \
+ && apt upgrade -y \
  && apt install -y curl gcc build-essentials \
  && curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python -\
  && cd /usr/local/bin \
