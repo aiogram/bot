@@ -13,16 +13,15 @@ class BaseRedis:
 
     @property
     def closed(self):
-        return not self._redis or self._redis.closed
+        return not self._redis
 
     async def connect(self):
         if self.closed:
-            self._redis = await aioredis.create_redis_pool((self.host, self.port), db=self.db)
+            self._redis = await aioredis.from_url(f"redis://{self.host}:{self.port}/{self.db}")
 
     async def disconnect(self):
         if not self.closed:
-            self._redis.close()
-            await self._redis.wait_closed()
+            await self._redis.close()
 
     @property
     def redis(self) -> aioredis.Redis:
