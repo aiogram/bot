@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bullseye as production
+FROM python:3.9-slim-bullseye as production
 LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
       description="Telegram Bot"
 
