@@ -20,9 +20,12 @@ RUN set +x \
  && rm -rf /var/lib/apt/lists/*
 
 # Add code & install dependencies
-ADD . /app/
+COPY pyproject.toml poetry.lock /app/
 RUN chmod +x scripts/* \
- && poetry install -n --only main \
+ && poetry install -n --only main --no-root
+
+ADD . /app/
+RUN poetry install -n --only-root \
  && pybabel compile -d locales -D bot
 
 ENTRYPOINT ["docker-entrypoint.sh"]
