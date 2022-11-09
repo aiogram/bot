@@ -29,7 +29,7 @@ class JoinListService(BaseRedis):
         for user_id in users:
             score = time.time()
             logger.info("Add user to join-list {key} {value}", key=key, score=score, value=user_id)
-            await self.redis.zadd(key, score, user_id)
+            await self.redis.zadd(key, {str(user_id): score})
         scheduler.add_job(
             join_expired,
             "date",
@@ -47,7 +47,7 @@ class JoinListService(BaseRedis):
 
     async def check_list(self, chat_id: int, message_id: int) -> List[int]:
         key = self.create_key(chat_id=chat_id, message_id=message_id)
-        users_list = await self.redis.zrange(key)
+        users_list = await self.redis.zrange(key, -1, -2)
         return list(map(int, users_list))
 
 
