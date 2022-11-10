@@ -3,6 +3,7 @@ from contextlib import suppress
 from typing import List, Optional
 
 from aiogram import types
+from aiogram.types import ContentType
 from aiogram.utils import exceptions
 from aiogram.utils.exceptions import BadRequest, Unauthorized
 from aiogram.utils.markdown import hlink, quote_html
@@ -152,7 +153,9 @@ async def text_report_admins(message: types.Message):
         chat=message.chat.id,
         from_user=message.reply_to_message.from_user.id,
     )
-    if not message.reply_to_message:
+    if not message.reply_to_message or message.reply_to_message.content_type in {ContentType.FORUM_TOPIC_CREATED,
+                                                                                 ContentType.FORUM_TOPIC_REOPENED,
+                                                                                 ContentType.FORUM_TOPIC_CLOSED}:
         return await message.reply(
             _(
                 "Please use this command is only in reply to message what do you want to report "
@@ -161,12 +164,13 @@ async def text_report_admins(message: types.Message):
         )
 
     admins: List[types.ChatMember] = await message.chat.get_administrators()
+    url = f"https://t.me/{message.chat.username}/{message.reply_to_message.message_id}"
+    if message.is_topic_message:
+        url += f'?topic={message.message_thread_id}'
+
     text = _("[ALERT] User {user} is reported message in chat {chat}.").format(
         user=message.from_user.get_mention(),
-        chat=hlink(
-            message.chat.title,
-            f"https://t.me/{message.chat.username}/{message.reply_to_message.message_id}",
-        )
+        chat=hlink(message.chat.title, url)
         if message.chat.username
         else quote_html(repr(message.chat.title)),
     )
