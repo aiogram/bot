@@ -164,15 +164,17 @@ async def text_report_admins(message: types.Message):
         )
 
     admins: List[types.ChatMember] = await message.chat.get_administrators()
-    url = f"https://t.me/{message.chat.username}/{message.reply_to_message.message_id}"
-    if message.is_topic_message:
-        url += f'?topic={message.message_thread_id}'
+    if message.chat.username:
+        url = f"https://t.me/{message.chat.username}/{message.reply_to_message.message_id}"
+        if message.is_topic_message:
+            url += f'?topic={message.reply_to_message.message_thread_id}'
+        chat_label = hlink(message.chat.title, url)
+    else:
+        chat_label = quote_html(repr(message.chat.title))
 
     text = _("[ALERT] User {user} is reported message in chat {chat}.").format(
         user=message.from_user.get_mention(),
-        chat=hlink(message.chat.title, url)
-        if message.chat.username
-        else quote_html(repr(message.chat.title)),
+        chat=chat_label,
     )
 
     admin_ids = [
