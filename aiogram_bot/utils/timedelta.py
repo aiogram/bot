@@ -4,8 +4,8 @@ import typing
 
 from aiogram import types
 
-PATTERN = re.compile(r"(?P<value>\d+)(?P<modifier>[wdhms])")
-LINE_PATTERN = re.compile(r"^(\d+[wdhms]){1,}$")
+PATTERN = re.compile(r"(?P<value>\d+)(?P<modifier>[wdhms])|^(?P<keyword>forever)$")
+LINE_PATTERN = re.compile(r"^(\d+[wdhms])+$|^(forever)$")
 
 MODIFIERS = {
     "w": datetime.timedelta(weeks=1),
@@ -26,6 +26,8 @@ def parse_timedelta(value: str) -> datetime.timedelta:
         raise TimedeltaParseError("Invalid time format")
 
     try:
+        if PATTERN.match(value).group("keyword"):
+            return datetime.timedelta(days=367)
         result = datetime.timedelta()
         for match in PATTERN.finditer(value):
             value, modifier = match.groups()
