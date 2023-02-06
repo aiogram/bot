@@ -19,6 +19,7 @@ class I18nMiddleware(BaseI18nMiddleware):
         "en": LanguageData("🇺🇸", "English"),
         "ru": LanguageData("🇷🇺", "Русский"),
         "uk": LanguageData("🇺🇦", "Українська"),
+        "uz": LanguageData("🇺🇿", "O'zbekcha"),
     }
 
     async def get_user_locale(self, action: str, args: Tuple[Any]) -> str:
