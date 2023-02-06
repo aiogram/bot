@@ -1,0 +1,268 @@
+# Uzbek translations by Shahobiddin Anorboyev for aiogram_bot.
+# Copyright (C) 2023 Illemius
+# This file is distributed under the same license as the aiogram_bot
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: aiogram_bot 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-12-09 23:51+0200\n"
+"PO-Revision-Date: 2021-12-09 23:53+0200\n"
+"Last-Translator: \n"
+"Language: uz\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0\n"
+
+#: aiogram_bot/handlers/base.py:17
+msgid ""
+"Hello, {user}.\n"
+"Send /help if you want to read my commands list and also you can change "
+"language by sending /settings command.\n"
+"My source code: {source_url}"
+msgstr ""
+"Salom, {user}.\n"
+"Agar siz mening buyruqlarim ro\'yxatini o\'qishni yoki o\'zgartirsangiz xohlasangiz /help buyrug\'ini yuboring"
+"Tilni o\'zgartirish uchun /settings buyrug\'ini yuboring\n"
+"\n"
+"Mening kodim: {source_url}"
+
+#: aiogram_bot/handlers/base.py:36
+msgid "Here you can read the list of my commands:"
+msgstr "Bu yerda mening buyruqlarim ro\'yxatini o\'qishingiz mumkin:"
+
+#: aiogram_bot/handlers/base.py:37
+msgid "{command} - Start conversation with bot"
+msgstr "{command} - Bot bilan suhbatni boshlang"
+
+#: aiogram_bot/handlers/base.py:38
+msgid "{command} - Get this message"
+msgstr "{command} - Ushbu xabarni oling"
+
+#: aiogram_bot/handlers/base.py:39
+msgid "{command} - Chat or user settings"
+msgstr "{command} - Chat yoki foydalanuvchi sozlamalari"
+
+#: aiogram_bot/handlers/base.py:40
+msgid "{command} - My version"
+msgstr "{command} - Versiya"
+
+#: aiogram_bot/handlers/base.py:41
+msgid "{command} - Publish content to HasteBin"
+msgstr "{command} - HasteBin-ga nashr qilish"
+
+#: aiogram_bot/handlers/base.py:46
+msgid "In chats this commands list can be other"
+msgstr "Chatlarda bu buyruqlar ro\'yxati boshqacha bo\'lishi mumkin"
+
+#: aiogram_bot/handlers/base.py:50
+msgid "Available only in groups:"
+msgstr "Quyidagi buyruqlar faqat guruhlarda mavjud:"
+
+#: aiogram_bot/handlers/base.py:51
+msgid "{command} - Report message to chat administrators"
+msgstr "{command} - Chat ma\'murlariga shikoyat qilish"
+
+#: aiogram_bot/handlers/base.py:54
+msgid "{command} - Set RO mode for user"
+msgstr "{command} - Foydalanuvchi uchun RO (Read Only) rejimini o\'rnatish"
+
+#: aiogram_bot/handlers/base.py:55
+msgid "{command} - Ban user"
+msgstr "{command} - Foydalanuvchini bloklash"
+
+#: aiogram_bot/handlers/base.py:57
+msgid "In private chats this commands list can be other"
+msgstr "Shaxsiy chatlarda bu buyruqlar ro\'yxati boshqacha bo\'lishi mumkin"
+
+#: aiogram_bot/handlers/base.py:66
+msgid ""
+"My Engine:\n"
+"{aiogram}"
+msgstr ""
+"Mening versiyam:\n"
+"{aiogram}"
+
+#: aiogram_bot/handlers/chat_settings.py:56
+#: aiogram_bot/handlers/chat_settings.py:98
+#: aiogram_bot/handlers/chat_settings.py:147
+msgid "Invalid chat"
+msgstr "Yaroqsiz chat"
+
+#: aiogram_bot/handlers/chat_settings.py:70
+msgid "Choose chat language"
+msgstr "Suhbatlashish tilini tanlang"
+
+#: aiogram_bot/handlers/chat_settings.py:102
+#: aiogram_bot/handlers/chat_settings.py:151
+msgid "You cannot change settings of this chat!"
+msgstr "Siz ushbu chat sozlamalarini o\'zgartira olmaysiz!"
+
+#: aiogram_bot/handlers/chat_settings.py:114
+msgid "Language changed to {new_language}"
+msgstr "Til {new_language} ga o\'zgartirildi"
+
+#: aiogram_bot/handlers/chat_settings.py:124
+msgid "Do not disturb mode reconfigured"
+msgstr "\"Bezovta qilmang\" rejimi qayta sozlandi"
+
+#: aiogram_bot/handlers/chat_settings.py:137
+msgid "Settings saved"
+msgstr "Sozlamalar saqlandi"
+
+#: aiogram_bot/handlers/chat_settings.py:167
+msgid "Invalid property"
+msgstr "Yaroqsiz parametr"
+
+#: aiogram_bot/handlers/chat_settings.py:169
+#, fuzzy
+msgid "Settings updated"
+msgstr "Sozlamalar yangilandi"
+
+#: aiogram_bot/handlers/hastebin.py:30
+msgid "Content to move is too short!"
+msgstr "Ko\'chirish uchun xabar juda qisqa!"
+
+#: aiogram_bot/handlers/hastebin.py:36
+msgid ""
+"Message originally posted by {author} was moved to {url} service\n"
+"Content size: {size} bytes"
+msgstr ""
+"Dastlab {author} tomonidan yuborilgan xabar {url} xizmatiga koʻchirildi\n"
+"Hajmi: {size} bayt"
+
+#: aiogram_bot/handlers/new_chat_members.py:72
+msgid "I'm bot"
+msgstr "Men botman"
+
+#: aiogram_bot/handlers/new_chat_members.py:73
+msgid "I'm pet"
+msgstr "Men uy hayvoniman"
+
+#: aiogram_bot/handlers/new_chat_members.py:75
+msgid "I'm spammer"
+msgstr "Men spammerman"
+
+#: aiogram_bot/handlers/new_chat_members.py:78
+msgid "I'm scammer"
+msgstr "Men rus kemasiman"
+
+#: aiogram_bot/handlers/new_chat_members.py:84
+msgid "I'm human"
+msgstr "Men insonman"
+
+#: aiogram_bot/handlers/new_chat_members.py:87
+msgid ""
+"{users}, Welcome to the chat. \n"
+"Please confirm that you are a human. User filter is enabled in this chat,"
+" so if you don't answer my question, I will be forced to remove you from "
+"this chat."
+msgstr ""
+"Salom, {users}!\n"
+"Iltimos, odam ekanligingizni tasdiqlang. Ushbu suhbatda \"yangi foydalanuvchilar\" filtri yoqilgan. "
+"Shu sababli, agar siz mening savolimga javob bermasangiz "
+"men sizni suhbatdan chiqarib yuborishga majbur bo\'laman"
+
+#: aiogram_bot/handlers/new_chat_members.py:123
+msgid "This message is not for you!"
+msgstr "Bu xabar siz uchun emas!"
+
+#: aiogram_bot/handlers/new_chat_members.py:126
+msgid "Good answer!"
+msgstr "To\'g\'ri javob"
+
+#: aiogram_bot/handlers/new_chat_members.py:133
+msgid "Bad answer."
+msgstr "Noto\'g\'ri javob."
+
+#: aiogram_bot/handlers/simple_admin.py:50
+msgid ""
+"Channel {channel} was permanently banned and the channel owner will no "
+"longer be able to send messages here on behalf of any of his channels."
+msgstr ""
+"{channel} kanali bloklandi, ushbu kanal endi egasi o\'z kanallari nomidan "
+"ushbu chatga habar yubora olmaydi."
+
+#: aiogram_bot/handlers/simple_admin.py:86
+msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
+msgstr "<b>Read-only</b> rejimi {user} faollashtirildi. Muddat: {duration}"
+
+#: aiogram_bot/handlers/simple_admin.py:121
+msgid "User {user} <b>banned</b> for {duration}"
+msgstr "{user} foydalanuvchisi <b>Bloklandi</b>. Muddat: {duration}"
+
+#: aiogram_bot/handlers/simple_admin.py:150
+msgid ""
+"Please use this command is only in reply to message what do you want to "
+"report and this message will be reported to chat administrators."
+msgstr ""
+"Iltimos, ushbu buyruqdan faqat boshqa xabarga javob ( reply ) sifatida foydalaning"
+"Men bu haqida chat ma'muriyatiga xabar beraman."
+
+#: aiogram_bot/handlers/simple_admin.py:157
+msgid "[ALERT] User {user} is reported message in chat {chat}."
+msgstr "Diqqat. {user} foydalanuvchisi {chat} chatida xabar yubordi."
+
+#: aiogram_bot/handlers/simple_admin.py:179
+msgid "This message is reported to chat administrators."
+msgstr "Chat ma\'muriyati ogohlantirildi."
+
+#: aiogram_bot/handlers/simple_admin.py:191
+msgid "User {user} leave this chat..."
+msgstr "Foydalanuvchi {user} ushbu chatni tark etdi..."
+
+#: aiogram_bot/handlers/simple_admin.py:227
+msgid "Channel {channel} allowed in this chat"
+msgstr "{channel} kanali chatda yozishga ruhsat berildi"
+
+#: aiogram_bot/handlers/superuser.py:25
+msgid "Successful changed is_superuser to {is_superuser} for user {user}"
+msgstr ""
+"{user} foydalanuvchisi uchun is_superuser bayrog\'i {is_superuser}" ga muvaffaqiyatli yangilandi."
+
+#: aiogram_bot/handlers/superuser.py:30
+msgid "Failed to set is_superuser to {is_superuser} for user {user}"
+msgstr ""
+"{user} foydalanuvchisi uchun is_superuser-ni {is_superuser} ga o\'rnatib bo'lmadi"
+
+#: aiogram_bot/utils/chat_settings.py:29
+msgid "Settings for chat {chat_title}"
+msgstr "{chat_title} chati uchun sozlamalar!"
+
+#: aiogram_bot/utils/chat_settings.py:34
+msgid "{status} Join filter"
+msgstr "{status} Join filtri"
+
+#: aiogram_bot/utils/chat_settings.py:44
+msgid "{status} Ban channels"
+msgstr "{status} Kanallarni taqiqlash"
+
+#: aiogram_bot/utils/chat_settings.py:54
+msgid "{status} Delete channel messages"
+msgstr "{status} Kanal xabarlarini o\'chirish"
+
+#: aiogram_bot/utils/chat_settings.py:64 aiogram_bot/utils/chat_settings.py:102
+msgid "{flag} Language"
+msgstr "{flag} Til"
+
+#: aiogram_bot/utils/chat_settings.py:74 aiogram_bot/utils/chat_settings.py:110
+msgid "Done"
+msgstr "Tayyor"
+
+#: aiogram_bot/utils/chat_settings.py:87
+msgid "Personal settings"
+msgstr "Shaxsiy sozlamalar"
+
+#: aiogram_bot/utils/chat_settings.py:92
+msgid "{status} Do not disturb"
+msgstr "{status} Bezovta qilmang"
+
+#~ msgid "Join filter re-configured"
+#~ msgstr "Chatga kirish filtri qayta sozlandi"
