@@ -3,8 +3,8 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from app.config import POSTGRES_URI
-from app.models.base import db
+from aiogram_bot.config import POSTGRES_URI
+from aiogram_bot.models.base import db
 
 config = context.config
 fileConfig(config.config_file_name)
@@ -47,6 +47,7 @@ def run_migrations_online():
         config.get_section(config.config_ini_section),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
+
     )
 
     with connectable.connect() as connection:

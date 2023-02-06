@@ -1,23 +1,23 @@
 # Translations template for aiogram_bot.
-# Copyright (C) 2019 Illemius
+# Copyright (C) 2021 Illemius
 # This file is distributed under the same license as the aiogram_bot project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-06 11:44+0200\n"
+"POT-Creation-Date: 2021-12-09 23:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: app/handlers/base.py:17
+#: aiogram_bot/handlers/base.py:18
 msgid ""
 "Hello, {user}.\n"
 "Send /help if you want to read my commands list and also you can change language by sending "
@@ -25,170 +25,215 @@ msgid ""
 "My source code: {source_url}"
 msgstr ""
 
-#: app/handlers/base.py:35
+#: aiogram_bot/handlers/base.py:36
 msgid "Here you can read the list of my commands:"
 msgstr ""
 
-#: app/handlers/base.py:36
+#: aiogram_bot/handlers/base.py:37
 msgid "{command} - Start conversation with bot"
 msgstr ""
 
-#: app/handlers/base.py:37
+#: aiogram_bot/handlers/base.py:38
 msgid "{command} - Get this message"
 msgstr ""
 
-#: app/handlers/base.py:38
+#: aiogram_bot/handlers/base.py:39
 msgid "{command} - Chat or user settings"
 msgstr ""
 
-#: app/handlers/base.py:39
+#: aiogram_bot/handlers/base.py:40
 msgid "{command} - My version"
 msgstr ""
 
-#: app/handlers/base.py:48
+#: aiogram_bot/handlers/base.py:41
+msgid "{command} - Publish content to HasteBin"
+msgstr ""
+
+#: aiogram_bot/handlers/base.py:46
 msgid "In chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/base.py:54
+#: aiogram_bot/handlers/base.py:50
 msgid "Available only in groups:"
 msgstr ""
 
-#: app/handlers/base.py:55
+#: aiogram_bot/handlers/base.py:51
 msgid "{command} - Report message to chat administrators"
 msgstr ""
 
-#: app/handlers/base.py:58
+#: aiogram_bot/handlers/base.py:54
 msgid "{command} - Set RO mode for user"
 msgstr ""
 
-#: app/handlers/base.py:59
+#: aiogram_bot/handlers/base.py:55
 msgid "{command} - Ban user"
 msgstr ""
 
-#: app/handlers/base.py:61
+#: aiogram_bot/handlers/base.py:57
 msgid "In private chats this commands list can be other"
 msgstr ""
 
-#: app/handlers/base.py:70
+#: aiogram_bot/handlers/base.py:66
 msgid ""
 "My Engine:\n"
 "{aiogram}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:51 app/handlers/chat_settings.py:93 app/handlers/chat_settings.py:131
+#: aiogram_bot/handlers/chat_settings.py:56 aiogram_bot/handlers/chat_settings.py:98
+#: aiogram_bot/handlers/chat_settings.py:147
 msgid "Invalid chat"
 msgstr ""
 
-#: app/handlers/chat_settings.py:65
+#: aiogram_bot/handlers/chat_settings.py:70
 msgid "Choose chat language"
 msgstr ""
 
-#: app/handlers/chat_settings.py:97 app/handlers/chat_settings.py:135
+#: aiogram_bot/handlers/chat_settings.py:102 aiogram_bot/handlers/chat_settings.py:151
 msgid "You cannot change settings of this chat!"
 msgstr ""
 
-#: app/handlers/chat_settings.py:109
+#: aiogram_bot/handlers/chat_settings.py:114
 msgid "Language changed to {new_language}"
 msgstr ""
 
-#: app/handlers/chat_settings.py:119
+#: aiogram_bot/handlers/chat_settings.py:124
 msgid "Do not disturb mode reconfigured"
 msgstr ""
 
-#: app/handlers/chat_settings.py:141
-msgid "Join filter re-configured"
-msgstr ""
-
-#: app/handlers/chat_settings.py:154
+#: aiogram_bot/handlers/chat_settings.py:137
 msgid "Settings saved"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:68
-msgid "I'm human"
+#: aiogram_bot/handlers/chat_settings.py:167
+msgid "Invalid property"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:69
+#: aiogram_bot/handlers/chat_settings.py:169
+msgid "Settings updated"
+msgstr ""
+
+#: aiogram_bot/handlers/hastebin.py:30
+msgid "Content to move is too short!"
+msgstr ""
+
+#: aiogram_bot/handlers/hastebin.py:36
+msgid ""
+"Message originally posted by {author} was moved to {url} service\n"
+"Content size: {size} bytes"
+msgstr ""
+
+#: aiogram_bot/handlers/new_chat_members.py:72
 msgid "I'm bot"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:70
+#: aiogram_bot/handlers/new_chat_members.py:73
 msgid "I'm pet"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:74
+#: aiogram_bot/handlers/new_chat_members.py:75
+msgid "I'm spammer"
+msgstr ""
+
+#: aiogram_bot/handlers/new_chat_members.py:78
+msgid "I'm scammer"
+msgstr ""
+
+#: aiogram_bot/handlers/new_chat_members.py:84
+msgid "I'm human"
+msgstr ""
+
+#: aiogram_bot/handlers/new_chat_members.py:87
 msgid ""
 "{users}, Welcome to the chat. \n"
 "Please confirm that you are a human. User filter is enabled in this chat, so if you don't answer"
 " my question, I will be forced to remove you from this chat."
 msgstr ""
 
-#: app/handlers/new_chat_members.py:110
+#: aiogram_bot/handlers/new_chat_members.py:123
 msgid "This message is not for you!"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:113
+#: aiogram_bot/handlers/new_chat_members.py:126
 msgid "Good answer!"
 msgstr ""
 
-#: app/handlers/new_chat_members.py:120
+#: aiogram_bot/handlers/new_chat_members.py:133
 msgid "Bad answer."
 msgstr ""
 
-#: app/handlers/simple_admin.py:47
+#: aiogram_bot/handlers/simple_admin.py:50
+msgid ""
+"Channel {channel} was permanently banned and the channel owner will no longer be able to send "
+"messages here on behalf of any of his channels."
+msgstr ""
+
+#: aiogram_bot/handlers/simple_admin.py:86
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:82
+#: aiogram_bot/handlers/simple_admin.py:121
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr ""
 
-#: app/handlers/simple_admin.py:106
+#: aiogram_bot/handlers/simple_admin.py:150
 msgid ""
 "Please use this command is only in reply to message what do you want to report and this message "
 "will be reported to chat administrators."
 msgstr ""
 
-#: app/handlers/simple_admin.py:113
+#: aiogram_bot/handlers/simple_admin.py:157
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr ""
 
-#: app/handlers/simple_admin.py:135
+#: aiogram_bot/handlers/simple_admin.py:179
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: app/handlers/simple_admin.py:148
+#: aiogram_bot/handlers/simple_admin.py:191
 msgid "User {user} leave this chat..."
 msgstr ""
 
-#: app/handlers/superuser.py:25
+#: aiogram_bot/handlers/simple_admin.py:227
+msgid "Channel {channel} allowed in this chat"
+msgstr ""
+
+#: aiogram_bot/handlers/superuser.py:25
 msgid "Successful changed is_superuser to {is_superuser} for user {user}"
 msgstr ""
 
-#: app/handlers/superuser.py:30
+#: aiogram_bot/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
 
-#: app/utils/chat_settings.py:24
+#: aiogram_bot/utils/chat_settings.py:29
 msgid "Settings for chat {chat_title}"
 msgstr ""
 
-#: app/utils/chat_settings.py:29
+#: aiogram_bot/utils/chat_settings.py:34
 msgid "{status} Join filter"
 msgstr ""
 
-#: app/utils/chat_settings.py:39 app/utils/chat_settings.py:77
+#: aiogram_bot/utils/chat_settings.py:44
+msgid "{status} Ban channels"
+msgstr ""
+
+#: aiogram_bot/utils/chat_settings.py:54
+msgid "{status} Delete channel messages"
+msgstr ""
+
+#: aiogram_bot/utils/chat_settings.py:64 aiogram_bot/utils/chat_settings.py:102
 msgid "{flag} Language"
 msgstr ""
 
-#: app/utils/chat_settings.py:49 app/utils/chat_settings.py:85
+#: aiogram_bot/utils/chat_settings.py:74 aiogram_bot/utils/chat_settings.py:110
 msgid "Done"
 msgstr ""
 
-#: app/utils/chat_settings.py:62
+#: aiogram_bot/utils/chat_settings.py:87
 msgid "Personal settings"
 msgstr ""
 
-#: app/utils/chat_settings.py:67
+#: aiogram_bot/utils/chat_settings.py:92
 msgid "{status} Do not disturb"
 msgstr ""
 

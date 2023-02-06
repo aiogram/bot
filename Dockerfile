@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster as production
+FROM python:3.9-slim-bullseye as production
 LABEL maintainer="Alex Root Junior <jroot.junior@gmail.com>" \
       description="Telegram Bot"
 
@@ -8,12 +8,25 @@ ENV PATH "/app/scripts:${PATH}"
 EXPOSE 80
 WORKDIR /app
 
-COPY Pipfile* /app/
-RUN pip install pipenv && \
-    pipenv install --system --deploy
+# Install Poetry
+RUN set +x \
+ && apt update \
+ && apt upgrade -y \
+ && apt install -y curl gcc build-essential \
+ && curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python -\
+ && cd /usr/local/bin \
+ && ln -s /opt/poetry/bin/poetry \
+ && poetry config virtualenvs.create false \
+ && rm -rf /var/lib/apt/lists/*
+
+# Add code & install dependencies
+COPY pyproject.toml poetry.lock /app/
+RUN poetry install -n --only main --no-root
+
 ADD . /app/
-RUN chmod +x scripts/* && \
-    pybabel compile -d locales -D bot
+RUN chmod +x scripts/* \
+ && poetry install -n --only-root \
+ && pybabel compile -d locales -D bot
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["run-webhook"]

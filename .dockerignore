@@ -1,7 +1,6 @@
 # Project
 .idea/
 .github/
-pyproject.toml
 .flake8
 .*ignore
 .isort.cfg
