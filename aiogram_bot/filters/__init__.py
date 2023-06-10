@@ -6,6 +6,7 @@ from aiogram_bot.filters.chat_property import ChatPropertyFilter
 
 def setup(dispatcher: Dispatcher):
     logger.info("Configure filters...")
+    from .contains_bot_token import ContainsBotToken
     from .has_permissions import BotHasPermissions, HasPermissions
     from .is_reply import IsReplyFilter
     from .superuser import IsSuperuserFilter
@@ -22,3 +23,4 @@ def setup(dispatcher: Dispatcher):
     dispatcher.filters_factory.bind(BotHasPermissions, event_handlers=text_messages)
     dispatcher.filters_factory.bind(ChatPropertyFilter, event_handlers=text_messages)
     dispatcher.filters_factory.bind(IsSuperuserFilter)
+    dispatcher.filters_factory.bind(ContainsBotToken)

@@ -1,25 +1,24 @@
 # Russian translations for aiogram_bot.
-# Copyright (C) 2021 Illemius
+# Copyright (C) 2023 Illemius
 # This file is distributed under the same license as the aiogram_bot
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-09 23:51+0200\n"
+"POT-Creation-Date: 2023-06-10 03:39+0300\n"
 "PO-Revision-Date: 2021-12-09 23:53+0200\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0\n"
 
 #: aiogram_bot/handlers/base.py:18
 msgid ""
@@ -29,8 +28,8 @@ msgid ""
 "My source code: {source_url}"
 msgstr ""
 "Привет, {user}.\n"
-"Отправь /help если хочешь прочитать список моих команд. Так же, если хочешь "
-"изменить язык - отправь команду /settings.\n"
+"Отправь /help если хочешь прочитать список моих команд. Так же, если "
+"хочешь изменить язык - отправь команду /settings.\n"
 "\n"
 "Мои исходники: {source_url}"
 
@@ -161,14 +160,14 @@ msgstr "Я человек"
 #: aiogram_bot/handlers/new_chat_members.py:87
 msgid ""
 "{users}, Welcome to the chat. \n"
-"Please confirm that you are a human. User filter is enabled in this chat, so "
-"if you don't answer my question, I will be forced to remove you from this "
-"chat."
+"Please confirm that you are a human. User filter is enabled in this chat,"
+" so if you don't answer my question, I will be forced to remove you from "
+"this chat."
 msgstr ""
 "Привет, {users}!\n"
 "Пожалуйста подтверди, что ты человек. В этом чате включен фильтр новых "
-"пользователей, поэтому, если ты не ответишь на мой вопрос, я буду вынужден "
-"прогнать тебя из чата."
+"пользователей, поэтому, если ты не ответишь на мой вопрос, я буду "
+"вынужден прогнать тебя из чата."
 
 #: aiogram_bot/handlers/new_chat_members.py:123
 msgid "This message is not for you!"
@@ -182,23 +181,23 @@ msgstr "Хороший ответ!"
 msgid "Bad answer."
 msgstr "Плохой ответ."
 
-#: aiogram_bot/handlers/simple_admin.py:50
+#: aiogram_bot/handlers/simple_admin.py:52
 msgid ""
 "Channel {channel} was permanently banned and the channel owner will no "
 "longer be able to send messages here on behalf of any of his channels."
 msgstr ""
-"Канал {channel} заблокирован, его владелец больше не сможет писать от имени "
-"любого из своих каналов в этом чате."
+"Канал {channel} заблокирован, его владелец больше не сможет писать от "
+"имени любого из своих каналов в этом чате."
 
-#: aiogram_bot/handlers/simple_admin.py:86
+#: aiogram_bot/handlers/simple_admin.py:89
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr "Пользователь {user} помещен в <b>RO</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:121
+#: aiogram_bot/handlers/simple_admin.py:125
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr "Пользователь {user} <b>забанен</b> на {duration}"
 
-#: aiogram_bot/handlers/simple_admin.py:150
+#: aiogram_bot/handlers/simple_admin.py:160
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
@@ -206,31 +205,43 @@ msgstr ""
 "Пожалуйста, используй эту команду только в ответ на другое сообщение и я "
 "сообщу про него администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:157
+#: aiogram_bot/handlers/simple_admin.py:175
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥 Пользователь {user} сообщает про сообщение в чате {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:179
+#: aiogram_bot/handlers/simple_admin.py:192
 msgid "This message is reported to chat administrators."
 msgstr "Я сообщил про это сообщение администрации чата."
 
-#: aiogram_bot/handlers/simple_admin.py:191
+#: aiogram_bot/handlers/simple_admin.py:204
 msgid "User {user} leave this chat..."
 msgstr "Пользователь {user} покинул этот чат..."
 
-#: aiogram_bot/handlers/simple_admin.py:227
+#: aiogram_bot/handlers/simple_admin.py:240
 msgid "Channel {channel} allowed in this chat"
 msgstr "Теперь канал {channel} разрешен в этом чате"
 
 #: aiogram_bot/handlers/superuser.py:25
 msgid "Successful changed is_superuser to {is_superuser} for user {user}"
 msgstr ""
-"Успешно обновлен флаг is_superuser на {is_superuser} для пользователя {user}"
+"Успешно обновлен флаг is_superuser на {is_superuser} для пользователя "
+"{user}"
 
 #: aiogram_bot/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
-"Не удалось изменить флаг is_superuser {is_superuser} для пользователя{user}"
+"Не удалось изменить флаг is_superuser {is_superuser} для "
+"пользователя{user}"
+
+#: aiogram_bot/handlers/token_finder.py:20
+msgid ""
+"[ALERT] You posted a token, go revoke it with @BotFather.\n"
+"\n"
+"Token exposed: @{exposed_bot_username}"
+msgstr ""
+"🔥 Ты разместил токен бота, сбрось его в @BotFather.\n"
+"\n"
+"Токен размещен: @{exposed_bot_username}"
 
 #: aiogram_bot/utils/chat_settings.py:29
 msgid "Settings for chat {chat_title}"
@@ -266,3 +277,16 @@ msgstr "{status} Не беспокоить"
 
 #~ msgid "Join filter re-configured"
 #~ msgstr "Фильтр входа в чат перенастроен"
+
+#~ msgid ""
+#~ "⚠️ You posted a token, go revoke it with @BotFather.\n"
+#~ "\n"
+#~ "Token exposed: @{exposed_bot_username}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[ALERT]You posted a token, go revoke it with @BotFather.\n"
+#~ "\n"
+#~ "Token exposed: @{exposed_bot_username}"
+#~ msgstr ""
+

@@ -11,3 +11,4 @@ from . import new_chat_members
 from . import superuser
 from . import hastebin
 from . import channel_filter
+from . import token_finder

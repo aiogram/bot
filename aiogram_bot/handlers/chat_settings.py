@@ -11,13 +11,13 @@ from aiogram_bot.models.chat import Chat
 from aiogram_bot.models.user import User
 from aiogram_bot.utils.chat_admin import get_chat_administrator
 from aiogram_bot.utils.chat_settings import (
+    PROPERTY_BAN_CHANNELS,
+    PROPERTY_DEL_CHANNEL_MESSAGES,
+    PROPERTY_JOIN,
     cb_chat_settings,
     cb_user_settings,
     get_chat_settings_markup,
     get_user_settings_markup,
-    PROPERTY_JOIN,
-    PROPERTY_BAN_CHANNELS,
-    PROPERTY_DEL_CHANNEL_MESSAGES,
 )
 
 _ = i18n.gettext

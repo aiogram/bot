@@ -1,14 +1,14 @@
 # English translations for aiogram_bot.
-# Copyright (C) 2021 Illemius
+# Copyright (C) 2023 Illemius
 # This file is distributed under the same license as the aiogram_bot
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: aiogram_bot 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-09 23:51+0200\n"
+"POT-Creation-Date: 2023-06-10 03:39+0300\n"
 "PO-Revision-Date: 2019-10-22 00:12+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -166,39 +166,39 @@ msgstr ""
 msgid "Bad answer."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:50
+#: aiogram_bot/handlers/simple_admin.py:52
 msgid ""
 "Channel {channel} was permanently banned and the channel owner will no "
 "longer be able to send messages here on behalf of any of his channels."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:86
+#: aiogram_bot/handlers/simple_admin.py:89
 msgid "<b>Read-only</b> activated for user {user}. Duration: {duration}"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:121
+#: aiogram_bot/handlers/simple_admin.py:125
 msgid "User {user} <b>banned</b> for {duration}"
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:150
+#: aiogram_bot/handlers/simple_admin.py:160
 msgid ""
 "Please use this command is only in reply to message what do you want to "
 "report and this message will be reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:157
+#: aiogram_bot/handlers/simple_admin.py:175
 msgid "[ALERT] User {user} is reported message in chat {chat}."
 msgstr "🔥🔥🔥 User {user} is reported message in chat {chat}."
 
-#: aiogram_bot/handlers/simple_admin.py:179
+#: aiogram_bot/handlers/simple_admin.py:192
 msgid "This message is reported to chat administrators."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:191
+#: aiogram_bot/handlers/simple_admin.py:204
 msgid "User {user} leave this chat..."
 msgstr ""
 
-#: aiogram_bot/handlers/simple_admin.py:227
+#: aiogram_bot/handlers/simple_admin.py:240
 msgid "Channel {channel} allowed in this chat"
 msgstr ""
 
@@ -209,6 +209,16 @@ msgstr ""
 #: aiogram_bot/handlers/superuser.py:30
 msgid "Failed to set is_superuser to {is_superuser} for user {user}"
 msgstr ""
+
+#: aiogram_bot/handlers/token_finder.py:20
+msgid ""
+"[ALERT] You posted a token, go revoke it with @BotFather.\n"
+"\n"
+"Token exposed: @{exposed_bot_username}"
+msgstr ""
+"🔥 You posted a token, go revoke it with @BotFather.\n"
+"\n"
+"Token exposed: @{exposed_bot_username}"
 
 #: aiogram_bot/utils/chat_settings.py:29
 msgid "Settings for chat {chat_title}"
@@ -251,5 +261,17 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Join filter re-configured"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "⚠️ You posted a token, go revoke it with @BotFather.\n"
+#~ "\n"
+#~ "Token exposed: @{exposed_bot_username}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "[ALERT]You posted a token, go revoke it with @BotFather.\n"
+#~ "\n"
+#~ "Token exposed: @{exposed_bot_username}"
 #~ msgstr ""
 
